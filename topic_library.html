@@ -157,9 +157,11 @@ body::after { content:''; position:fixed; inset:0; z-index:-1;
 /* 必看徽章：橘红描边胶囊（与日报 top-badge 对齐） */
 .top-badge { color:#FFB03A; font-size:11px; padding:2px 8px; border-radius:9px;
   background:rgba(255,176,58,.12); border:1px solid rgba(255,176,58,.45); font-weight:600; }
-/* 日期标签：与日报一致，柔和灰底 */
-.datetag { font-size:11px; padding:2px 8px; border-radius:9px;
-  background:rgba(255,255,255,.05); color:var(--muted); border:1px solid var(--border); }
+/* 日期 + 线索ID：金色胶囊（与日报 caseid / 周报日期胶囊对齐） */
+.datetag, .cid { font-size:11px; padding:2px 9px; border-radius:9px;
+  color:#FFB03A; background:rgba(255,176,58,.10);
+  border:1px solid rgba(255,176,58,.34); font-family:ui-monospace,Menlo,monospace;
+  font-weight:500; }
 /* 星级：亮星实心、暗星弱化，比"★★★★☆ 4"的文字堆叠清晰 */
 .score { font-size:12.5px; letter-spacing:1.5px; color:rgba(255,176,58,.28);
   line-height:1; white-space:nowrap; }
@@ -253,9 +255,6 @@ mark { background:rgba(255,176,58,.30); color:inherit; padding:0 2px; border-rad
 .cfoot { margin-top:10px; display:flex; align-items:center; gap:7px; flex-wrap:wrap; }
 .fct { font-size:11px; color:var(--muted); }
 .dot { color:var(--border); font-style:normal; }
-.cid { font-size:11px; color:var(--muted); font-family:ui-monospace,monospace;
-  text-decoration:none; }
-.cid:hover { color:var(--accent); }
 
 /* 操作区默认收起，悬停/已标记/聚焦时才展开——省掉每张卡近 1/4 的高度 */
 /* U-F 卡片操作：右上角常驻图标（快速状态指示）+ 悬停展开完整按钮 */
@@ -375,7 +374,7 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
     
     <div class="htxt">
       <h1>和平精英 · 选题聚合库</h1>
-      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-04 ｜ 更新于 2026-08-04 19:02</div>
+      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-04 ｜ 更新于 2026-08-04 19:19</div>
     </div>
     
   </div>
@@ -674,7 +673,6 @@ function cardHTML(c) {
     ${c.reason ? `<div class="reason">${hl(esc(c.reason), _q)}</div>` : ''}
     <div class="cfoot">
       ${facts.map(f => `<span class="fct">${f}</span>`).join('<i class="dot">·</i>')}
-      ${facts.length && cidHTML ? '<i class="dot">·</i>' : ''}${cidHTML}
     </div>
     <div class="acts">
       <button class="act ${m.star ? 'on' : ''}" data-a="star">⭐ 加星</button>
