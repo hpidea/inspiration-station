@@ -375,7 +375,7 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
     
     <div class="htxt">
       <h1>和平精英 · 选题聚合库</h1>
-      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-04 ｜ 更新于 2026-08-04 18:59</div>
+      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-04 ｜ 更新于 2026-08-04 19:02</div>
     </div>
     
   </div>
@@ -634,7 +634,7 @@ function cardHTML(c) {
   const topHTML = c.top
     ? `<span class="top-badge" title="当日 top 3 高潜力线索">必看</span>` : '';
   const dateHTML = c.date
-    ? `<span class="datetag">${esc(c.date.replace(/-/g, '年').replace(/(\d{4})年(\d{2})月(\d{2})/, '$1年$2月$3日'))}</span>` : '';
+    ? `<span class="datetag">${esc(c.date.split('-').map((p, i) => i === 0 ? p + '年' : i === 1 ? p + '月' : p + '日').join(''))}</span>` : '';
   // 热度单独出来做右上角强调，来源/榜单信息挪到平台图标的 tooltip 里（减少视觉噪音）
   const hv = heatFmt(c.heat);
   const heatHTML = hv ? `<span class="heat"><b>${esc(hv)}</b>热度</span>` : '';
