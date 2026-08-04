@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>方案 A+C — 预览</title>
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+
+/* === HERO — 纯 CSS 渐变 + 角色立绘 === */
+.hero { text-align:center; padding:68px 20px 52px; position:relative; overflow:hidden;
+  /* A 的渐变 */
+  background:
+    linear-gradient(180deg,
+      rgba(255,176,58,.08) 0%,   rgba(19,28,55,.25) 30%,
+      rgba(19,28,55,.55) 60%,    rgba(11,17,33,.95) 100%),
+    radial-gradient(ellipse 55% 45% at 50% 15%, rgba(255,176,58,.12), transparent),
+    radial-gradient(ellipse 35% 40% at 78% 50%, rgba(46,125,200,.10), transparent),
+    #0b1121;
+  border-bottom:1px solid rgba(255,255,255,.06); }
+
+/* C 的立绘 */
+.hero .char { position:absolute; right:-36px; bottom:0; height:380px;
+  opacity:.82; mix-blend-mode:lighten; z-index:0; pointer-events:none; }
+
+/* 文字层级：立绘上方 */
+.hero .badge { position:relative; z-index:1; display:inline-block; padding:4px 15px;
+  background:rgba(255,176,58,.12); border:1px solid rgba(255,176,58,.28);
+  border-radius:20px; color:#FFC569; font-size:12px; font-weight:600;
+  letter-spacing:1.5px; margin-bottom:20px; }
+.hero h1 { position:relative; z-index:1; font-size:38px; font-weight:700;
+  background:linear-gradient(135deg,#fff 28%,#FFB03A);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text; margin-bottom:14px; }
+.hero .desc { position:relative; z-index:1; font-size:15px; color:#b8c7dd;
+  max-width:500px; margin:0 auto; line-height:1.85; }
+
+/* KPI */
+.kpis { position:relative; z-index:1; display:flex; justify-content:center;
+  gap:44px; margin-top:30px; }
+.kpi { text-align:center; }
+.kpi .n { font-size:38px; font-weight:700; color:#FFB03A; line-height:1.1; }
+.kpi .l { font-size:12px; color:#93a1b8; margin-top:5px; }
+.kpi.hi .n { color:#D4537E; }
+
+/* 页面其余部分示意 */
+body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:#0b1121; color:#e8edf6; }
+.actions { display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+  max-width:920px; margin:36px auto; padding:0 20px; }
+.acard { background:#131e36; border:1px solid rgba(255,255,255,.08); border-radius:16px;
+  padding:24px 22px; color:#e8edf6; }
+.acard .ai { font-size:32px; margin-bottom:10px; display:block; }
+.acard .at { font-size:16px; font-weight:600; margin-bottom:5px; }
+.acard .ad { font-size:13px; color:#7b8ca8; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img class="char" src="../assets/posters/character.png" alt="">
+  <div class="badge">DAILY UPDATED</div>
+  <h1>和平精英创作者灵感站</h1>
+  <div class="desc">基于抖音热榜 + B站入站必看，用 AI 帮你找到最值得做的和平精英二创选题。每日自动更新。</div>
+  <div class="kpis">
+    <div class="kpi"><div class="n">34</div><div class="l">累计日报</div></div>
+    <div class="kpi hi"><div class="n">202</div><div class="l">高潜力线索</div></div>
+    <div class="kpi"><div class="n">372</div><div class="l">有价值方向</div></div>
+  </div>
+</div>
+
+<!-- 示意：下面三大入口 + 日报 / 周报不会变 -->
+<div class="actions">
+  <div class="acard"><span class="ai">📊</span><div class="at">每日热点线索</div><div class="ad">最新的抖音+B站热点分析，每条带转化方向。</div></div>
+  <div class="acard"><span class="ai">📈</span><div class="at">每周趋势周报</div><div class="ad">近7天数据汇总，看清本周方向。</div></div>
+  <div class="acard"><span class="ai">🔍</span><div class="at">选题灵感库</div><div class="ad">全部历史选题搜索筛选加星。</div></div>
+</div>
+
+</body>
+</html>

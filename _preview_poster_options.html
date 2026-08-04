@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>灵感站素材方案对比</title>
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:#0b1121; color:#e8edf6; padding:30px 20px 60px; }
+h2 { font-size:18px; font-weight:600; margin:36px 0 14px; color:#FFB03A; }
+.wrap { max-width:960px; margin:0 auto; }
+
+/* ---- 方案 A：纯 CSS 渐变（无图） ---- */
+.hero-a { text-align:center; padding:64px 20px 48px;
+  background:linear-gradient(180deg,
+    rgba(255,176,58,.06) 0%,    rgba(19,28,55,.20) 30%,
+    rgba(19,28,55,.60) 60%,     rgba(11,17,33,.95) 100%),
+  radial-gradient(ellipse 60% 50% at 50% 20%, rgba(255,176,58,.10), transparent),
+  radial-gradient(ellipse 40% 50% at 80% 50%, rgba(46,125,200,.12), transparent);
+  border-bottom:1px solid rgba(255,255,255,.06); }
+.hero-a .badge { display:inline-block; padding:4px 14px; background:rgba(255,176,58,.12);
+  border:1px solid rgba(255,176,58,.25); border-radius:20px; color:#FFC569;
+  font-size:12px; font-weight:600; letter-spacing:1px; margin-bottom:18px; }
+.hero-a h1 { font-size:36px; font-weight:700;
+  background:linear-gradient(135deg,#fff 30%,#FFB03A);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text; margin-bottom:12px; }
+.hero-a .desc { font-size:15px; color:#b8c7dd; max-width:500px; margin:0 auto 8px; line-height:1.8; }
+
+/* ---- 方案 B：单图背景（无立绘） ---- */
+.hero-b { text-align:center; padding:64px 20px 48px;
+  position:relative; overflow:hidden;
+  background:linear-gradient(180deg,
+    rgba(11,17,33,.75) 0%,   rgba(11,17,33,.30) 40%,
+    rgba(11,17,33,.60) 70%,  rgba(11,17,33,.92) 100%); }
+.hero-b::before { content:''; position:absolute; inset:0; z-index:-1;
+  background:
+    url(../assets/posters/hero.jpg) center/cover no-repeat;
+  filter:blur(3px) brightness(.6); opacity:.20; }
+
+/* ---- 方案 C：双图（背景+右立绘） ---- */
+.hero-c { text-align:center; padding:64px 20px 48px;
+  position:relative; overflow:hidden;
+  background:linear-gradient(180deg,
+    rgba(11,17,33,.75) 0%,   rgba(11,17,33,.30) 40%,
+    rgba(11,17,33,.60) 70%,  rgba(11,17,33,.92) 100%); }
+.hero-c::before { content:''; position:absolute; inset:0; z-index:-2;
+  background:
+    url(../assets/posters/hero.jpg) center/cover no-repeat;
+  filter:blur(3px) brightness(.6); opacity:.20; }
+.hero-c .char { position:absolute; right:-30px; bottom:0; height:360px;
+  opacity:.85; mix-blend-mode:lighten; z-index:-1; }
+
+/* 通用 */
+.hero-b .badge, .hero-c .badge, .hero-a .badge { display:inline-block; padding:4px 14px; background:rgba(255,176,58,.12); border:1px solid rgba(255,176,58,.25); border-radius:20px; color:#FFC569; font-size:12px; font-weight:600; letter-spacing:1px; margin-bottom:18px; }
+.hero-b h1, .hero-c h1 { font-size:36px; font-weight:700; background:linear-gradient(135deg,#fff 30%,#FFB03A); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+.hero-b .desc, .hero-c .desc { font-size:15px; color:#b8c7dd; max-width:500px; margin:0 auto 8px; line-height:1.8; }
+
+.kpis { display:flex; justify-content:center; gap:40px; margin-top:28px; }
+.kpi { text-align:center; }
+.kpi .n { font-size:36px; font-weight:700; color:#FFB03A; line-height:1.1; }
+.kpi .l { font-size:12px; color:#93a1b8; margin-top:4px; }
+.kpi.hi .n { color:#D4537E; }
+
+.note { font-size:12px; color:#7b8ca8; margin-top:18px; }
+</style>
+</head>
+<body>
+
+<h2>方案 A：纯 CSS 渐变（无图，零依赖）</h2>
+<div class="hero-a">
+  <div class="badge">DAILY UPDATED</div>
+  <h1>和平精英创作者灵感站</h1>
+  <div class="desc">基于抖音热榜 + B站入站必看，用 AI 帮你找到最值得做的和平精英二创选题。每日自动更新。</div>
+  <div class="kpis">
+    <div class="kpi"><div class="n">34</div><div class="l">累计日报</div></div>
+    <div class="kpi hi"><div class="n">202</div><div class="l">高潜力线索</div></div>
+    <div class="kpi"><div class="n">372</div><div class="l">有价值方向</div></div>
+  </div>
+</div>
+<div class="note">优点：干净高级，永远不会出图裂/加载慢/版权问题。缺点：缺少品牌感。</div>
+
+<h2>方案 B：单张背景图（无立绘）</h2>
+<div class="hero-b">
+  <div class="badge">DAILY UPDATED</div>
+  <h1>和平精英创作者灵感站</h1>
+  <div class="desc">基于抖音热榜 + B站入站必看，用 AI 帮你找到最值得做的和平精英二创选题。每日自动更新。</div>
+  <div class="kpis">
+    <div class="kpi"><div class="n">34</div><div class="l">累计日报</div></div>
+    <div class="kpi hi"><div class="n">202</div><div class="l">高潜力线索</div></div>
+    <div class="kpi"><div class="n">372</div><div class="l">有价值方向</div></div>
+  </div>
+</div>
+<div class="note">优点：有战场氛围感。缺点：hero.jpg 若不存在或尺寸不对会降级。需要横版 4:1 图。</div>
+
+<h2>方案 C：背景图 + 右立绘</h2>
+<div class="hero-c">
+  <img class="char" src="../assets/posters/character.png" alt="">
+  <div class="badge">DAILY UPDATED</div>
+  <h1>和平精英创作者灵感站</h1>
+  <div class="desc">基于抖音热榜 + B站入站必看，用 AI 帮你找到最值得做的和平精英二创选题。每日自动更新。</div>
+  <div class="kpis">
+    <div class="kpi"><div class="n">34</div><div class="l">累计日报</div></div>
+    <div class="kpi hi"><div class="n">202</div><div class="l">高潜力线索</div></div>
+    <div class="kpi"><div class="n">372</div><div class="l">有价值方向</div></div>
+  </div>
+</div>
+<div class="note">优点：品牌感最强。缺点：超 2MB 立绘影响加载；hero.jpg+character.png 不存在时会塌陷。</div>
+
+</body>
+</html>
