@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>和平精英内容线索周报 2026-06-24~2026-06-30</title>
+<style>
+:root { --bg:#f5f6f8; --card:#fff; --ink:#1c1d21; --muted:#86878d; --line:#e8e9ed; --brand:#534AB7; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.6; padding:24px 16px 60px; }
+.wrap { max-width:860px; margin:0 auto; }
+.header { background:linear-gradient(135deg,#3d3596,#7F77DD); color:#fff;
+  border-radius:18px; padding:28px 30px; margin-bottom:20px; }
+.header h1 { font-size:22px; font-weight:600; margin-bottom:6px; }
+.header .sub { font-size:13px; opacity:.85; }
+.header .tags { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.header .tags span { background:rgba(255,255,255,.18); padding:4px 12px; border-radius:20px; font-size:12px; }
+.kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:20px; }
+.kpi { background:var(--card); border-radius:14px; padding:16px; text-align:center; border:1px solid var(--line); }
+.kpi .num { font-size:28px; font-weight:600; color:var(--brand); }
+.kpi .lbl { font-size:12px; color:var(--muted); margin-top:2px; }
+.kpi .dl { display:block; font-size:11px; margin-top:4px; font-weight:600; }
+.dl-up { color:#D4537E; } .dl-down { color:#1D9E75; } .dl-flat { color:var(--muted); }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
+.panel { background:var(--card); border-radius:14px; padding:18px 20px; border:1px solid var(--line); }
+.panel h3 { font-size:14px; font-weight:600; margin-bottom:14px; }
+.donut-wrap { display:flex; align-items:center; gap:16px; }
+.cat-legend { flex:1; }
+.cat-item { display:flex; align-items:center; font-size:13px; padding:3px 0; }
+.cat-item i { width:10px; height:10px; border-radius:3px; margin-right:8px; }
+.cat-item b { margin-left:auto; font-weight:600; }
+.empty-donut { width:160px; text-align:center; color:var(--muted); padding:60px 0; }
+.daybars { display:flex; align-items:flex-end; gap:10px; height:160px; padding-top:10px; }
+.daybar { flex:1; display:flex; flex-direction:column; align-items:center; height:100%; }
+.dbar-track { position:relative; width:60%; flex:1; display:flex; align-items:flex-end;
+  background:#f2f3f5; border-radius:6px 6px 0 0; }
+.dbar-all { position:absolute; bottom:0; width:100%; background:#cdd0f3; border-radius:6px 6px 0 0; }
+.dbar-val { position:absolute; bottom:0; width:100%; background:#534AB7; border-radius:6px 6px 0 0; }
+.dbar-num { font-size:12px; font-weight:600; margin-top:4px; }
+.dbar-lbl { font-size:11px; color:var(--muted); }
+.bar { display:flex; height:14px; border-radius:8px; overflow:hidden; margin-bottom:12px; }
+.bar div { height:100%; }
+.bar-legend { font-size:12px; color:var(--muted); }
+.bar-legend .lg { display:inline-flex; align-items:center; margin-right:14px; }
+.bar-legend i { width:9px; height:9px; border-radius:2px; margin-right:5px; display:inline-block; }
+.chips { margin-top:6px; }
+.chip { display:inline-block; background:#f0eefb; color:#534AB7; padding:4px 12px; border-radius:16px; font-size:12px; margin:0 6px 6px 0; }
+.chip b { font-weight:600; } .chip-empty { color:var(--muted); font-size:12px; }
+.legend-mini { font-size:11px; color:var(--muted); margin-top:8px; }
+.legend-mini i { display:inline-block; width:9px; height:9px; border-radius:2px; margin:0 4px 0 10px; vertical-align:middle; }
+.section-title { font-size:16px; font-weight:600; margin:28px 0 14px; padding-left:12px; border-left:4px solid var(--brand); }
+.card { background:var(--card); border-radius:14px; padding:16px 18px; margin-bottom:12px;
+  border:1px solid var(--line); border-left:4px solid var(--cat); }
+.card-head { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+.card-head .rank { font-size:13px; font-weight:600; color:var(--muted); }
+.card-head .cat { color:#fff; font-size:11px; padding:2px 9px; border-radius:10px; }
+.caseid { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11px; color:#534AB7;
+  background:#eeedfe; padding:2px 8px; border-radius:10px; border:1px solid #cecbf6; }
+.score { color:#fff; font-size:11px; font-weight:600; padding:2px 9px; border-radius:10px; letter-spacing:-1px; }
+.mchips { margin-top:8px; display:flex; gap:8px; }
+.mchip { font-size:11.5px; color:#6b6c72; background:#f2f3f5; padding:3px 10px; border-radius:8px; }
+.mchip-t { background:#fff4e6; color:#a35200; }
+.card-head .meta { font-size:12px; color:var(--muted); margin-left:auto; }
+.card .title { font-size:15px; font-weight:600; margin-bottom:10px; }
+.dir-row { display:flex; gap:12px; align-items:flex-start; }
+.dir-row .form { flex-shrink:0; background:#eef2ff; color:#3730a3; font-size:12px; padding:4px 10px; border-radius:8px; font-weight:500; }
+.direction { flex:1; font-size:13.5px; background:#f7f8fa; padding:8px 12px; border-radius:8px; }
+.direction .lbl { display:inline-block; font-size:11px; color:var(--brand); font-weight:600; margin-right:6px; }
+.empty { color:var(--muted); text-align:center; padding:20px; font-size:13px; }
+.notice { background:#fff8e6; border:1px solid #ffe39e; border-radius:12px; padding:12px 16px; font-size:12.5px; color:#8a6d00; margin-top:20px; }
+.footer { text-align:center; color:var(--muted); font-size:12px; margin-top:30px; }
+@media (max-width:680px) { .kpis { grid-template-columns:repeat(2,1fr); } .grid2 { grid-template-columns:1fr; } }
+@media print { body { background:#fff; padding:0; } .card,.panel,.kpi { break-inside:avoid; }
+  .header { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <h1>和平精英 · 社媒内容线索周报</h1>
+    <div class="sub">2026-06-24 ~ 2026-06-30 · 生成于 2026-06-30 20:09</div>
+    <div class="tags">
+      <span>抖音热榜</span><span>B站入站必看</span>
+      <span>近 7 天汇总</span>
+      <span>AI 仅产出二创方向，风险合规由人工判断</span>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="num">52</div><div class="lbl">本周采集</div><span class="dl dl-flat">上周 0</span></div>
+    <div class="kpi"><div class="num">48</div><div class="lbl">有价值方向</div><span class="dl dl-flat">上周 0</span></div>
+    <div class="kpi"><div class="num">7</div><div class="lbl">高潜力(4-5★)</div><span class="dl dl-flat">上周 0</span></div>
+    <div class="kpi"><div class="num">7</div><div class="lbl">覆盖品类</div></div>
+  </div>
+
+  <div class="panel" style="margin-bottom:20px">
+    <h3>每日产量趋势</h3>
+    <div class="daybars"><div class="daybar" title="2026-06-24 采集19 有价值16"><div class="dbar-track"><div class="dbar-all" style="height:61%"></div><div class="dbar-val" style="height:51%"></div></div><div class="dbar-num">19</div><div class="dbar-lbl">周三</div></div><div class="daybar" title="2026-06-25 采集1 有价值1"><div class="dbar-track"><div class="dbar-all" style="height:3%"></div><div class="dbar-val" style="height:3%"></div></div><div class="dbar-num">1</div><div class="dbar-lbl">周四</div></div><div class="daybar" title="2026-06-26 采集1 有价值1"><div class="dbar-track"><div class="dbar-all" style="height:3%"></div><div class="dbar-val" style="height:3%"></div></div><div class="dbar-num">1</div><div class="dbar-lbl">周五</div></div><div class="daybar" title="2026-06-27 采集0 有价值0"><div class="dbar-track"><div class="dbar-all" style="height:0%"></div><div class="dbar-val" style="height:0%"></div></div><div class="dbar-num">0</div><div class="dbar-lbl">周六</div></div><div class="daybar" title="2026-06-28 采集0 有价值0"><div class="dbar-track"><div class="dbar-all" style="height:0%"></div><div class="dbar-val" style="height:0%"></div></div><div class="dbar-num">0</div><div class="dbar-lbl">周日</div></div><div class="daybar" title="2026-06-29 采集0 有价值0"><div class="dbar-track"><div class="dbar-all" style="height:0%"></div><div class="dbar-val" style="height:0%"></div></div><div class="dbar-num">0</div><div class="dbar-lbl">周一</div></div><div class="daybar" title="2026-06-30 采集31 有价值30"><div class="dbar-track"><div class="dbar-all" style="height:100%"></div><div class="dbar-val" style="height:96%"></div></div><div class="dbar-num">31</div><div class="dbar-lbl">周二</div></div></div>
+    <div class="legend-mini"><i style="background:#cdd0f3"></i>采集总量<i style="background:#534AB7"></i>有价值方向</div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>本周品类分布</h3>
+      <div class="donut-wrap"><svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"><path d="M80.00,10.00 A70.00,70.00 0 0 1 129.50,129.50 L109.70,109.70 A42.00,42.00 0 0 0 80.00,38.00 Z" fill="#534AB7"></path><path d="M129.50,129.50 A70.00,70.00 0 0 1 30.50,129.50 L50.30,109.70 A42.00,42.00 0 0 0 109.70,109.70 Z" fill="#888780"></path><path d="M30.50,129.50 A70.00,70.00 0 0 1 10.00,80.00 L38.00,80.00 A42.00,42.00 0 0 0 50.30,109.70 Z" fill="#1D9E75"></path><path d="M10.00,80.00 A70.00,70.00 0 0 1 24.47,37.39 L46.68,54.43 A42.00,42.00 0 0 0 38.00,80.00 Z" fill="#D85A30"></path><path d="M24.47,37.39 A70.00,70.00 0 0 1 45.00,19.38 L59.00,43.63 A42.00,42.00 0 0 0 46.68,54.43 Z" fill="#BA7517"></path><path d="M45.00,19.38 A70.00,70.00 0 0 1 70.86,10.60 L74.52,38.36 A42.00,42.00 0 0 0 59.00,43.63 Z" fill="#378ADD"></path><path d="M70.86,10.60 A70.00,70.00 0 0 1 80.00,10.00 L80.00,38.00 A42.00,42.00 0 0 0 74.52,38.36 Z" fill="#D4537E"></path><text x="80.0" y="76.0" text-anchor="middle" font-size="26" font-weight="600" fill="#1a1a1a">48</text><text x="80.0" y="96.0" text-anchor="middle" font-size="12" fill="#888">条线索</text></svg><div class="cat-legend"><div class="cat-item"><i style="background:#534AB7"></i>游戏<b>18</b></div><div class="cat-item"><i style="background:#888780"></i>其他<b>12</b></div><div class="cat-item"><i style="background:#1D9E75"></i>音乐<b>6</b></div><div class="cat-item"><i style="background:#D85A30"></i>生活<b>5</b></div><div class="cat-item"><i style="background:#BA7517"></i>搞笑<b>3</b></div><div class="cat-item"><i style="background:#378ADD"></i>影视<b>3</b></div><div class="cat-item"><i style="background:#D4537E"></i>娱乐<b>1</b></div></div></div>
+    </div>
+    <div class="panel">
+      <h3>来源占比</h3>
+      <div class="bar"><div style="width:53.8%;background:#534AB7;" title="抖音热点 28条"></div><div style="width:46.2%;background:#1D9E75;" title="B站热门 24条"></div></div><div class="bar-legend"><span class="lg"><i style="background:#534AB7"></i>抖音热点 28</span> <span class="lg"><i style="background:#1D9E75"></i>B站热门 24</span></div>
+      <h3 style="margin-top:18px">建议内容形式</h3>
+      <div class="chips"><span class="chip">混剪 <b>10</b></span><span class="chip">教学 <b>8</b></span><span class="chip">整活 <b>8</b></span><span class="chip">短剧 <b>7</b></span><span class="chip">整活 / 混剪 <b>2</b></span><span class="chip">短剧 / 混剪 <b>2</b></span><span class="chip">挑战 <b>2</b></span><span class="chip">赛事借势 <b>2</b></span><span class="chip">口播 <b>2</b></span><span class="chip">口播 / 整活 <b>1</b></span><span class="chip">混剪 / 整活 <b>1</b></span><span class="chip">教学 / 混剪 <b>1</b></span><span class="chip">整活 / 挑战 <b>1</b></span><span class="chip">混剪 / 短剧 <b>1</b></span></div>
+    </div>
+  </div>
+
+  <div class="section-title">本周高潜力线索 TOP10</div>
+  
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#1</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        <span class="score" style="background:#D4537E">★★★★★ 5</span><span class="caseid">20260630-23</span>
+        <span class="meta">抖音热点 · 热度 9042176 · 2026-06-30</span>
+      </div>
+      <div class="title">和平精英夏日航海新版本</div>
+      <div class="dir-row">
+        <span class="form">教学</span>
+        <div class="direction"><span class="lbl">转化方向</span>夏日航海版本新地图/新机制/新皮肤体验混剪，或新载具（如船艇）的刚枪挑战、新区域的苟分教学。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#2</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        <span class="score" style="background:#D4537E">★★★★★ 5</span><span class="caseid">20260630-24</span>
+        <span class="meta">B站热门 · 热度 2033074 · 2026-06-30</span>
+      </div>
+      <div class="title">《崩坏：星穹铁道》寰宇漫游变奏：「知更鸟•晴歌」</div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>借着星铁知更鸟热度，混剪和平精英经典套装知更鸟的高光击杀时刻，配上夏日航海新版本BGM，打出海岛也有自己的知更鸟概念。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#3</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        <span class="score" style="background:#D4537E">★★★★★ 5</span><span class="caseid">20260630-26</span>
+        <span class="meta">B站热门 · 热度 1901594 · 2026-06-30</span>
+      </div>
+      <div class="title">假如志愿填报是款游戏......</div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>把志愿填报做成和平精英跳伞选点短剧：985是P城（中心高风险高回报），211是军事基地（刚枪），二本是野区（苟分），专科是防空洞（地下隐藏），用游戏选点逻辑教考生怎么填志愿。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#4</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        <span class="score" style="background:#D4537E">★★★★★ 5</span><span class="caseid">20260630-28</span>
+        <span class="meta">B站热门 · 热度 1160631 · 2026-06-30</span>
+      </div>
+      <div class="title">苏尔南需要我们！地铁逃生2周年版本重磅开启</div>
+      <div class="dir-row">
+        <span class="form">教学</span>
+        <div class="direction"><span class="lbl">转化方向</span>地铁逃生2周年新版本开荒教学：新地图高价值物资路线规划、新BOSS打法、或者极限1级套进图赚百万撤离挑战。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#5</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        <span class="score" style="background:#534AB7">★★★★☆ 4</span><span class="caseid">20260630-27</span>
+        <span class="meta">B站热门 · 热度 1535091 · 2026-06-30</span>
+      </div>
+      <div class="title">《崩坏：星穹铁道》寰宇漫游变奏：「砂金•戏浪」</div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>借用砂金的赌徒人设，在和平精英上演赌狗的夏日航海：追空投赌里面是AWM还是平底锅，赌下一个圈是同心圆还是天谴圈，配上砂金BGM，结局要么一梭子秒杀要么被雷炸飞。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#6</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        <span class="score" style="background:#534AB7">★★★★☆ 4</span><span class="caseid">20260630-29</span>
+        <span class="meta">B站热门 · 热度 612245 · 2026-06-30</span>
+      </div>
+      <div class="title">哪来的傻孩子啊</div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>四排遇到各种奇葩操作的萌新队友（如对着空气开枪、被车撞死、反向封烟），用这句哪来的傻孩子啊作为统一吐槽台词，做成队友破防实录。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
+    </div>
+    <div class="card" style="--cat:#1D9E75">
+      <div class="card-head">
+        <span class="rank">#7</span>
+        <span class="cat" style="background:#1D9E75">音乐</span>
+        <span class="score" style="background:#534AB7">★★★★☆ 4</span><span class="caseid">20260630-30</span>
+        <span class="meta">B站热门 · 热度 463063 · 2026-06-30</span>
+      </div>
+      <div class="title">循环歌单|《超人の小曲》《英雄の小曲》Towards the Light</div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>用《超人の小曲》做BGM，混剪和平精英里极限救队友、一打四守楼、极限拿空投的英雄时刻，打造燃向高光操作混剪。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+    </div>
+    <div class="card" style="--cat:#1D9E75">
+      <div class="card-head">
+        <span class="rank">#8</span>
+        <span class="cat" style="background:#1D9E75">音乐</span>
+        <span class="score" style="background:#378ADD">★★★☆☆ 3</span><span class="caseid">20260630-25</span>
+        <span class="meta">B站热门 · 热度 1966296 · 2026-06-30</span>
+      </div>
+      <div class="title">这些你能念出几个？大家一起睡前学英语(&gt;^ω^&lt;)</div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>和平精英版睡前学英语：把游戏里的英文语音包报点做成空耳中文（如伊尼密阿黑得=敌人前方），或者用英文报点朗读挑战，看队友能不能听懂。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
+    </div>
+    <div class="card" style="--cat:#378ADD">
+      <div class="card-head">
+        <span class="rank">#9</span>
+        <span class="cat" style="background:#378ADD">影视</span>
+        <span class="score" style="background:#378ADD">★★★☆☆ 3</span><span class="caseid">20260630-31</span>
+        <span class="meta">B站热门 · 热度 362136 · 2026-06-30</span>
+      </div>
+      <div class="title">都盲，盲点好啊</div>
+      <div class="dir-row">
+        <span class="form">教学</span>
+        <div class="direction"><span class="lbl">转化方向</span>和平精英版盲点好啊：教学如何利用第三人称的视野盲区（卡视角看人别人看不见你），或者在房区利用盲区阴人，或者整活自己因为视野盲区被伏地魔阴死的破防瞬间。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+    </div>
+    <div class="card" style="--cat:#1D9E75">
+      <div class="card-head">
+        <span class="rank">#10</span>
+        <span class="cat" style="background:#1D9E75">音乐</span>
+        <span class="caseid">20260630-06</span>
+        <span class="meta">B站热门 · 热度 15318760 · 2026-06-30</span>
+      </div>
+      <div class="title">左手《Luvsic》，右手《夜，萤火虫和你》，是什么感觉？</div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>用这两首曲子做和平精英的对比混剪：前半段用《Luvsic》配四排刚枪、扫车、贴脸输出的极度狂躁燃向画面；后半段无缝切换《夜，萤火虫和你》，配海岛夜景、Z城枫叶林打卡、苟分看星的唯美静谧画面，形成“左手刚枪，右手苟分”的强烈反差。</div>
+      </div>
+      
+    </div>
+
+  <div class="notice">
+    AI 使用说明：AI 仅用于生成二创方向和推荐理由。涉及严肃资讯、公共事件、负面情绪的热点，
+    风险、合规、是否跟进一律由人工判断。线索ID 可在案例库表按 ID 检索回溯完整信息。
+  </div>
+
+  <div class="footer">本周报由「和平精英内容线索 AI 日报工具」自动生成</div>
+</div>
+</body>
+</html>

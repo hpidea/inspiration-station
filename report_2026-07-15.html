@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>和平精英内容线索日报 2026-07-15</title>
+<style>
+:root {
+  --bg:#f5f6f8; --card:#ffffff; --ink:#1c1d21; --muted:#86878d;
+  --line:#e8e9ed; --brand:#534AB7;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.6; padding:24px 16px 60px; }
+.wrap { max-width:860px; margin:0 auto; }
+.header { background:linear-gradient(135deg,#534AB7,#7F77DD); color:#fff;
+  border-radius:18px; padding:28px 30px; margin-bottom:20px; }
+.header h1 { font-size:22px; font-weight:600; margin-bottom:6px; }
+.header .sub { font-size:13px; opacity:.85; }
+.header .tags { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.header .tags span { background:rgba(255,255,255,.18); padding:4px 12px;
+  border-radius:20px; font-size:12px; }
+
+.kpis { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:20px; }
+.kpi { background:var(--card); border-radius:14px; padding:16px; text-align:center;
+  border:1px solid var(--line); }
+.kpi .num { font-size:28px; font-weight:600; color:var(--brand); }
+.kpi .lbl { font-size:12px; color:var(--muted); margin-top:2px; }
+
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
+.panel { background:var(--card); border-radius:14px; padding:18px 20px;
+  border:1px solid var(--line); }
+.panel h3 { font-size:14px; font-weight:600; margin-bottom:14px; color:var(--ink); }
+.donut-wrap { display:flex; align-items:center; gap:16px; }
+.cat-legend { flex:1; }
+.cat-item { display:flex; align-items:center; font-size:13px; padding:3px 0; }
+.cat-item i { width:10px; height:10px; border-radius:3px; margin-right:8px; }
+.cat-item b { margin-left:auto; font-weight:600; }
+.empty-donut { width:160px; text-align:center; color:var(--muted); padding:60px 0; }
+
+.bar { display:flex; height:14px; border-radius:8px; overflow:hidden; margin-bottom:12px; }
+.bar div { height:100%; }
+.bar-legend { font-size:12px; color:var(--muted); }
+.bar-legend .lg { display:inline-flex; align-items:center; margin-right:14px; }
+.bar-legend i { width:9px; height:9px; border-radius:2px; margin-right:5px; display:inline-block; }
+.chips { margin-top:14px; }
+.chip { display:inline-block; background:#f0eefb; color:#534AB7; padding:4px 12px;
+  border-radius:16px; font-size:12px; margin:0 6px 6px 0; }
+.chip b { font-weight:600; }
+.chip-empty { color:var(--muted); font-size:12px; }
+
+.section-title { font-size:16px; font-weight:600; margin:28px 0 14px;
+  padding-left:12px; border-left:4px solid var(--brand); }
+
+.card { background:var(--card); border-radius:14px; padding:16px 18px;
+  margin-bottom:12px; border:1px solid var(--line); border-left:4px solid var(--cat); }
+.card-top { background:linear-gradient(180deg,#faf9ff,#fff); }
+.card-head { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+.card-head .rank { font-size:13px; font-weight:600; color:var(--muted); }
+.card-head .cat { color:#fff; font-size:11px; padding:2px 9px; border-radius:10px; }
+.top-badge { background:#ffd84d; color:#7a5800; font-size:11px; font-weight:600;
+  padding:2px 9px; border-radius:10px; }
+.caseid { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11px;
+  color:#534AB7; background:#eeedfe; padding:2px 8px; border-radius:10px;
+  text-decoration:none; border:1px solid #cecbf6; }
+.caseid:hover { background:#534AB7; color:#fff; }
+.score { color:#fff; font-size:11px; font-weight:600; padding:2px 9px;
+  border-radius:10px; letter-spacing:-1px; }
+.sustain { background:#ffeceb; color:#d4380d; font-size:11px; font-weight:600;
+  padding:2px 9px; border-radius:10px; border:1px solid #ffccc7; }
+.newtag { background:#e6fffb; color:#08979c; font-size:11px; font-weight:600;
+  padding:2px 9px; border-radius:10px; border:1px solid #87e8de; }
+.mchips { margin-top:8px; display:flex; gap:8px; }
+.mchip { font-size:11.5px; color:#6b6c72; background:#f2f3f5;
+  padding:3px 10px; border-radius:8px; }
+.mchip-t { background:#fff4e6; color:#a35200; }
+.card-head .meta { font-size:12px; color:var(--muted); margin-left:auto; }
+.card .title { font-size:15px; font-weight:600; margin-bottom:10px; }
+.card .title a { color:var(--ink); text-decoration:none; }
+.card .title a:hover { color:var(--brand); }
+.card .title .ext { font-size:12px; color:var(--brand); }
+.dir-row { display:flex; gap:12px; align-items:flex-start; }
+.dir-row .form { flex-shrink:0; background:#eef2ff; color:#3730a3; font-size:12px;
+  padding:4px 10px; border-radius:8px; font-weight:500; }
+.direction { flex:1; font-size:13.5px; background:#f7f8fa; padding:8px 12px; border-radius:8px; }
+.direction .lbl, .reason .lbl { display:inline-block; font-size:11px; color:var(--brand);
+  font-weight:600; margin-right:6px; }
+.reason { margin-top:8px; font-size:12.5px; color:#6b6c72; }
+
+.no-dir { background:var(--card); border-radius:14px; padding:12px 18px;
+  border:1px solid var(--line); list-style:none; }
+.no-dir li { padding:8px 0; border-bottom:1px solid var(--line); font-size:13.5px;
+  display:flex; align-items:center; gap:8px; }
+.no-dir li:last-child { border-bottom:none; }
+.nd-cat { color:#fff; font-size:11px; padding:1px 8px; border-radius:9px; flex-shrink:0; }
+.nd-heat { margin-left:auto; font-size:12px; color:var(--muted); }
+.empty, .empty-li { color:var(--muted); text-align:center; padding:20px; font-size:13px; }
+
+details { background:var(--card); border-radius:14px; border:1px solid var(--line);
+  margin-top:14px; padding:0 18px; }
+details summary { cursor:pointer; padding:14px 0; font-size:14px; font-weight:600; }
+table { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:14px; }
+table th { text-align:left; color:var(--muted); font-weight:500; padding:6px 8px;
+  border-bottom:2px solid var(--line); }
+table td { padding:6px 8px; border-bottom:1px solid var(--line); }
+
+.notice { background:#fff8e6; border:1px solid #ffe39e; border-radius:12px;
+  padding:12px 16px; font-size:12.5px; color:#8a6d00; margin-top:20px; }
+.footer { text-align:center; color:var(--muted); font-size:12px; margin-top:30px; }
+
+@media (max-width:680px) {
+  .kpis { grid-template-columns:repeat(2,1fr); }
+  .grid2 { grid-template-columns:1fr; }
+  .card-head .meta { margin-left:0; width:100%; }
+}
+@media print {
+  body { background:#fff; padding:0; }
+  .card,.panel,.kpi,.no-dir,details { break-inside:avoid; }
+  .header { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <h1>和平精英 · 社媒内容线索日报</h1>
+    <div class="sub">2026-07-15 · 生成于 2026-07-15 17:00</div>
+    <div class="tags">
+      <span>抖音热榜</span><span>B站入站必看</span>
+      <span>定向品类：娱乐 / 搞笑 / 游戏 / 音乐 / 影视</span>
+      <span>AI 仅产出二创方向，风险合规由人工判断</span>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="num">36</div><div class="lbl">送 AI 线索</div></div>
+    <div class="kpi"><div class="num">0</div><div class="lbl">有价值方向</div></div>
+    <div class="kpi"><div class="num">0</div><div class="lbl">高潜力(4-5★)</div></div>
+    <div class="kpi"><div class="num">0</div><div class="lbl">🔥持续发酵</div></div>
+    <div class="kpi"><div class="num">64</div><div class="lbl">品类过滤</div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>内容品类分布</h3>
+      <div class="donut-wrap">
+        <div class="empty-donut">暂无</div>
+        <div class="cat-legend"><div class="empty">暂无</div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>来源占比</h3>
+      <div class="bar"><div style="width:69.4%;background:#534AB7;" title="B站热门 25条"></div><div style="width:30.6%;background:#1D9E75;" title="抖音热点 11条"></div></div><div class="bar-legend"><span class="lg"><i style="background:#534AB7"></i>B站热门 25</span> <span class="lg"><i style="background:#1D9E75"></i>抖音热点 11</span></div>
+      <h3 style="margin-top:18px">建议内容形式</h3>
+      <div class="chips"><span class="chip-empty">暂无</span></div>
+    </div>
+  </div>
+
+  <div class="section-title">今日最值得看的 0 条</div>
+  <div class="empty">今日暂无优先推荐线索</div>
+
+  <div class="section-title">完整线索（0 条）</div>
+  <div class="empty">今日暂无明确二创方向的线索</div>
+
+  <div class="section-title">待人工判断（36 条）</div>
+  <ul class="no-dir"><li><span class="nd-cat" style="background:#D85A30">生活</span>日常不费力的复古氛围感穿搭<span class="nd-heat">热度 9471590</span></li><li><span class="nd-cat" style="background:#D85A30">生活</span>一起进入世纪夏天<span class="nd-heat">热度 8980094</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>侯明昊艾米雀骨抖音直播<span class="nd-heat">热度 8427000</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>马克龙回应法国队无缘决赛<span class="nd-heat">热度 8377975</span></li><li><span class="nd-cat" style="background:#888780">其他</span>热巴复刻功夫女足踢球场面鞋掉了<span class="nd-heat">热度 7748382</span></li><li><span class="nd-cat" style="background:#BA7517">搞笑</span>万妮达搞笑配音毫无违和感<span class="nd-heat">热度 7737576</span></li><li><span class="nd-cat" style="background:#378ADD">影视</span>动画版三英战吕布好燃<span class="nd-heat">热度 7726768</span></li><li><span class="nd-cat" style="background:#1D9E75">音乐</span>世上只有妈妈好都出DJ版了<span class="nd-heat">热度 7720201</span></li><li><span class="nd-cat" style="background:#D4537E">娱乐</span>逐玉演唱会定档8月15日<span class="nd-heat">热度 7696177</span></li><li><span class="nd-cat" style="background:#1D9E75">音乐</span>怎么偶尔听到老歌时<span class="nd-heat">热度 7672085</span></li><li><span class="nd-cat" style="background:#888780">其他</span>我的意中人是个盖世英雄<span class="nd-heat">热度 7658511</span></li><li><span class="nd-cat" style="background:#378ADD">影视</span>【复制铜镜全系列合集】ai软件生成，剧情虚构，非官方）正片+番外+解说+彩蛋<span class="nd-heat">热度 7029036</span></li><li><span class="nd-cat" style="background:#1D9E75">音乐</span>这才是《The Other Side Of Paradise》原版MV！<span class="nd-heat">热度 6104558</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>《迈亚融解》实机首曝<span class="nd-heat">热度 4779508</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>《崩坏：星穹铁道》姬子•启行角色PV——「启明星于今夜坠落」<span class="nd-heat">热度 3756802</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>扶大厦之将倾。<span class="nd-heat">热度 3354545</span></li><li><span class="nd-cat" style="background:#BA7517">搞笑</span>这样的挑战下次请不要喊我了！#挑战# #野兽先生# #MrBeast# #vlog# #整活#<span class="nd-heat">热度 2852911</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>哭着剪完这条视频…<span class="nd-heat">热度 2467194</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>【狂怒】乌鲁鲁首款干员研究外观7月17日上线！<span class="nd-heat">热度 2197189</span></li><li><span class="nd-cat" style="background:#888780">其他</span>&quot;自古英雄出少年.&quot;<span class="nd-heat">热度 1837368</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>逆天小游戏2327<span class="nd-heat">热度 1824685</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>这期不笑的是给<span class="nd-heat">热度 1459450</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>《明日方舟：终末地》干员叙事 [诀：履旧尘]<span class="nd-heat">热度 1267978</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>日服堵桥被全图围剿！鲁鲁正义の制裁<span class="nd-heat">热度 1083284</span></li><li><span class="nd-cat" style="background:#888780">其他</span>挑战您说我像谁我就模仿谁！第五期！这期更是很难绷！<span class="nd-heat">热度 1065998</span></li><li><span class="nd-cat" style="background:#888780">其他</span>上海日式拉面挑战，超油腻！20分钟吃完奖金500元！能吃饱吗？<span class="nd-heat">热度 928334</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>我找到了三角洲里的零号大坝！？<span class="nd-heat">热度 825537</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>《追上我命都给你哦》<span class="nd-heat">热度 806153</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>《洛克王国：世界》S3赛季部分新增和优化内容，实机提前看！<span class="nd-heat">热度 782240</span></li><li><span class="nd-cat" style="background:#D85A30">生活</span>我的父亲 杀了我的父亲【完整版】<span class="nd-heat">热度 742597</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>来成都 好生耍一盘 | 《湮灭之潮》首次试玩会报名开启<span class="nd-heat">热度 732206</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>都免疫“/kill”了非说是隐身，天堂装备没轻没重的【更好的MC】<span class="nd-heat">热度 505259</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>桑多喵奔月<span class="nd-heat">热度 459641</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>【货币战争攻略】试用姬子竟能吊打所有主C和生存位？全网最详细姬子A850稳定通关教程！货币战争零和博弈的最终答案 你说的对这就是四装备大人<span class="nd-heat">热度 206348</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>这都能还原！！？【MC姬子篇】<span class="nd-heat">热度 171257</span></li><li><span class="nd-cat" style="background:#1D9E75">音乐</span>第320集 | 现在的小孩在听什么垃圾音乐啊？！<span class="nd-heat">热度 163923</span></li></ul>
+
+  <div class="notice">
+    AI 使用说明：AI 仅用于生成二创方向和推荐理由。涉及严肃资讯、公共事件、负面情绪的热点，
+    风险、合规、是否跟进一律由人工判断。
+  </div>
+
+  <details>
+    <summary>附录：原始热榜全量（36 条）</summary>
+    <table>
+      <thead><tr><th>排名</th><th>来源</th><th>标题</th><th>热度</th></tr></thead>
+      <tbody><tr><td>8</td><td>抖音热点</td><td>日常不费力的复古氛围感穿搭</td><td>9471590</td></tr><tr><td>16</td><td>抖音热点</td><td>一起进入世纪夏天</td><td>8980094</td></tr><tr><td>18</td><td>抖音热点</td><td>侯明昊艾米雀骨抖音直播</td><td>8427000</td></tr><tr><td>20</td><td>抖音热点</td><td>马克龙回应法国队无缘决赛</td><td>8377975</td></tr><tr><td>30</td><td>抖音热点</td><td>热巴复刻功夫女足踢球场面鞋掉了</td><td>7748382</td></tr><tr><td>32</td><td>抖音热点</td><td>万妮达搞笑配音毫无违和感</td><td>7737576</td></tr><tr><td>37</td><td>抖音热点</td><td>动画版三英战吕布好燃</td><td>7726768</td></tr><tr><td>38</td><td>抖音热点</td><td>世上只有妈妈好都出DJ版了</td><td>7720201</td></tr><tr><td>41</td><td>抖音热点</td><td>逐玉演唱会定档8月15日</td><td>7696177</td></tr><tr><td>44</td><td>抖音热点</td><td>怎么偶尔听到老歌时</td><td>7672085</td></tr><tr><td>50</td><td>抖音热点</td><td>我的意中人是个盖世英雄</td><td>7658511</td></tr><tr><td>9</td><td>B站热门</td><td>【复制铜镜全系列合集】ai软件生成，剧情虚构，非官方）正片+番外+解说+彩蛋</td><td>7029036</td></tr><tr><td>37</td><td>B站热门</td><td>这才是《The Other Side Of Paradise》原版MV！</td><td>6104558</td></tr><tr><td>5</td><td>B站热门</td><td>《迈亚融解》实机首曝</td><td>4779508</td></tr><tr><td>27</td><td>B站热门</td><td>《崩坏：星穹铁道》姬子•启行角色PV——「启明星于今夜坠落」</td><td>3756802</td></tr><tr><td>44</td><td>B站热门</td><td>扶大厦之将倾。</td><td>3354545</td></tr><tr><td>41</td><td>B站热门</td><td>这样的挑战下次请不要喊我了！#挑战# #野兽先生# #MrBeast# #vlog# #整活#</td><td>2852911</td></tr><tr><td>1</td><td>B站热门</td><td>哭着剪完这条视频…</td><td>2467194</td></tr><tr><td>16</td><td>B站热门</td><td>【狂怒】乌鲁鲁首款干员研究外观7月17日上线！</td><td>2197189</td></tr><tr><td>30</td><td>B站热门</td><td>&quot;自古英雄出少年.&quot;</td><td>1837368</td></tr><tr><td>15</td><td>B站热门</td><td>逆天小游戏2327</td><td>1824685</td></tr><tr><td>47</td><td>B站热门</td><td>这期不笑的是给</td><td>1459450</td></tr><tr><td>28</td><td>B站热门</td><td>《明日方舟：终末地》干员叙事 [诀：履旧尘]</td><td>1267978</td></tr><tr><td>13</td><td>B站热门</td><td>日服堵桥被全图围剿！鲁鲁正义の制裁</td><td>1083284</td></tr><tr><td>29</td><td>B站热门</td><td>挑战您说我像谁我就模仿谁！第五期！这期更是很难绷！</td><td>1065998</td></tr><tr><td>49</td><td>B站热门</td><td>上海日式拉面挑战，超油腻！20分钟吃完奖金500元！能吃饱吗？</td><td>928334</td></tr><tr><td>40</td><td>B站热门</td><td>我找到了三角洲里的零号大坝！？</td><td>825537</td></tr><tr><td>34</td><td>B站热门</td><td>《追上我命都给你哦》</td><td>806153</td></tr><tr><td>19</td><td>B站热门</td><td>《洛克王国：世界》S3赛季部分新增和优化内容，实机提前看！</td><td>782240</td></tr><tr><td>20</td><td>B站热门</td><td>我的父亲 杀了我的父亲【完整版】</td><td>742597</td></tr><tr><td>6</td><td>B站热门</td><td>来成都 好生耍一盘 | 《湮灭之潮》首次试玩会报名开启</td><td>732206</td></tr><tr><td>33</td><td>B站热门</td><td>都免疫“/kill”了非说是隐身，天堂装备没轻没重的【更好的MC】</td><td>505259</td></tr><tr><td>25</td><td>B站热门</td><td>桑多喵奔月</td><td>459641</td></tr><tr><td>39</td><td>B站热门</td><td>【货币战争攻略】试用姬子竟能吊打所有主C和生存位？全网最详细姬子A850稳定通关教程！货币战争零和博弈的最终答案 你说的对这就是四装备大人</td><td>206348</td></tr><tr><td>35</td><td>B站热门</td><td>这都能还原！！？【MC姬子篇】</td><td>171257</td></tr><tr><td>50</td><td>B站热门</td><td>第320集 | 现在的小孩在听什么垃圾音乐啊？！</td><td>163923</td></tr></tbody>
+    </table>
+  </details>
+
+  <div class="footer">本报告由「和平精英内容线索 AI 日报工具」自动生成</div>
+
+</div>
+</body>
+</html>

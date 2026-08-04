@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>和平精英内容线索日报 2026-08-02</title>
+<style>
+:root {
+  --bg:#f5f6f8; --card:#ffffff; --ink:#1c1d21; --muted:#86878d;
+  --line:#e8e9ed; --brand:#534AB7;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.6; padding:24px 16px 60px; }
+.wrap { max-width:860px; margin:0 auto; }
+.header { background:linear-gradient(135deg,#534AB7,#7F77DD); color:#fff;
+  border-radius:18px; padding:28px 30px; margin-bottom:20px; }
+.header h1 { font-size:22px; font-weight:600; margin-bottom:6px; }
+.header .sub { font-size:13px; opacity:.85; }
+.header .tags { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.header .tags span { background:rgba(255,255,255,.18); padding:4px 12px;
+  border-radius:20px; font-size:12px; }
+
+.kpis { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:20px; }
+.kpi { background:var(--card); border-radius:14px; padding:16px; text-align:center;
+  border:1px solid var(--line); }
+.kpi .num { font-size:28px; font-weight:600; color:var(--brand); }
+.kpi .lbl { font-size:12px; color:var(--muted); margin-top:2px; }
+
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
+.panel { background:var(--card); border-radius:14px; padding:18px 20px;
+  border:1px solid var(--line); }
+.panel h3 { font-size:14px; font-weight:600; margin-bottom:14px; color:var(--ink); }
+.donut-wrap { display:flex; align-items:center; gap:16px; }
+.cat-legend { flex:1; }
+.cat-item { display:flex; align-items:center; font-size:13px; padding:3px 0; }
+.cat-item i { width:10px; height:10px; border-radius:3px; margin-right:8px; }
+.cat-item b { margin-left:auto; font-weight:600; }
+.empty-donut { width:160px; text-align:center; color:var(--muted); padding:60px 0; }
+
+.bar { display:flex; height:14px; border-radius:8px; overflow:hidden; margin-bottom:12px; }
+.bar div { height:100%; }
+.bar-legend { font-size:12px; color:var(--muted); }
+.bar-legend .lg { display:inline-flex; align-items:center; margin-right:14px; }
+.bar-legend i { width:9px; height:9px; border-radius:2px; margin-right:5px; display:inline-block; }
+.chips { margin-top:14px; }
+.chip { display:inline-block; background:#f0eefb; color:#534AB7; padding:4px 12px;
+  border-radius:16px; font-size:12px; margin:0 6px 6px 0; }
+.chip b { font-weight:600; }
+.chip-empty { color:var(--muted); font-size:12px; }
+
+.section-title { font-size:16px; font-weight:600; margin:28px 0 14px;
+  padding-left:12px; border-left:4px solid var(--brand); }
+
+.card { background:var(--card); border-radius:14px; padding:16px 18px;
+  margin-bottom:12px; border:1px solid var(--line); border-left:4px solid var(--cat); }
+.card-top { background:linear-gradient(180deg,#faf9ff,#fff); }
+.card-head { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+.card-head .rank { font-size:13px; font-weight:600; color:var(--muted); }
+.card-head .cat { color:#fff; font-size:11px; padding:2px 9px; border-radius:10px; }
+.top-badge { background:#ffd84d; color:#7a5800; font-size:11px; font-weight:600;
+  padding:2px 9px; border-radius:10px; }
+.caseid { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11px;
+  color:#534AB7; background:#eeedfe; padding:2px 8px; border-radius:10px;
+  text-decoration:none; border:1px solid #cecbf6; }
+.caseid:hover { background:#534AB7; color:#fff; }
+.score { color:#fff; font-size:11px; font-weight:600; padding:2px 9px;
+  border-radius:10px; letter-spacing:-1px; }
+.sustain { background:#ffeceb; color:#d4380d; font-size:11px; font-weight:600;
+  padding:2px 9px; border-radius:10px; border:1px solid #ffccc7; }
+.newtag { background:#e6fffb; color:#08979c; font-size:11px; font-weight:600;
+  padding:2px 9px; border-radius:10px; border:1px solid #87e8de; }
+.mchips { margin-top:8px; display:flex; gap:8px; }
+.mchip { font-size:11.5px; color:#6b6c72; background:#f2f3f5;
+  padding:3px 10px; border-radius:8px; }
+.mchip-t { background:#fff4e6; color:#a35200; }
+.card-head .meta { font-size:12px; color:var(--muted); margin-left:auto; }
+.card .title { font-size:15px; font-weight:600; margin-bottom:10px; }
+.card .title a { color:var(--ink); text-decoration:none; }
+.card .title a:hover { color:var(--brand); }
+.card .title .ext { font-size:12px; color:var(--brand); }
+.dir-row { display:flex; gap:12px; align-items:flex-start; }
+.dir-row .form { flex-shrink:0; background:#eef2ff; color:#3730a3; font-size:12px;
+  padding:4px 10px; border-radius:8px; font-weight:500; }
+.direction { flex:1; font-size:13.5px; background:#f7f8fa; padding:8px 12px; border-radius:8px; }
+.direction .lbl, .reason .lbl { display:inline-block; font-size:11px; color:var(--brand);
+  font-weight:600; margin-right:6px; }
+.reason { margin-top:8px; font-size:12.5px; color:#6b6c72; }
+
+.no-dir { background:var(--card); border-radius:14px; padding:12px 18px;
+  border:1px solid var(--line); list-style:none; }
+.no-dir li { padding:8px 0; border-bottom:1px solid var(--line); font-size:13.5px;
+  display:flex; align-items:center; gap:8px; }
+.no-dir li:last-child { border-bottom:none; }
+.nd-cat { color:#fff; font-size:11px; padding:1px 8px; border-radius:9px; flex-shrink:0; }
+.nd-heat { margin-left:auto; font-size:12px; color:var(--muted); }
+.empty, .empty-li { color:var(--muted); text-align:center; padding:20px; font-size:13px; }
+
+details { background:var(--card); border-radius:14px; border:1px solid var(--line);
+  margin-top:14px; padding:0 18px; }
+details summary { cursor:pointer; padding:14px 0; font-size:14px; font-weight:600; }
+table { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:14px; }
+table th { text-align:left; color:var(--muted); font-weight:500; padding:6px 8px;
+  border-bottom:2px solid var(--line); }
+table td { padding:6px 8px; border-bottom:1px solid var(--line); }
+
+.notice { background:#fff8e6; border:1px solid #ffe39e; border-radius:12px;
+  padding:12px 16px; font-size:12.5px; color:#8a6d00; margin-top:20px; }
+.footer { text-align:center; color:var(--muted); font-size:12px; margin-top:30px; }
+
+@media (max-width:680px) {
+  .kpis { grid-template-columns:repeat(2,1fr); }
+  .grid2 { grid-template-columns:1fr; }
+  .card-head .meta { margin-left:0; width:100%; }
+}
+@media print {
+  body { background:#fff; padding:0; }
+  .card,.panel,.kpi,.no-dir,details { break-inside:avoid; }
+  .header { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <h1>和平精英 · 社媒内容线索日报</h1>
+    <div class="sub">2026-08-02 · 生成于 2026-08-02 17:03</div>
+    <div class="tags">
+      <span>抖音热榜</span><span>B站入站必看</span>
+      <span>定向品类：娱乐 / 搞笑 / 游戏 / 音乐 / 影视</span>
+      <span>AI 仅产出二创方向，风险合规由人工判断</span>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="num">36</div><div class="lbl">送 AI 线索</div></div>
+    <div class="kpi"><div class="num">36</div><div class="lbl">有价值方向</div></div>
+    <div class="kpi"><div class="num">18</div><div class="lbl">高潜力(4-5★)</div></div>
+    <div class="kpi"><div class="num">7</div><div class="lbl">🔥持续发酵</div></div>
+    <div class="kpi"><div class="num">63</div><div class="lbl">品类过滤</div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>内容品类分布</h3>
+      <div class="donut-wrap">
+        <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"><path d="M80.00,10.00 A70.00,70.00 0 0 1 80.00,150.00 L80.00,122.00 A42.00,42.00 0 0 0 80.00,38.00 Z" fill="#534AB7"></path><path d="M80.00,150.00 A70.00,70.00 0 0 1 10.00,80.00 L38.00,80.00 A42.00,42.00 0 0 0 80.00,122.00 Z" fill="#D4537E"></path><path d="M10.00,80.00 A70.00,70.00 0 0 1 26.38,35.00 L47.83,53.00 A42.00,42.00 0 0 0 38.00,80.00 Z" fill="#BA7517"></path><path d="M26.38,35.00 A70.00,70.00 0 0 1 45.00,19.38 L59.00,43.63 A42.00,42.00 0 0 0 47.83,53.00 Z" fill="#888780"></path><path d="M45.00,19.38 A70.00,70.00 0 0 1 67.84,11.06 L72.71,38.64 A42.00,42.00 0 0 0 59.00,43.63 Z" fill="#378ADD"></path><path d="M67.84,11.06 A70.00,70.00 0 0 1 80.00,10.00 L80.00,38.00 A42.00,42.00 0 0 0 72.71,38.64 Z" fill="#D85A30"></path><text x="80.0" y="76.0" text-anchor="middle" font-size="26" font-weight="600" fill="#1a1a1a">36</text><text x="80.0" y="96.0" text-anchor="middle" font-size="12" fill="#888">条线索</text></svg>
+        <div class="cat-legend"><div class="cat-item"><i style="background:#534AB7"></i>游戏<b>18</b></div><div class="cat-item"><i style="background:#D4537E"></i>娱乐<b>9</b></div><div class="cat-item"><i style="background:#BA7517"></i>搞笑<b>4</b></div><div class="cat-item"><i style="background:#888780"></i>其他<b>2</b></div><div class="cat-item"><i style="background:#378ADD"></i>影视<b>2</b></div><div class="cat-item"><i style="background:#D85A30"></i>生活<b>1</b></div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>来源占比</h3>
+      <div class="bar"><div style="width:50.0%;background:#534AB7;" title="抖音热点 18条"></div><div style="width:50.0%;background:#1D9E75;" title="B站热门 18条"></div></div><div class="bar-legend"><span class="lg"><i style="background:#534AB7"></i>抖音热点 18</span> <span class="lg"><i style="background:#1D9E75"></i>B站热门 18</span></div>
+      <h3 style="margin-top:18px">建议内容形式</h3>
+      <div class="chips"><span class="chip">混剪 <b>10</b></span><span class="chip">整活 <b>9</b></span><span class="chip">短剧 <b>7</b></span><span class="chip">口播 <b>6</b></span><span class="chip">挑战 <b>3</b></span><span class="chip">赛事借势 <b>1</b></span></div>
+    </div>
+  </div>
+
+  <div class="section-title">今日最值得看的 3 条</div>
+  
+    <div class="card card-top" style="--cat:#888780">
+      <div class="card-head">
+        <span class="rank">#1</span>
+        <span class="cat" style="background:#888780">其他</span>
+        <span class="top-badge">必看</span>
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-08-01，持续发酵中">🔥连续2天</span>
+        
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 10318463 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7668741167336475958" target="_blank" rel="noopener">用一万斤青铜复刻曾侯乙编钟 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>万斤空投堆叠实验：用游戏内空投箱、燃油桶、载具零件拼搭成巨型“编钟”模型，搭配敲击音效与慢动作破坏镜头，制作解压向二创。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>视觉奇观与解压属性强，直接映射PE物资搜集与载具改装玩法，低成本高完播率。</div>
+    </div>
+    <div class="card card-top" style="--cat:#D4537E">
+      <div class="card-head">
+        <span class="rank">#2</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        <span class="top-badge">必看</span>
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-02 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7798607 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7669003639159373691" target="_blank" rel="noopener">在抖音看演唱会直播 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>决赛圈沉浸式听歌：将跳伞空镜、载具驾驶视角与演唱会高燃片段混剪，配合耳机党专属BGM，打造“边刚枪边开演唱会”视听体验。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>视听结合热点，利用PE开阔场景与载具移动特性，极易破圈传播。</div>
+    </div>
+    <div class="card card-top" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#3</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        <span class="top-badge">必看</span>
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-03 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7777197 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7669263688292994342" target="_blank" rel="noopener">三角洲巅峰赛决赛开战 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">赛事借势</span>
+        <div class="direction"><span class="lbl">转化方向</span>特种兵巅峰对决：对比两款战术竞技游戏的撤离/吃鸡玩法差异，邀请路人组队进行双端联动测试，主打“哪款更考验团队配合”。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>竞品赛事自带流量，通过差异化对比与实战测试可自然引流至PE核心玩法讨论。</div>
+    </div>
+
+  <div class="section-title">完整线索（36 条）</div>
+  
+    <div class="card" style="--cat:#888780">
+      <div class="card-head">
+        <span class="rank">#1</span>
+        <span class="cat" style="background:#888780">其他</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-08-01，持续发酵中">🔥连续2天</span>
+        
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 10318463 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7668741167336475958" target="_blank" rel="noopener">用一万斤青铜复刻曾侯乙编钟 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>万斤空投堆叠实验：用游戏内空投箱、燃油桶、载具零件拼搭成巨型“编钟”模型，搭配敲击音效与慢动作破坏镜头，制作解压向二创。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>视觉奇观与解压属性强，直接映射PE物资搜集与载具改装玩法，低成本高完播率。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E">
+      <div class="card-head">
+        <span class="rank">#2</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-02 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7798607 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7669003639159373691" target="_blank" rel="noopener">在抖音看演唱会直播 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>决赛圈沉浸式听歌：将跳伞空镜、载具驾驶视角与演唱会高燃片段混剪，配合耳机党专属BGM，打造“边刚枪边开演唱会”视听体验。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>视听结合热点，利用PE开阔场景与载具移动特性，极易破圈传播。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#3</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-03 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7777197 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7669263688292994342" target="_blank" rel="noopener">三角洲巅峰赛决赛开战 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">赛事借势</span>
+        <div class="direction"><span class="lbl">转化方向</span>特种兵巅峰对决：对比两款战术竞技游戏的撤离/吃鸡玩法差异，邀请路人组队进行双端联动测试，主打“哪款更考验团队配合”。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>竞品赛事自带流量，通过差异化对比与实战测试可自然引流至PE核心玩法讨论。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E">
+      <div class="card-head">
+        <span class="rank">#4</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7763269 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7668819309132709745" target="_blank" rel="noopener">晒出你的蔡徐坤演唱会穿搭 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">挑战</span>
+        <div class="direction"><span class="lbl">转化方向</span>皮肤穿搭大赏：发起#和平精英演唱会级穿搭 挑战，展示游戏内限定皮肤/配饰搭配思路，结合“跑毒也精致”的反差感进行整活。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>穿搭话题自带UGC属性，直接对接PE庞大外观系统与时尚玩法。</div>
+    </div>
+    <div class="card" style="--cat:#BA7517">
+      <div class="card-head">
+        <span class="rank">#5</span>
+        <span class="cat" style="background:#BA7517">搞笑</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-04 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7734660 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7669271400422668409" target="_blank" rel="noopener">张启山救齐铁嘴名场面来了 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>绝境救援重演：还原剧中“一人断后三人撤”兄弟情，拍摄四排队故意卖队友苟分，最后决赛圈极限拉人复活的神反转剧情。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>经典影视名场面具强叙事张力，完美契合PE四排战术与“救起扶”文化。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#6</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7697554 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7668256450335354533" target="_blank" rel="noopener">王者皮肤手感排行 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">口播</span>
+        <div class="direction"><span class="lbl">转化方向</span>和平精英枪械皮肤手感实测：横向对比三款同类型步枪的皮肤特效与后坐力反馈，给出“手感T0/T1梯队”，引导评论区投票。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>跨品类话题迁移顺畅，PE玩家同样极度关注枪械手感与皮肤反馈，易引发讨论。</div>
+    </div>
+    <div class="card" style="--cat:#378ADD">
+      <div class="card-head">
+        <span class="rank">#7</span>
+        <span class="cat" style="background:#378ADD">影视</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-08-01，持续发酵中">🔥连续2天</span>
+        
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7673407 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7666145145712796145" target="_blank" rel="noopener">电影痴迷观影后遗症 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>现实入戏太深：拍摄玩家打完一局后产生“幻视”，如看到路人背包想搜刮、听到脚步声下意识找掩体等搞笑日常，结尾反转回现实。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>痛点共鸣极强，切中核心玩家群体，低成本易产出爆款。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E">
+      <div class="card-head">
+        <span class="rank">#8</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-07 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7664876 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7669067723108467578" target="_blank" rel="noopener">陈小春青岛演唱会 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>古惑仔冲锋队：选用《乱世巨星》BGM，剪辑载具冲坡、喷子清房、决赛圈翻盘爽文向视频，包装成“江湖义气四排实录”。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>港风金曲+热血逆袭，完美契合PE近战刚枪与团队配合爽感。</div>
+    </div>
+    <div class="card" style="--cat:#888780">
+      <div class="card-head">
+        <span class="rank">#9</span>
+        <span class="cat" style="background:#888780">其他</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-08-01，持续发酵中">🔥连续2天</span>
+        
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7651803 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7668641078581152739" target="_blank" rel="noopener">正太扭腰挑战 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">挑战</span>
+        <div class="direction"><span class="lbl">转化方向</span>身法扭腰闪避赛：将舞蹈动作转化为游戏内身法教学，演示如何利用滑铲、跳跃、转身规避载具碰撞与子弹判定，制作“物理外挂”教程。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>挑战赛天然适合游戏化改编，能直观展示操作技巧，兼具娱乐性与实用性。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#10</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 3 天上榜，首次 2026-07-29，持续发酵中">🔥连续3天</span>
+        
+        <span class="meta">B站热门 · B站入站必看 · 热度 4728803 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1xAK865ESF" target="_blank" rel="noopener">【命运-冠位指定×上美影】简中版十周年专属PV——行迹 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>国风联动前瞻混剪：提取上美影美术风格，结合PE已上线/即将上线的国风皮肤、载具涂装进行梦幻联动预告剪辑，呼吁官方加快进度。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>国风美学热度高，PE一直有国风线需求，此类内容易引发玩家期待与转发。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#11</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-08-01，持续发酵中">🔥连续2天</span>
+        
+        <span class="meta">B站热门 · B站入站必看 · 热度 2040998 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1vk3t6qEUL" target="_blank" rel="noopener">😊什么样的结局才配得上这一路的颠沛流离……【一口气看完】 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>绝地重生纪录片：以第一人称视角记录从跳伞落荒而逃、载具抛锚、决赛圈舔包到最终夺冠全过程，配以深沉旁白，突出“逆风翻盘”热血感。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>情绪向剪辑极易引发共情，PE单局随机性天然提供戏剧性素材。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#12</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">B站热门 · B站入站必看 · 热度 1752996 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1oj3i64Eib" target="_blank" rel="noopener">对 抗 路 迎 来 大 变20.0 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">口播</span>
+        <div class="direction"><span class="lbl">转化方向</span>地图资源大改测评：针对PE地图更新进行实地测试，输出“T0落点推荐”与“避坑指南”，满足玩家求变心理。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>版本变动是硬核玩家核心关注点，专业测评内容长尾价值高且易沉淀粉丝。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#13</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">B站热门 · B站入站必看 · 热度 1223503 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1gfGw6RE5p" target="_blank" rel="noopener">【warma】我为1000亿奖金挑战天才作者谜题！ <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">挑战</span>
+        <div class="direction"><span class="lbl">转化方向</span>地铁逃生寻宝谜题：结合地铁逃生模式高额奖励机制，设计“根据线索找隐藏物资点”挑战视频，失败则淘汰，成功则提现（游戏币）。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>高额悬赏+解谜元素极具吸引力，可直接套用PE地铁逃生经济系统。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#14</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">B站热门 · B站入站必看 · 热度 937624 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV19wG369Edu" target="_blank" rel="noopener">我发现了一个诡异的论坛.... <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">口播</span>
+        <div class="direction"><span class="lbl">转化方向</span>老六情报局：以悬疑解说风格盘点游戏内反常现象（如奇怪脚步、空投异常刷新、队友突然消失），引出“如何识别并反制老六”技巧。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>悬疑好奇驱动点击，完美契合PE“谍战”与“反老六”社区文化。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#15</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">B站热门 · B站入站必看 · 热度 788888 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1UjG365E8H" target="_blank" rel="noopener">“连坐制”，一款如今人人都在玩的热门游戏 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>四排连坐惩罚局：拍摄队伍内部制定“连坐规则”（如谁倒地下把谁踢、谁没补枪请客奶茶），记录游戏过程中笑料百出的互助与背刺日常。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>社交玩法热点，直接映射PE语音开黑真实互动生态，极易引发UGC跟拍。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#16</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-09 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 651432 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV11xGw6jERt" target="_blank" rel="noopener">遗忘之海 x 海绵宝宝联动 实机演示 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>童趣沙滩大作战：提取海绵宝宝卡通色彩与乐观精神，剪辑PE海岛地图夏日活动画面，搭配搞怪音效，推出“童真系跳伞姿势”挑战。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>知名IP联动自带流量，PE海岛场景天然适配，可快速拉动年轻化内容曝光。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#17</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">B站热门 · B站入站必看 · 热度 485709 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1DaGg65EpL" target="_blank" rel="noopener">关于鼠鼠怎么活到现在 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">口播</span>
+        <div class="direction"><span class="lbl">转化方向</span>苟分大师课：以“鼠鼠哲学”为切入点，详解地铁逃生/海岛模式隐蔽发育路线、假封烟骗枪技巧，主打“猥琐发育也能吃鸡”。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>“鼠鼠”是游戏圈通用自黑标签，契合PE部分玩家稳健打法偏好。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#18</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 6 天上榜，首次 2026-07-07，持续发酵中">🔥连续6天</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-13 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 276912 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1YW3m6HEMY" target="_blank" rel="noopener">当你不小心进入了黑乌龟... <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>禁区逃生实录：以第一人称视角记录误入高危区域（如军事基地/中心岛）后的慌乱搜刮、载具逃逸与极限反杀，突出心跳加速压迫感。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>高危场景天然具戏剧张力，契合PE高风险高回报核心循环。</div>
+    </div>
+    <div class="card" style="--cat:#D85A30">
+      <div class="card-head">
+        <span class="rank">#19</span>
+        <span class="cat" style="background:#D85A30">生活</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-01 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 8214056 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7668959176248331556" target="_blank" rel="noopener">夏天多喝淡盐水可以预防中暑吗 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">口播</span>
+        <div class="direction"><span class="lbl">转化方向</span>海岛高温生存指南：结合游戏内夏季地图环境，科普真实防暑知识的同时，植入防晒配件、医疗包使用技巧，打造“战术级避暑”教学。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>生活科普易引发共鸣，嫁接PE生存机制可提升实用性与互动收藏率。</div>
+    </div>
+    <div class="card" style="--cat:#378ADD">
+      <div class="card-head">
+        <span class="rank">#20</span>
+        <span class="cat" style="background:#378ADD">影视</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7843508 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7669090672499142385" target="_blank" rel="noopener">天才女友开播 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>四排闺蜜局剧情：还原女性成长与羁绊，拍摄队友从默契配合到战术分歧再到决赛圈和解的日常，搭配复古滤镜与走心文案。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>情感共鸣强，深度契合PE社交属性，易吸引女性玩家及剧情向受众。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E">
+      <div class="card-head">
+        <span class="rank">#21</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7775531 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7669002746968749554" target="_blank" rel="noopener">王力宏西安演唱会 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>经典情歌载具巡游：选取王力宏高人气歌曲，搭配游戏内敞篷跑车/摩托车全图兜风剪辑，加入公路电影运镜，营造浪漫追击氛围。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>经典IP+音乐热点，PE载具场景完美适配，易引发怀旧与情绪传播。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E">
+      <div class="card-head">
+        <span class="rank">#22</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7741956 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7669038097933588361" target="_blank" rel="noopener">张远广州演唱会 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>高音破防急救包：用游戏内医疗箱/能量饮料作为“降火神器”，剪辑队友被老六阴或抢空投心态爆炸瞬间，配张远歌曲反衬“冷静突围”。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>借用歌手名场面情绪，映射游戏内血压波动瞬间，幽默且有共鸣。</div>
+    </div>
+    <div class="card" style="--cat:#BA7517">
+      <div class="card-head">
+        <span class="rank">#23</span>
+        <span class="cat" style="background:#BA7517">搞笑</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-05 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7723412 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7668686585118036041" target="_blank" rel="noopener">一条视频打开陈哲远英寡名场面 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>英寡式独狼狙击：模仿角色高冷气质，拍摄单人压枪狙击教学+高光集锦，搭配“独美不沾锅”文案，突出精准与冷静。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>角色人设鲜明，与PE狙击手/独狼打法高度契合，易吸引操作粉。</div>
+    </div>
+    <div class="card" style="--cat:#BA7517">
+      <div class="card-head">
+        <span class="rank">#24</span>
+        <span class="cat" style="background:#BA7517">搞笑</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7713851 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7667377902233865674" target="_blank" rel="noopener">第五人格胖子是什么梗 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>胖友突击车：将S12K/喷子搭配防爆盾做成“笨重但无解”防守流派，拍摄载具堵桥+近身贴脸反杀集锦，自嘲“富贵险中求”。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>梗文化易传播，可转化为PE特定武器/战术的趣味标签，降低硬核门槛。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E">
+      <div class="card-head">
+        <span class="rank">#25</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7675064 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7668972932950089145" target="_blank" rel="noopener">李荣浩襄阳演唱会 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>低音炮载具引擎音：录制游戏内不同载具引擎声浪，与李荣浩低沉嗓音同步卡点剪辑，打造“机械交响乐”。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>音乐人特色鲜明，PE载具音效丰富，结合卡点剪辑极具视听冲击力。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#26</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7671414 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7668745973568408884" target="_blank" rel="noopener">被裁掉的女孩第二季更新了 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>职场压力转移局：将女主遭遇映射到四排队友关系，拍摄“上班被气，上号发泄”剧情，通过游戏内合理战术释放压力，传递正向陪伴价值。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>社会情绪热点，贴合年轻玩家用游戏解压的真实场景，易引发情感共鸣。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E">
+      <div class="card-head">
+        <span class="rank">#27</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-06 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7665676 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/video/7669065291780168079" target="_blank" rel="noopener">黄子韬杭州演唱会 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>直球式刚枪宣言：结合黄子韬外向性格，拍摄开局直接跳P城/军事基地的“头铁”攻略，搭配“不服就干”字幕，主打热血对抗。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>明星性格标签鲜明，与PE高风险高回报的跳伞策略形成趣味绑定。</div>
+    </div>
+    <div class="card" style="--cat:#BA7517">
+      <div class="card-head">
+        <span class="rank">#28</span>
+        <span class="cat" style="background:#BA7517">搞笑</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">B站热门 · B站入站必看 · 热度 2802924 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1Nr3s6rE79" target="_blank" rel="noopener">⚡️宗 主 连 携 技⚡️ <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>四排连携击破：模仿动漫招式命名，拍摄队友四人通过信号接收器呼叫、烟雾弹掩护、载具撞击形成的“连招”击杀集锦，加夸张特效字幕。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>中二热血风符合年轻受众口味，与PE多兵种协同作战机制高度一致。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E">
+      <div class="card-head">
+        <span class="rank">#29</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">B站热门 · B站入站必看 · 热度 2090671 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV15CG36dEsF" target="_blank" rel="noopener">【TF家族练习生】《突围II破局》EP06：我们把彼此留下来（上） <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>青训营选拔赛：将练习生训练过程类比PE训练营模式，拍摄萌新从落地白给到掌握身法、配装的成长日记，强调“破局”主题。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>养成系内容易引发陪伴感，贴合PE低门槛高上限的游戏生态。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#30</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-08-01，持续发酵中">🔥连续2天</span>
+        
+        <span class="meta">B站热门 · B站入站必看 · 热度 1026137 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1riGw6zELu" target="_blank" rel="noopener">《原神》至冬交响音乐现场 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>极地风雪生存战：截取至冬国冰原画面与PE雪地地图实机画面无缝转场，搭配交响乐烘托“硬核求生”氛围。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>跨游戏美术风格对比，PE雪地场景具备同等视觉张力，适合氛围感混剪。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#31</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">B站热门 · B站入站必看 · 热度 1016731 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1JQ3m6AEoW" target="_blank" rel="noopener">正宗大盘鸡到底有没有土豆？？【主播说三农】 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">口播</span>
+        <div class="direction"><span class="lbl">转化方向</span>物资争夺战大盘点：用“要不要土豆”类比“决赛圈该打药还是打雷”，通过轻松辩论形式讲解战术选择，穿插游戏内搜刮优先级教学。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>生活争议话题迁移到游戏决策，降低理解门槛，增强趣味性。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#32</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-08 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 710897 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1zU3164E2u" target="_blank" rel="noopener">当MC服里加入妙脆角小猫(玩家：被生活磨平了妙脆角😁😁 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>萌宠护航计划：将游戏内载具装饰物拟人化配音，演绎“小车带着毛孩子全图流浪”治愈向日常，反差萌十足。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>萌宠+治愈系内容受众广，PE外观系统支持度高，制作门槛低。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#33</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-10 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 643901 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1cx326wENd" target="_blank" rel="noopener">他叫李白 我最爱的英雄 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>诗意狙击手：结合李白飘逸形象，剪辑游戏内AWM/Kar98k远程一穿多镜头，搭配古风配乐与剑客运镜，打造“千里取首级”武侠感。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>文化符号鲜明，与PE高精度武器玩法形成跨界美学融合。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#34</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="meta">B站热门 · B站入站必看 · 热度 610573 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1md3266ELt" target="_blank" rel="noopener">终于实现回城自由，有没有事都可以回城一下了 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>信号接收器滥用指南：调侃游戏中频繁呼叫信号枪行为，拍摄各种离谱理由（如迷路、看风景、单纯想跑毒）使用信号枪搞笑合集。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>游戏内高频道具日常化吐槽，共鸣强烈，易于引发玩家分享自身经历。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E">
+      <div class="card-head">
+        <span class="rank">#35</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-11 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 442479 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV19z326HEhj" target="_blank" rel="noopener">【TF家族练习生】《异常加载中》 MV <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>加载界面幻想曲：将游戏匹配、加载、出生岛等待时间与MV节奏卡点结合，用快剪展现“等待的每一秒都在变强”心理建设，带出预热情绪。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>利用游戏固有流程制造节奏感，缓解玩家焦虑，提升品牌好感度。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#36</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260802-12 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 411364 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV14HGV6UESe" target="_blank" rel="noopener">海绵宝宝大战僵尸day1，海绵宝宝射手 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>创意工坊靶场秀：在游戏内靶场设置移动靶/固定靶，搭配海绵宝宝配音模拟“射击特训”，展示压枪稳定性与爆头线控制技巧。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>动画角色+射击训练组合新颖，兼顾娱乐性与基础教学功能。</div>
+    </div>
+
+  <div class="section-title">待人工判断（0 条）</div>
+  <ul class="no-dir"><li class="empty-li">全部送 AI 的热点均已产出二创方向</li></ul>
+
+  <div class="notice">
+    AI 使用说明：AI 仅用于生成二创方向和推荐理由。涉及严肃资讯、公共事件、负面情绪的热点，
+    风险、合规、是否跟进一律由人工判断。
+  </div>
+
+  <details>
+    <summary>附录：原始热榜全量（36 条）</summary>
+    <table>
+      <thead><tr><th>排名</th><th>来源</th><th>标题</th><th>热度</th></tr></thead>
+      <tbody><tr><td>5</td><td>抖音热点</td><td>用一万斤青铜复刻曾侯乙编钟</td><td>10318463</td></tr><tr><td>13</td><td>抖音热点</td><td>夏天多喝淡盐水可以预防中暑吗</td><td>8214056</td></tr><tr><td>14</td><td>抖音热点</td><td>天才女友开播</td><td>7843508</td></tr><tr><td>16</td><td>抖音热点</td><td>在抖音看演唱会直播</td><td>7798607</td></tr><tr><td>17</td><td>抖音热点</td><td>三角洲巅峰赛决赛开战</td><td>7777197</td></tr><tr><td>19</td><td>抖音热点</td><td>王力宏西安演唱会</td><td>7775531</td></tr><tr><td>21</td><td>抖音热点</td><td>晒出你的蔡徐坤演唱会穿搭</td><td>7763269</td></tr><tr><td>24</td><td>抖音热点</td><td>张远广州演唱会</td><td>7741956</td></tr><tr><td>27</td><td>抖音热点</td><td>张启山救齐铁嘴名场面来了</td><td>7734660</td></tr><tr><td>28</td><td>抖音热点</td><td>一条视频打开陈哲远英寡名场面</td><td>7723412</td></tr><tr><td>30</td><td>抖音热点</td><td>第五人格胖子是什么梗</td><td>7713851</td></tr><tr><td>31</td><td>抖音热点</td><td>王者皮肤手感排行</td><td>7697554</td></tr><tr><td>39</td><td>抖音热点</td><td>李荣浩襄阳演唱会</td><td>7675064</td></tr><tr><td>41</td><td>抖音热点</td><td>电影痴迷观影后遗症</td><td>7673407</td></tr><tr><td>42</td><td>抖音热点</td><td>被裁掉的女孩第二季更新了</td><td>7671414</td></tr><tr><td>44</td><td>抖音热点</td><td>黄子韬杭州演唱会</td><td>7665676</td></tr><tr><td>45</td><td>抖音热点</td><td>陈小春青岛演唱会</td><td>7664876</td></tr><tr><td>49</td><td>抖音热点</td><td>正太扭腰挑战</td><td>7651803</td></tr><tr><td>5</td><td>B站热门</td><td>【命运-冠位指定×上美影】简中版十周年专属PV——行迹</td><td>4728803</td></tr><tr><td>2</td><td>B站热门</td><td>⚡️宗 主 连 携 技⚡️</td><td>2802924</td></tr><tr><td>16</td><td>B站热门</td><td>【TF家族练习生】《突围II破局》EP06：我们把彼此留下来（上）</td><td>2090671</td></tr><tr><td>23</td><td>B站热门</td><td>😊什么样的结局才配得上这一路的颠沛流离……【一口气看完】</td><td>2040998</td></tr><tr><td>50</td><td>B站热门</td><td>对 抗 路 迎 来 大 变20.0</td><td>1752996</td></tr><tr><td>31</td><td>B站热门</td><td>【warma】我为1000亿奖金挑战天才作者谜题！</td><td>1223503</td></tr><tr><td>28</td><td>B站热门</td><td>《原神》至冬交响音乐现场</td><td>1026137</td></tr><tr><td>22</td><td>B站热门</td><td>正宗大盘鸡到底有没有土豆？？【主播说三农】</td><td>1016731</td></tr><tr><td>14</td><td>B站热门</td><td>我发现了一个诡异的论坛....</td><td>937624</td></tr><tr><td>45</td><td>B站热门</td><td>“连坐制”，一款如今人人都在玩的热门游戏</td><td>788888</td></tr><tr><td>13</td><td>B站热门</td><td>当MC服里加入妙脆角小猫(玩家：被生活磨平了妙脆角😁😁</td><td>710897</td></tr><tr><td>38</td><td>B站热门</td><td>遗忘之海 x 海绵宝宝联动 实机演示</td><td>651432</td></tr><tr><td>41</td><td>B站热门</td><td>他叫李白 我最爱的英雄</td><td>643901</td></tr><tr><td>26</td><td>B站热门</td><td>终于实现回城自由，有没有事都可以回城一下了</td><td>610573</td></tr><tr><td>7</td><td>B站热门</td><td>关于鼠鼠怎么活到现在</td><td>485709</td></tr><tr><td>20</td><td>B站热门</td><td>【TF家族练习生】《异常加载中》 MV</td><td>442479</td></tr><tr><td>43</td><td>B站热门</td><td>海绵宝宝大战僵尸day1，海绵宝宝射手</td><td>411364</td></tr><tr><td>18</td><td>B站热门</td><td>当你不小心进入了黑乌龟...</td><td>276912</td></tr></tbody>
+    </table>
+  </details>
+
+  <div class="footer">本报告由「和平精英内容线索 AI 日报工具」自动生成</div>
+
+</div>
+</body>
+</html>

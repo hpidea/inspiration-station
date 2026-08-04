@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>和平精英创作者灵感站</title>
+<meta name="description" content="基于抖音/B站热榜的和平精英二创内容灵感站，每日更新热点线索、转化方向和选题推荐。">
+<style>
+:root { --bg:#0b1121; --c1:#131e36; --c2:#1a2a48;
+  --ink:#e8edf6; --ink2:#b8c7dd; --muted:#7b8ca8;
+  --line:rgba(255,255,255,.08); --l2:rgba(255,255,255,.15);
+  --brand:#FFB03A; --brand2:#FFC569;
+  --accent-l:rgba(255,176,58,.12); --on-brand:#1a0e00;
+  --green:#5ee7a8; --pink:#D4537E; }
+
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.7;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255,176,58,.06),transparent); }
+
+/* ---- Hero ---- */
+.hero { text-align:center; padding:60px 20px 44px; max-width:720px; margin:0 auto; }
+.hero .badge { display:inline-block; padding:4px 14px; background:var(--accent-l);
+  border:1px solid rgba(255,176,58,.25); border-radius:20px; color:var(--brand2);
+  font-size:12px; font-weight:600; letter-spacing:1px; margin-bottom:18px; }
+.hero h1 { font-size:36px; font-weight:700; letter-spacing:-1px;
+  background:linear-gradient(135deg,#fff 30%,#FFB03A); -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+.hero .desc { font-size:15px; color:var(--ink2); max-width:500px; margin:0 auto 32px; line-height:1.8; }
+.hero .kpis { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; }
+.hero .kpi { text-align:center; }
+.hero .kpi .n { font-size:36px; font-weight:700; color:var(--brand); line-height:1.1; }
+.hero .kpi .l { font-size:12px; color:var(--muted); margin-top:4px; }
+.hero .kpi.hi .n { color:var(--pink); }
+
+/* ---- 主入口三卡片 ---- */
+.actions { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px;
+  max-width:920px; margin:0 auto 48px; padding:0 20px; }
+.acard { background:var(--c1); border:1px solid var(--line); border-radius:16px;
+  padding:28px 26px; text-decoration:none; color:var(--ink);
+  transition:transform .15s, border-color .15s, box-shadow .15s; position:relative; overflow:hidden; }
+.acard::before { content:''; position:absolute; top:-40px; right:-40px; width:120px; height:120px;
+  border-radius:50%; opacity:.06; transition:opacity .2s, transform .2s; }
+.acard:hover { transform:translateY(-4px); border-color:var(--l2);
+  box-shadow:0 12px 32px rgba(0,0,0,.30); }
+.acard:hover::before { opacity:.12; transform:scale(1.2); }
+.acard .ai { font-size:36px; margin-bottom:14px; display:block; }
+.acard .at { font-size:17px; font-weight:600; margin-bottom:6px; }
+.acard .ad { font-size:13px; color:var(--muted); line-height:1.6; }
+.acard .ak { display:inline-flex; align-items:center; gap:5px; margin-top:14px;
+  font-size:13px; font-weight:600; }
+.acard.daily::before { background:var(--brand); }
+.acard.daily .ak { color:var(--brand); }
+.acard.weekly::before { background:var(--green); }
+.acard.weekly .ak { color:var(--green); }
+.acard.lib::before { background:var(--pink); }
+.acard.lib .ak { color:var(--pink); }
+
+/* ---- 日报 / 周报列表 ---- */
+.section { max-width:920px; margin:0 auto 32px; padding:0 20px; }
+.sec-title { font-size:17px; font-weight:700; margin-bottom:18px; display:flex;
+  align-items:center; gap:10px; }
+.sec-title .st-bd { flex:1; height:1px; background:var(--line); }
+.sec-title a { font-size:12px; color:var(--brand); text-decoration:none; font-weight:500; }
+.sec-title a:hover { text-decoration:underline; }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px; }
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+@media (max-width:880px) { .grid-3 { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:600px) { .grid-3 { grid-template-columns:1fr; } }
+.rcard { background:var(--c1); border:1px solid var(--line); border-radius:13px;
+  padding:16px 18px; text-decoration:none; color:var(--ink); display:block;
+  transition:transform .12s, border-color .12s; border-left:3px solid var(--brand); }
+.rcard:hover { transform:translateY(-2px); border-color:var(--brand); }
+.rc-date { font-size:15px; font-weight:600; display:flex; align-items:baseline; gap:8px; }
+.rc-wd { font-size:11px; color:var(--muted); font-weight:400; }
+.rc-stats { display:flex; gap:12px; margin-top:12px; }
+.rc-stat { text-align:center; }
+.rc-stat b { font-size:18px; font-weight:700; color:var(--brand); display:block; line-height:1.2; }
+.rc-stat.hi b { color:var(--pink); }
+.rc-stat span { font-size:10px; color:var(--muted); }
+.wcard { border-left-color:var(--green); }
+.wcard .rc-stat b { color:var(--green); }
+.wcard .rc-stat.hi b { color:var(--pink); }
+.empty { grid-column:1/-1; text-align:center; color:var(--muted); padding:40px 0; }
+
+/* ---- 页脚 ---- */
+.footer { text-align:center; color:var(--muted); font-size:12px;
+  padding:30px 20px 40px; border-top:1px solid var(--line);
+  margin-top:20px; max-width:920px; margin-left:auto; margin-right:auto; }
+.footer .ft-note { margin-top:6px; opacity:.6; }
+
+/* ---- 响应式 ---- */
+@media (max-width:640px) {
+  .hero h1 { font-size:26px; }
+  .hero .kpis { gap:24px; }
+  .hero .kpi .n { font-size:28px; }
+  .grid { grid-template-columns:repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="badge">DAILY UPDATED</div>
+  <h1>和平精英创作者灵感站</h1>
+  <div class="desc">基于抖音热榜 + B站入站必看，用 AI 帮你找到最值得做的和平精英二创选题。每日自动更新。</div>
+  <div class="kpis">
+    <div class="kpi"><div class="n">33</div><div class="l">累计日报</div></div>
+    <div class="kpi hi"><div class="n">202</div><div class="l">高潜力线索</div></div>
+    <div class="kpi"><div class="n">372</div><div class="l">有价值方向</div></div>
+  </div>
+</div>
+
+<!-- 三大入口 -->
+<div class="actions">
+  <a class="acard daily" href="report_2026-08-04.html">
+    <span class="ai">📊</span>
+    <div class="at">每日热点线索</div>
+    <div class="ad">最新的抖音热榜 + B站入站必看分析，每条热点配有转化方向和推荐理由。</div>
+    <span class="ak">查看最新日报 →</span>
+  </a>
+  <a class="acard weekly" href="weekly_2026-08-04.html">
+    <span class="ai">📈</span>
+    <div class="at">每周趋势周报</div>
+    <div class="ad">近7天数据汇总，热度趋势、品类分布、高潜力 TOP10，看清本周方向。</div>
+    <span class="ak">查看最新周报 →</span>
+  </a>
+  <a class="acard lib" href="topic_library.html">
+    <span class="ai">🔍</span>
+    <div class="at">选题灵感库</div>
+    <div class="ad">全部历史选题一页搜索、按潜力分/品类/难度筛选，支持加星和采用标记。</div>
+    <span class="ak">进入灵感库 →</span>
+  </a>
+</div>
+
+<!-- 最近日报 -->
+<div class="section">
+  <div class="sec-title">📊 最近日报<span class="st-bd"></span><a href="report_2026-08-04.html">查看全部 33 份 →</a></div>
+  <div class="grid">
+    <a class="rcard" href="report_2026-08-04.html">
+      <div class="rc-date">2026-08-04<span class="rc-wd">周二</span></div>
+      <div class="rc-stats">
+        <div class="rc-stat"><b>20</b><span>有价值</span></div>
+        <div class="rc-stat hi"><b>18</b><span>高潜力</span></div>
+        <div class="rc-stat"><b>29</b><span>送AI</span></div>
+      </div>
+    </a>
+    <a class="rcard" href="report_2026-08-03.html">
+      <div class="rc-date">2026-08-03<span class="rc-wd">周一</span></div>
+      <div class="rc-stats">
+        <div class="rc-stat"><b>24</b><span>有价值</span></div>
+        <div class="rc-stat hi"><b>12</b><span>高潜力</span></div>
+        <div class="rc-stat"><b>24</b><span>送AI</span></div>
+      </div>
+    </a>
+    <a class="rcard" href="report_2026-08-02.html">
+      <div class="rc-date">2026-08-02<span class="rc-wd">周日</span></div>
+      <div class="rc-stats">
+        <div class="rc-stat"><b>36</b><span>有价值</span></div>
+        <div class="rc-stat hi"><b>18</b><span>高潜力</span></div>
+        <div class="rc-stat"><b>36</b><span>送AI</span></div>
+      </div>
+    </a>
+    <a class="rcard" href="report_2026-08-01.html">
+      <div class="rc-date">2026-08-01<span class="rc-wd">周六</span></div>
+      <div class="rc-stats">
+        <div class="rc-stat"><b>0</b><span>有价值</span></div>
+        <div class="rc-stat hi"><b>0</b><span>高潜力</span></div>
+        <div class="rc-stat"><b>38</b><span>送AI</span></div>
+      </div>
+    </a>
+    <a class="rcard" href="report_2026-07-31.html">
+      <div class="rc-date">2026-07-31<span class="rc-wd">周五</span></div>
+      <div class="rc-stats">
+        <div class="rc-stat"><b>25</b><span>有价值</span></div>
+        <div class="rc-stat hi"><b>10</b><span>高潜力</span></div>
+        <div class="rc-stat"><b>34</b><span>送AI</span></div>
+      </div>
+    </a>
+    <a class="rcard" href="report_2026-07-30.html">
+      <div class="rc-date">2026-07-30<span class="rc-wd">周四</span></div>
+      <div class="rc-stats">
+        <div class="rc-stat"><b>0</b><span>有价值</span></div>
+        <div class="rc-stat hi"><b>0</b><span>高潜力</span></div>
+        <div class="rc-stat"><b>38</b><span>送AI</span></div>
+      </div>
+    </a>
+    <a class="rcard" href="report_2026-07-29.html">
+      <div class="rc-date">2026-07-29<span class="rc-wd">周三</span></div>
+      <div class="rc-stats">
+        <div class="rc-stat"><b>0</b><span>有价值</span></div>
+        <div class="rc-stat hi"><b>0</b><span>高潜力</span></div>
+        <div class="rc-stat"><b>33</b><span>送AI</span></div>
+      </div>
+    </a></div>
+</div>
+
+<!-- 周报 -->
+<div class="sec-title">📈 每周趋势周报</div><div class="grid grid-3">
+    <a class="rcard wcard" href="weekly_2026-08-04.html">
+      <div class="rc-date">截止 2026-08-04</div>
+      <div class="rc-stats">
+        <div class="rc-stat"><b>212</b><span>采集</span></div>
+        <div class="rc-stat"><b>144</b><span>有价值</span></div>
+        <div class="rc-stat hi"><b>65</b><span>高潜力</span></div>
+      </div>
+    </a>
+    <a class="rcard wcard" href="weekly_2026-07-27.html">
+      <div class="rc-date">截止 2026-07-27</div>
+      <div class="rc-stats">
+        <div class="rc-stat"><b>0</b><span>采集</span></div>
+        <div class="rc-stat"><b>0</b><span>有价值</span></div>
+        <div class="rc-stat hi"><b>0</b><span>高潜力</span></div>
+      </div>
+    </a>
+    <a class="rcard wcard" href="weekly_2026-07-20.html">
+      <div class="rc-date">截止 2026-07-20</div>
+      <div class="rc-stats">
+        <div class="rc-stat"><b>0</b><span>采集</span></div>
+        <div class="rc-stat"><b>0</b><span>有价值</span></div>
+        <div class="rc-stat hi"><b>0</b><span>高潜力</span></div>
+      </div>
+    </a>
+    <a class="rcard wcard" href="weekly_2026-07-13.html">
+      <div class="rc-date">截止 2026-07-13</div>
+      <div class="rc-stats">
+        <div class="rc-stat"><b>0</b><span>采集</span></div>
+        <div class="rc-stat"><b>0</b><span>有价值</span></div>
+        <div class="rc-stat hi"><b>0</b><span>高潜力</span></div>
+      </div>
+    </a>
+    <a class="rcard wcard" href="weekly_2026-07-06.html">
+      <div class="rc-date">截止 2026-07-06</div>
+      <div class="rc-stats">
+        <div class="rc-stat"><b>186</b><span>采集</span></div>
+        <div class="rc-stat"><b>185</b><span>有价值</span></div>
+        <div class="rc-stat hi"><b>87</b><span>高潜力</span></div>
+      </div>
+    </a>
+    <a class="rcard wcard" href="weekly_2026-06-30.html">
+      <div class="rc-date">截止 2026-06-30</div>
+      <div class="rc-stats">
+        <div class="rc-stat"><b>52</b><span>采集</span></div>
+        <div class="rc-stat"><b>48</b><span>有价值</span></div>
+        <div class="rc-stat hi"><b>7</b><span>高潜力</span></div>
+      </div>
+    </a></div>
+
+<div class="footer">
+  <div>和平精英创作者灵感站 · 由 AI 日报工具自动生成 · 更新于 2026-08-04 14:44</div>
+  <div class="ft-note">数据来源：抖音热榜 · B站入站必看 ｜ 仅供内部创作参考</div>
+</div>
+
+</body>
+</html>

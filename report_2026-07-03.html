@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>和平精英内容线索日报 2026-07-03</title>
+<style>
+:root {
+  --bg:#f5f6f8; --card:#ffffff; --ink:#1c1d21; --muted:#86878d;
+  --line:#e8e9ed; --brand:#534AB7;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.6; padding:24px 16px 60px; }
+.wrap { max-width:860px; margin:0 auto; }
+.header { background:linear-gradient(135deg,#534AB7,#7F77DD); color:#fff;
+  border-radius:18px; padding:28px 30px; margin-bottom:20px; }
+.header h1 { font-size:22px; font-weight:600; margin-bottom:6px; }
+.header .sub { font-size:13px; opacity:.85; }
+.header .tags { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.header .tags span { background:rgba(255,255,255,.18); padding:4px 12px;
+  border-radius:20px; font-size:12px; }
+
+.kpis { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:20px; }
+.kpi { background:var(--card); border-radius:14px; padding:16px; text-align:center;
+  border:1px solid var(--line); }
+.kpi .num { font-size:28px; font-weight:600; color:var(--brand); }
+.kpi .lbl { font-size:12px; color:var(--muted); margin-top:2px; }
+
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
+.panel { background:var(--card); border-radius:14px; padding:18px 20px;
+  border:1px solid var(--line); }
+.panel h3 { font-size:14px; font-weight:600; margin-bottom:14px; color:var(--ink); }
+.donut-wrap { display:flex; align-items:center; gap:16px; }
+.cat-legend { flex:1; }
+.cat-item { display:flex; align-items:center; font-size:13px; padding:3px 0; }
+.cat-item i { width:10px; height:10px; border-radius:3px; margin-right:8px; }
+.cat-item b { margin-left:auto; font-weight:600; }
+.empty-donut { width:160px; text-align:center; color:var(--muted); padding:60px 0; }
+
+.bar { display:flex; height:14px; border-radius:8px; overflow:hidden; margin-bottom:12px; }
+.bar div { height:100%; }
+.bar-legend { font-size:12px; color:var(--muted); }
+.bar-legend .lg { display:inline-flex; align-items:center; margin-right:14px; }
+.bar-legend i { width:9px; height:9px; border-radius:2px; margin-right:5px; display:inline-block; }
+.chips { margin-top:14px; }
+.chip { display:inline-block; background:#f0eefb; color:#534AB7; padding:4px 12px;
+  border-radius:16px; font-size:12px; margin:0 6px 6px 0; }
+.chip b { font-weight:600; }
+.chip-empty { color:var(--muted); font-size:12px; }
+
+.section-title { font-size:16px; font-weight:600; margin:28px 0 14px;
+  padding-left:12px; border-left:4px solid var(--brand); }
+
+.card { background:var(--card); border-radius:14px; padding:16px 18px;
+  margin-bottom:12px; border:1px solid var(--line); border-left:4px solid var(--cat); }
+.card-top { background:linear-gradient(180deg,#faf9ff,#fff); }
+.card-head { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+.card-head .rank { font-size:13px; font-weight:600; color:var(--muted); }
+.card-head .cat { color:#fff; font-size:11px; padding:2px 9px; border-radius:10px; }
+.top-badge { background:#ffd84d; color:#7a5800; font-size:11px; font-weight:600;
+  padding:2px 9px; border-radius:10px; }
+.caseid { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11px;
+  color:#534AB7; background:#eeedfe; padding:2px 8px; border-radius:10px;
+  text-decoration:none; border:1px solid #cecbf6; }
+.caseid:hover { background:#534AB7; color:#fff; }
+.score { color:#fff; font-size:11px; font-weight:600; padding:2px 9px;
+  border-radius:10px; letter-spacing:-1px; }
+.sustain { background:#ffeceb; color:#d4380d; font-size:11px; font-weight:600;
+  padding:2px 9px; border-radius:10px; border:1px solid #ffccc7; }
+.newtag { background:#e6fffb; color:#08979c; font-size:11px; font-weight:600;
+  padding:2px 9px; border-radius:10px; border:1px solid #87e8de; }
+.mchips { margin-top:8px; display:flex; gap:8px; }
+.mchip { font-size:11.5px; color:#6b6c72; background:#f2f3f5;
+  padding:3px 10px; border-radius:8px; }
+.mchip-t { background:#fff4e6; color:#a35200; }
+.card-head .meta { font-size:12px; color:var(--muted); margin-left:auto; }
+.card .title { font-size:15px; font-weight:600; margin-bottom:10px; }
+.card .title a { color:var(--ink); text-decoration:none; }
+.card .title a:hover { color:var(--brand); }
+.card .title .ext { font-size:12px; color:var(--brand); }
+.dir-row { display:flex; gap:12px; align-items:flex-start; }
+.dir-row .form { flex-shrink:0; background:#eef2ff; color:#3730a3; font-size:12px;
+  padding:4px 10px; border-radius:8px; font-weight:500; }
+.direction { flex:1; font-size:13.5px; background:#f7f8fa; padding:8px 12px; border-radius:8px; }
+.direction .lbl, .reason .lbl { display:inline-block; font-size:11px; color:var(--brand);
+  font-weight:600; margin-right:6px; }
+.reason { margin-top:8px; font-size:12.5px; color:#6b6c72; }
+
+.no-dir { background:var(--card); border-radius:14px; padding:12px 18px;
+  border:1px solid var(--line); list-style:none; }
+.no-dir li { padding:8px 0; border-bottom:1px solid var(--line); font-size:13.5px;
+  display:flex; align-items:center; gap:8px; }
+.no-dir li:last-child { border-bottom:none; }
+.nd-cat { color:#fff; font-size:11px; padding:1px 8px; border-radius:9px; flex-shrink:0; }
+.nd-heat { margin-left:auto; font-size:12px; color:var(--muted); }
+.empty, .empty-li { color:var(--muted); text-align:center; padding:20px; font-size:13px; }
+
+details { background:var(--card); border-radius:14px; border:1px solid var(--line);
+  margin-top:14px; padding:0 18px; }
+details summary { cursor:pointer; padding:14px 0; font-size:14px; font-weight:600; }
+table { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:14px; }
+table th { text-align:left; color:var(--muted); font-weight:500; padding:6px 8px;
+  border-bottom:2px solid var(--line); }
+table td { padding:6px 8px; border-bottom:1px solid var(--line); }
+
+.notice { background:#fff8e6; border:1px solid #ffe39e; border-radius:12px;
+  padding:12px 16px; font-size:12.5px; color:#8a6d00; margin-top:20px; }
+.footer { text-align:center; color:var(--muted); font-size:12px; margin-top:30px; }
+
+@media (max-width:680px) {
+  .kpis { grid-template-columns:repeat(2,1fr); }
+  .grid2 { grid-template-columns:1fr; }
+  .card-head .meta { margin-left:0; width:100%; }
+}
+@media print {
+  body { background:#fff; padding:0; }
+  .card,.panel,.kpi,.no-dir,details { break-inside:avoid; }
+  .header { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <h1>和平精英 · 社媒内容线索日报</h1>
+    <div class="sub">2026-07-03 · 生成于 2026-07-03 17:02</div>
+    <div class="tags">
+      <span>抖音热榜</span><span>B站入站必看</span>
+      <span>定向品类：娱乐 / 搞笑 / 游戏 / 音乐 / 影视</span>
+      <span>AI 仅产出二创方向，风险合规由人工判断</span>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="num">28</div><div class="lbl">送 AI 线索</div></div>
+    <div class="kpi"><div class="num">16</div><div class="lbl">有价值方向</div></div>
+    <div class="kpi"><div class="num">12</div><div class="lbl">高潜力(4-5★)</div></div>
+    <div class="kpi"><div class="num">7</div><div class="lbl">🔥持续发酵</div></div>
+    <div class="kpi"><div class="num">72</div><div class="lbl">品类过滤</div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>内容品类分布</h3>
+      <div class="donut-wrap">
+        <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"><path d="M80.00,10.00 A70.00,70.00 0 0 1 106.79,144.67 L96.07,118.80 A42.00,42.00 0 0 0 80.00,38.00 Z" fill="#534AB7"></path><path d="M106.79,144.67 A70.00,70.00 0 0 1 30.50,129.50 L50.30,109.70 A42.00,42.00 0 0 0 96.07,118.80 Z" fill="#BA7517"></path><path d="M30.50,129.50 A70.00,70.00 0 0 1 10.00,80.00 L38.00,80.00 A42.00,42.00 0 0 0 50.30,109.70 Z" fill="#D85A30"></path><path d="M10.00,80.00 A70.00,70.00 0 0 1 30.50,30.50 L50.30,50.30 A42.00,42.00 0 0 0 38.00,80.00 Z" fill="#888780"></path><path d="M30.50,30.50 A70.00,70.00 0 0 1 53.21,15.33 L63.93,41.20 A42.00,42.00 0 0 0 50.30,50.30 Z" fill="#1D9E75"></path><path d="M53.21,15.33 A70.00,70.00 0 0 1 80.00,10.00 L80.00,38.00 A42.00,42.00 0 0 0 63.93,41.20 Z" fill="#378ADD"></path><text x="80.0" y="76.0" text-anchor="middle" font-size="26" font-weight="600" fill="#1a1a1a">16</text><text x="80.0" y="96.0" text-anchor="middle" font-size="12" fill="#888">条线索</text></svg>
+        <div class="cat-legend"><div class="cat-item"><i style="background:#534AB7"></i>游戏<b>7</b></div><div class="cat-item"><i style="background:#BA7517"></i>搞笑<b>3</b></div><div class="cat-item"><i style="background:#D85A30"></i>生活<b>2</b></div><div class="cat-item"><i style="background:#888780"></i>其他<b>2</b></div><div class="cat-item"><i style="background:#1D9E75"></i>音乐<b>1</b></div><div class="cat-item"><i style="background:#378ADD"></i>影视<b>1</b></div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>来源占比</h3>
+      <div class="bar"><div style="width:78.6%;background:#534AB7;" title="B站热门 22条"></div><div style="width:21.4%;background:#1D9E75;" title="抖音热点 6条"></div></div><div class="bar-legend"><span class="lg"><i style="background:#534AB7"></i>B站热门 22</span> <span class="lg"><i style="background:#1D9E75"></i>抖音热点 6</span></div>
+      <h3 style="margin-top:18px">建议内容形式</h3>
+      <div class="chips"><span class="chip">整活 <b>6</b></span><span class="chip">混剪 <b>4</b></span><span class="chip">挑战 <b>2</b></span><span class="chip">口播 <b>1</b></span><span class="chip">短剧 <b>1</b></span><span class="chip">教学 <b>1</b></span><span class="chip">赛事借势 <b>1</b></span></div>
+    </div>
+  </div>
+
+  <div class="section-title">今日最值得看的 3 条</div>
+  
+    <div class="card card-top" style="--cat:#1D9E75">
+      <div class="card-head">
+        <span class="rank">#1</span>
+        <span class="cat" style="background:#1D9E75">音乐</span>
+        <span class="top-badge">必看</span>
+        <span class="score" style="background:#D4537E" title="潜力分 5/5（AI 综合契合度·流量潜力·可执行性）">★★★★★ 5</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260703-22 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 8101228 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E7%BB%88%E4%BA%8E%E7%BB%99%E8%BF%99%E4%B8%AA%E8%A7%86%E9%A2%91%E6%89%BE%E5%88%B0bgm%E4%BA%86" target="_blank" rel="noopener">终于给这个视频找到bgm了 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>给这个决赛圈1V4找到最合适的BGM：混剪和平精英高燃操作或搞笑失误，配上近期爆火的神级BGM，形成强卡点视频。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>和平精英操作天然适合卡点混剪，借势找BGM的梗，把游戏内的高光/下饭瞬间与热门BGM结合，极易产出爆款。</div>
+    </div>
+    <div class="card card-top" style="--cat:#BA7517">
+      <div class="card-head">
+        <span class="rank">#2</span>
+        <span class="cat" style="background:#BA7517">搞笑</span>
+        <span class="top-badge">必看</span>
+        <span class="score" style="background:#D4537E" title="潜力分 5/5（AI 综合契合度·流量潜力·可执行性）">★★★★★ 5</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260703-24 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7715604 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E9%BC%93%E7%82%B9BGM%E4%B8%8B%E6%9C%80%E6%8A%BD%E8%B1%A1%E7%9A%84%E4%B8%80%E9%9B%86" target="_blank" rel="noopener">鼓点BGM下最抽象的一集 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>鼓点下最抽象的刚枪：在和平精英里卡鼓点做抽象操作，比如卡鼓点扔雷、卡鼓点被炸飞、卡鼓点在出生岛跳舞、卡鼓点摩托车翻车。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>和平精英角色动作和物理引擎（载具翻滚、被炸飞）非常适合做鼓点卡点抽象整活，笑点密集且易于跟风。</div>
+    </div>
+    <div class="card card-top" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#3</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        <span class="top-badge">必看</span>
+        <span class="score" style="background:#D4537E" title="潜力分 5/5（AI 综合契合度·流量潜力·可执行性）">★★★★★ 5</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-07-02，持续发酵中">🔥连续2天</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260703-25 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 4008788 · 2026-06-29</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1ZBKQ6fEpN" target="_blank" rel="noopener">你是龙啊？你是虾子！！！！ <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>刚枪你是龙，苟分你是虾：和平精英四排刚枪时，队友不敢上、只会趴地（虾子），自己猛冲锋（龙）的反差整活，配音原梗。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>原梗就是吐槽游戏玩家菜，直接平移到和平精英刚枪场景，自己1V4是龙，队友趴地是虾子，冲突感与喜感十足。</div>
+    </div>
+
+  <div class="section-title">完整线索（16 条）</div>
+  
+    <div class="card" style="--cat:#1D9E75">
+      <div class="card-head">
+        <span class="rank">#1</span>
+        <span class="cat" style="background:#1D9E75">音乐</span>
+        
+        <span class="score" style="background:#D4537E" title="潜力分 5/5（AI 综合契合度·流量潜力·可执行性）">★★★★★ 5</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260703-22 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 8101228 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E7%BB%88%E4%BA%8E%E7%BB%99%E8%BF%99%E4%B8%AA%E8%A7%86%E9%A2%91%E6%89%BE%E5%88%B0bgm%E4%BA%86" target="_blank" rel="noopener">终于给这个视频找到bgm了 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>给这个决赛圈1V4找到最合适的BGM：混剪和平精英高燃操作或搞笑失误，配上近期爆火的神级BGM，形成强卡点视频。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>和平精英操作天然适合卡点混剪，借势找BGM的梗，把游戏内的高光/下饭瞬间与热门BGM结合，极易产出爆款。</div>
+    </div>
+    <div class="card" style="--cat:#BA7517">
+      <div class="card-head">
+        <span class="rank">#2</span>
+        <span class="cat" style="background:#BA7517">搞笑</span>
+        
+        <span class="score" style="background:#D4537E" title="潜力分 5/5（AI 综合契合度·流量潜力·可执行性）">★★★★★ 5</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260703-24 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7715604 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E9%BC%93%E7%82%B9BGM%E4%B8%8B%E6%9C%80%E6%8A%BD%E8%B1%A1%E7%9A%84%E4%B8%80%E9%9B%86" target="_blank" rel="noopener">鼓点BGM下最抽象的一集 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>鼓点下最抽象的刚枪：在和平精英里卡鼓点做抽象操作，比如卡鼓点扔雷、卡鼓点被炸飞、卡鼓点在出生岛跳舞、卡鼓点摩托车翻车。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>和平精英角色动作和物理引擎（载具翻滚、被炸飞）非常适合做鼓点卡点抽象整活，笑点密集且易于跟风。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#3</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#D4537E" title="潜力分 5/5（AI 综合契合度·流量潜力·可执行性）">★★★★★ 5</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-07-02，持续发酵中">🔥连续2天</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260703-25 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 4008788 · 2026-06-29</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1ZBKQ6fEpN" target="_blank" rel="noopener">你是龙啊？你是虾子！！！！ <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>刚枪你是龙，苟分你是虾：和平精英四排刚枪时，队友不敢上、只会趴地（虾子），自己猛冲锋（龙）的反差整活，配音原梗。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>原梗就是吐槽游戏玩家菜，直接平移到和平精英刚枪场景，自己1V4是龙，队友趴地是虾子，冲突感与喜感十足。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#4</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260703-01 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 9191480 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E7%8E%8B%E6%A5%9A%E9%92%A6%E5%AD%99%E9%A2%96%E8%8E%8E%E6%99%8B%E7%BA%A7%E6%B7%B7%E5%8F%8C%E5%86%B3%E8%B5%9B" target="_blank" rel="noopener">王楚钦孙颖莎晋级混双决赛 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">挑战</span>
+        <div class="direction"><span class="lbl">转化方向</span>和平精英版莎头组合：双排极限默契挑战，如决赛圈男女搭档无交流纯靠意识救场、双排限定只救对方不自救等默契玩法。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>乒乓球混双强调极致默契配合，与和平精英双排/四排中的队友配合逻辑相通，可迁移为游戏内的情侣/好友默契挑战玩法。</div>
+    </div>
+    <div class="card" style="--cat:#D85A30">
+      <div class="card-head">
+        <span class="rank">#5</span>
+        <span class="cat" style="background:#D85A30">生活</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260703-23 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7780705 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E8%BF%99%E6%98%AF%E5%A4%8F%E5%A4%A9%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%A4%8F%E5%A4%A9" target="_blank" rel="noopener">这是夏天的第一个夏天 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>在海岛地图陪她过第一个夏天：和平精英海岛地图夏日模式/沙滩皮肤/夏日冲浪载具等场景的唯美混剪，或情侣双排浪漫Vlog。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>和平精英海岛地图本身有极强的夏日度假属性（沙滩、椰树、海景），配合夏日情绪热点，极易产出氛围感内容引发共鸣。</div>
+    </div>
+    <div class="card" style="--cat:#888780">
+      <div class="card-head">
+        <span class="rank">#6</span>
+        <span class="cat" style="background:#888780">其他</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-07-02，持续发酵中">🔥连续2天</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260702-03 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 7677916 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E8%BF%B7%E6%A0%B8%E6%89%8B%E5%8A%BF%E8%88%9E" target="_blank" rel="noopener">迷核手势舞 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">挑战</span>
+        <div class="direction"><span class="lbl">转化方向</span>出生岛15秒手势舞挑战：用和平精英角色在出生岛或决赛圈做迷核手势舞，或者真人穿和平精英cos服跳手势舞变装。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>游戏内角色动作系统可录制手势舞，结合出生岛等待时间，天然适合跟风手势舞挑战，执行门槛极低。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#7</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 4 天上榜，首次 2026-06-30，持续发酵中">🔥连续4天</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260630-29 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 5164643 · 2026-06-30</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV15LKd6wEtR" target="_blank" rel="noopener">哪来的傻孩子啊 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>哪来的傻队友啊：和平精英四排中遇到各种下饭队友（开车撞树、雷炸自己、走火误伤）的搞笑合集，配上这句配音或真人吐槽。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>这句话完美契合和平精英吐槽下饭队友的场景，做成队友失误集锦配上吐槽，共鸣极强。</div>
+    </div>
+    <div class="card" style="--cat:#888780">
+      <div class="card-head">
+        <span class="rank">#8</span>
+        <span class="cat" style="background:#888780">其他</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-07-02，持续发酵中">🔥连续2天</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260702-18 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 2408394 · 2026-07-01</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1cyjd6BEMj" target="_blank" rel="noopener">假如印度翻拍《火影忍者》 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>假如印度翻拍《和平精英》：用夸张的运镜和五毛特效剪辑和平精英的刚枪瞬间，如螺旋丸扔雷、影分身四排、载具飞天遁地。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 难</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>印度翻拍的核心是夸张运镜和特效，和平精英刚枪、扔雷、载具飞天等画面配合这种剪辑风格极具反差喜感。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#9</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-07-02，持续发酵中">🔥连续2天</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260702-15 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 1704027 · 2026-06-30</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1yCTF6bEMu" target="_blank" rel="noopener">&quot;我来自那个高手如云的时代&quot;在MC中极致还原X-COOL! <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">口播</span>
+        <div class="direction"><span class="lbl">转化方向</span>我来自那个高手如云的时代：和平精英老玩家怀旧混剪，回忆刺激战场时期的M4扫射、不带镜刚枪、沙漠图老六星等高光操作。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>情怀共鸣。和平精英经历多次版本迭代，借势此梗做老玩家身份认同与怀旧内容极易引发弹幕共鸣。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#10</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-07-02，持续发酵中">🔥连续2天</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260702-30 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 1534895 · 2026-07-01</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1rhTc6xEQu" target="_blank" rel="noopener">误闯十八铜人阵 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>误闯假车库十八铜人阵：和平精英中误闯假车库/拼图楼被四个队围攻，或者地铁逃生中误入高变区被满编队包夹的极限逃生混剪。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>误闯铜人阵即被多人围攻，完美对应和平精英攻楼被守或野区遭遇满编队包夹的绝望/搞笑场景，视觉冲击力强。</div>
+    </div>
+    <div class="card" style="--cat:#D85A30">
+      <div class="card-head">
+        <span class="rank">#11</span>
+        <span class="cat" style="background:#D85A30">生活</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260703-16 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 861826 · 2026-07-02</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1KST662E2m" target="_blank" rel="noopener">“故事从夏天的蝉鸣开始” <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>海岛故事从夏天的蝉鸣开始：讲述在海岛地图从出生岛相遇、四排并肩到决赛圈分别的队友情感短剧，配合海岛夏日风景与蝉鸣音效。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 难</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>青春夏日回忆与和平精英海岛地图的夏天场景高度绑定，适合做游戏内的情感向/友谊向叙事短剧，氛围感极佳。</div>
+    </div>
+    <div class="card" style="--cat:#BA7517">
+      <div class="card-head">
+        <span class="rank">#12</span>
+        <span class="cat" style="background:#BA7517">搞笑</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260703-26 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 617516 · 2026-07-02</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1sXTL6BEgk" target="_blank" rel="noopener">社死！女友偷偷在家穿兽装跳热舞…我直接把丈母娘叫来揍她！ <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>和平精英社死瞬间：四排时误开麦克风被队友听到社死声音，或者穿奇葩动物皮肤在出生岛跳舞被路人围观嘲笑的搞笑合集。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>社死是和平精英开麦交流时的常见笑点，结合奇葩皮肤或出生岛跳舞，能完美还原社死被围观的情境，笑点密集。</div>
+    </div>
+    <div class="card" style="--cat:#378ADD">
+      <div class="card-head">
+        <span class="rank">#13</span>
+        <span class="cat" style="background:#378ADD">影视</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260703-02 ↗</a>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 9176790 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E7%94%B5%E5%BD%B1%E7%89%B9%E7%AB%8B%E7%8B%AC%E8%A1%8C%E4%BB%8A%E6%97%A5%E4%B8%8A%E6%98%A0" target="_blank" rel="noopener">电影特立独行今日上映 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>特立独行的苟分路线/攻楼法：盘点和平精英中不按套路出牌的打法，比如不走正门的奇葩攻楼、摩托车飞天苟分、冷门野区反常规生存。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>特立独行概念与和平精英中非主流战术契合，反常规操作集锦自带话题冲突感与喜感。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#14</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260703-07 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 3521582 · 2026-07-02</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1RVTz6HEc3" target="_blank" rel="noopener">我不仅用了屏障，还用了命令方块 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">教学</span>
+        <div class="direction"><span class="lbl">转化方向</span>和平精英里的屏障与命令方块：盘点游戏内利用地形卡点、无敌房区、或者地铁逃生里的防爆门/屏障机制，制造类似开屏障的绝对防御效果。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>MC的屏障代表绝对防御，和平精英中可借势卡无敌点或防爆门机制，制造类似开屏障的爽感或整活，满足玩家寻找机制漏洞的好奇心。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7">
+      <div class="card-head">
+        <span class="rank">#15</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-07-02，持续发酵中">🔥连续2天</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260702-16 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 1481631 · 2026-07-01</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1jsTi67EMC" target="_blank" rel="noopener">【vlog】我们是冠军🏆 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">赛事借势</span>
+        <div class="direction"><span class="lbl">转化方向</span>和平精英我们是冠军：剪辑PEL赛事夺冠瞬间，或者普通玩家四排极限逆风翻盘吃鸡后的夸张庆祝vlog（放烟花、全队跳舞）。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>直接契合和平精英PEL职业赛事或玩家吃鸡后的情绪表达，借势夺冠热点放大吃鸡爽感与团队荣誉感。</div>
+    </div>
+    <div class="card" style="--cat:#BA7517">
+      <div class="card-head">
+        <span class="rank">#16</span>
+        <span class="cat" style="background:#BA7517">搞笑</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        <a class="caseid" href="https://docs.qq.com/smartsheet/DUUtyS0RoVGNzTE9v?tab=0en5LV" target="_blank" rel="noopener" title="点击打开案例库，按此ID检索回溯">20260703-15 ↗</a>
+        <span class="meta">B站热门 · B站入站必看 · 热度 995250 · 2026-07-02</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1woTB6PEGb" target="_blank" rel="noopener">Life Goes On，第二拍和第四拍互换 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>和平精英反常规节奏卡点：将常规的刚枪卡点节奏（第二第四拍）互换，做出开枪和换弹、击杀和倒地节奏错位的鬼畜卡点效果。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>音乐节奏互换梗，打破和平精英射击、换弹、翻越动作的常规节奏，做鬼畜错位卡点能产生极强新鲜感与洗脑效果。</div>
+    </div>
+
+  <div class="section-title">待人工判断（12 条）</div>
+  <ul class="no-dir"><li><span class="nd-cat" style="background:#534AB7">游戏</span>《白银之城》「二分法测试」实机PV | 《乌鸦与玫瑰》<span class="nd-heat">热度 4087316</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>【原神一条龙全收集】挪德卡莱月之八(成就数224/月神瞳79/摩拉68)杜南纳深坑+霜月/宝箱/摩拉堆/玉帛/月之印/探索度/原神6.7一条龙<span class="nd-heat">热度 2739649</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>《逆战：未来》S3无主之地联动赛季，今日双端上线！<span class="nd-heat">热度 1984663</span></li><li><span class="nd-cat" style="background:#1D9E75">音乐</span>歌剧老师锐评《乘风破浪的姐姐2026》大结局（双人合作秀）<span class="nd-heat">热度 1315336</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>《洛克王国：世界》准备好一起跳舞了吗？S3赛季将于7月16日开启<span class="nd-heat">热度 1208662</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>《怪物猎人：旅人》「启明测试」招募开启！<span class="nd-heat">热度 646687</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>【三国杀】势·周瑜武将PV：雄图尽展，坐待天下归吴！九州犹在，试问谁主沉浮？<span class="nd-heat">热度 561549</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>《夜幕之下》活动版本PV：被观看的自我<span class="nd-heat">热度 502188</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>《绝区零》诺姆角色展示 | 大嗯呐假说<span class="nd-heat">热度 468258</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>《豆包打锐雯推荐什么》<span class="nd-heat">热度 464510</span></li><li><span class="nd-cat" style="background:#534AB7">游戏</span>【暗区突围手游版本PV】浊潮行动，S18赛季「原爆点」现已上线，四周年福利季开启！<span class="nd-heat">热度 418580</span></li><li><span class="nd-cat" style="background:#378ADD">影视</span>十部80-90年代的日本成人动画“黑马”<span class="nd-heat">热度 271433</span></li></ul>
+
+  <div class="notice">
+    AI 使用说明：AI 仅用于生成二创方向和推荐理由。涉及严肃资讯、公共事件、负面情绪的热点，
+    风险、合规、是否跟进一律由人工判断。
+  </div>
+
+  <details>
+    <summary>附录：原始热榜全量（28 条）</summary>
+    <table>
+      <thead><tr><th>排名</th><th>来源</th><th>标题</th><th>热度</th></tr></thead>
+      <tbody><tr><td>14</td><td>抖音热点</td><td>王楚钦孙颖莎晋级混双决赛</td><td>9191480</td></tr><tr><td>16</td><td>抖音热点</td><td>电影特立独行今日上映</td><td>9176790</td></tr><tr><td>24</td><td>抖音热点</td><td>终于给这个视频找到bgm了</td><td>8101228</td></tr><tr><td>26</td><td>抖音热点</td><td>这是夏天的第一个夏天</td><td>7780705</td></tr><tr><td>36</td><td>抖音热点</td><td>鼓点BGM下最抽象的一集</td><td>7715604</td></tr><tr><td>43</td><td>抖音热点</td><td>迷核手势舞</td><td>7677916</td></tr><tr><td>32</td><td>B站热门</td><td>哪来的傻孩子啊</td><td>5164643</td></tr><tr><td>5</td><td>B站热门</td><td>《白银之城》「二分法测试」实机PV | 《乌鸦与玫瑰》</td><td>4087316</td></tr><tr><td>44</td><td>B站热门</td><td>你是龙啊？你是虾子！！！！</td><td>4008788</td></tr><tr><td>9</td><td>B站热门</td><td>我不仅用了屏障，还用了命令方块</td><td>3521582</td></tr><tr><td>14</td><td>B站热门</td><td>【原神一条龙全收集】挪德卡莱月之八(成就数224/月神瞳79/摩拉68)杜南纳深坑+霜月/宝箱/摩拉堆/玉帛/月之印/探索度/原神6.7一条龙</td><td>2739649</td></tr><tr><td>26</td><td>B站热门</td><td>假如印度翻拍《火影忍者》</td><td>2408394</td></tr><tr><td>38</td><td>B站热门</td><td>《逆战：未来》S3无主之地联动赛季，今日双端上线！</td><td>1984663</td></tr><tr><td>18</td><td>B站热门</td><td>&quot;我来自那个高手如云的时代&quot;在MC中极致还原X-COOL!</td><td>1704027</td></tr><tr><td>46</td><td>B站热门</td><td>误闯十八铜人阵</td><td>1534895</td></tr><tr><td>40</td><td>B站热门</td><td>【vlog】我们是冠军🏆</td><td>1481631</td></tr><tr><td>1</td><td>B站热门</td><td>歌剧老师锐评《乘风破浪的姐姐2026》大结局（双人合作秀）</td><td>1315336</td></tr><tr><td>10</td><td>B站热门</td><td>《洛克王国：世界》准备好一起跳舞了吗？S3赛季将于7月16日开启</td><td>1208662</td></tr><tr><td>16</td><td>B站热门</td><td>Life Goes On，第二拍和第四拍互换</td><td>995250</td></tr><tr><td>47</td><td>B站热门</td><td>“故事从夏天的蝉鸣开始”</td><td>861826</td></tr><tr><td>22</td><td>B站热门</td><td>《怪物猎人：旅人》「启明测试」招募开启！</td><td>646687</td></tr><tr><td>33</td><td>B站热门</td><td>社死！女友偷偷在家穿兽装跳热舞…我直接把丈母娘叫来揍她！</td><td>617516</td></tr><tr><td>21</td><td>B站热门</td><td>【三国杀】势·周瑜武将PV：雄图尽展，坐待天下归吴！九州犹在，试问谁主沉浮？</td><td>561549</td></tr><tr><td>15</td><td>B站热门</td><td>《夜幕之下》活动版本PV：被观看的自我</td><td>502188</td></tr><tr><td>12</td><td>B站热门</td><td>《绝区零》诺姆角色展示 | 大嗯呐假说</td><td>468258</td></tr><tr><td>28</td><td>B站热门</td><td>《豆包打锐雯推荐什么》</td><td>464510</td></tr><tr><td>36</td><td>B站热门</td><td>【暗区突围手游版本PV】浊潮行动，S18赛季「原爆点」现已上线，四周年福利季开启！</td><td>418580</td></tr><tr><td>45</td><td>B站热门</td><td>十部80-90年代的日本成人动画“黑马”</td><td>271433</td></tr></tbody>
+    </table>
+  </details>
+
+  <div class="footer">本报告由「和平精英内容线索 AI 日报工具」自动生成</div>
+
+</div>
+</body>
+</html>
