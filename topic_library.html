@@ -162,10 +162,9 @@ body::after { content:''; position:fixed; inset:0; z-index:-1;
   color:#FFB03A; background:rgba(255,176,58,.10);
   border:1px solid rgba(255,176,58,.34); font-family:ui-monospace,Menlo,monospace;
   font-weight:500; }
-/* 星级：亮星实心、暗星弱化，比"★★★★☆ 4"的文字堆叠清晰 */
-.score { font-size:12.5px; letter-spacing:1.5px; color:rgba(255,176,58,.28);
-  line-height:1; white-space:nowrap; }
-.score b { color:var(--accent); font-weight:400; }
+/* 星级胶囊：分类色背景 + 白字 + 数字（与日报 score 风格一致） */
+.score { font-size:11px; padding:2px 9px; border-radius:9px;
+  color:#fff; font-weight:600; letter-spacing:1px; line-height:1; white-space:nowrap; }
 .sustain { background:var(--sus-bg); color:var(--sus-fg); font-size:11px; padding:2px 8px;
   border-radius:9px; border:1px solid var(--sus-bd); }
 /* 热度靠右，数字强调 */
@@ -374,7 +373,7 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
     
     <div class="htxt">
       <h1>和平精英 · 选题聚合库</h1>
-      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-04 ｜ 更新于 2026-08-04 19:19</div>
+      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-04 ｜ 更新于 2026-08-04 19:23</div>
     </div>
     
   </div>
@@ -624,7 +623,7 @@ function cardHTML(c) {
     ? `<a href="${esc(c.link)}" target="_blank" rel="noopener">${hl(esc(c.title), _q)} ↗</a>`
     : hl(esc(c.title), _q);
   const scoreHTML = sc
-    ? `<span class="score" title="潜力分 ${sc}/5"><b>${'★'.repeat(sc)}</b>${'★'.repeat(5 - sc)}</span>`
+    ? `<span class="score" style="background:var(--c,#888)" title="潜力分 ${sc}/5">${'★'.repeat(sc)}${'☆'.repeat(5 - sc)} ${sc}</span>`
     : '';
   const susHTML = c.sustain
     ? `<span class="sustain">🔥 连续 ${esc(c.days)} 天</span>` : '';
@@ -661,7 +660,7 @@ function cardHTML(c) {
     <div class="chead">
       ${platHTML}
       <span class="cat" style="--c:${color}">${esc(c.cat)}</span>
-      ${topHTML}${scoreHTML}${susHTML}${dateHTML}${cidHTML}
+      ${topHTML}${scoreHTML}${susHTML}${cidHTML}
       ${heatHTML}
     </div>
     <div class="title">${titleHTML}</div>
