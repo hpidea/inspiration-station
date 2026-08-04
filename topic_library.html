@@ -371,7 +371,7 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
     
     <div class="htxt">
       <h1>和平精英 · 选题聚合库</h1>
-      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-04 ｜ 更新于 2026-08-04 19:36</div>
+      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-04 ｜ 更新于 2026-08-04 19:41</div>
     </div>
     
   </div>
@@ -621,7 +621,7 @@ function cardHTML(c) {
     ? `<a href="${esc(c.link)}" target="_blank" rel="noopener">${hl(esc(c.title), _q)} ↗</a>`
     : hl(esc(c.title), _q);
   const scoreHTML = sc
-    ? `<span class="score" style="--c:${color};background:var(--c,#888)" title="潜力分 ${sc}/5">${'★'.repeat(sc)}${'☆'.repeat(5 - sc)} ${sc}</span>`
+    ? `<span class="score" style="background:${SCORE_COLORS[sc]||'#888780'}" title="潜力分 ${sc}/5">${'★'.repeat(sc)}${'☆'.repeat(5 - sc)} ${sc}</span>`
     : '';
   const susHTML = c.sustain
     ? `<span class="sustain">🔥 连续 ${esc(c.days)} 天</span>` : '';
