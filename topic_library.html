@@ -369,7 +369,7 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
     
     <div class="htxt">
       <h1>和平精英 · 选题聚合库</h1>
-      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-04 ｜ 更新于 2026-08-04 18:41</div>
+      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-04 ｜ 更新于 2026-08-04 18:52</div>
     </div>
     
   </div>
@@ -860,8 +860,8 @@ function render() {
   curHitKeys = hit.map(keyOf);
   if (curIdx >= curHitKeys.length) curIdx = -1;
 
-  // 平台分布堆叠条（只在有一个以上平台时显示）
-  updatePlatBar(hit);
+  // 平台分布堆叠条：用全集（永远显示总览，不被当前 filter 影响）
+  updatePlatBar(DATA);
 
   if (_virtObs) { _virtObs.disconnect(); _virtObs = null; }
   const old = el('sentinel'); if (old) old.remove();
