@@ -369,7 +369,7 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
     
     <div class="htxt">
       <h1>和平精英 · 选题聚合库</h1>
-      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-04 ｜ 更新于 2026-08-04 17:03</div>
+      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-04 ｜ 更新于 2026-08-04 18:41</div>
     </div>
     
   </div>
@@ -702,10 +702,17 @@ function updatePlatBar(hit) {
     seg.onclick = () => {
       const v = seg.getAttribute('data-src');
       const sel = el('fSrc');
-      // 选项里可能没有"其他"，抖音/B站直接匹配
       const map = {'抖音':'抖音热点', 'B站':'B站热门'};
-      sel.value = map[v] || v;
-      sel.dispatchEvent(new Event('change'));
+      const targetVal = map[v] || v;
+      // 关键：自定义下拉是 div，没有 .value；要 set dataset.value + 标选 + render
+      sel.dataset.value = targetVal;
+      // 更新下拉的可见文字
+      const matchedOpt = Array.from(sel.querySelectorAll('.sel-opt')).find(o => o.dataset.v === targetVal);
+      if (matchedOpt) {
+        sel.querySelector('.sel-txt').textContent = matchedOpt.textContent;
+        sel.querySelectorAll('.sel-opt').forEach(o => o.classList.toggle('on', o === matchedOpt));
+      }
+      render();
     };
   });
 }
