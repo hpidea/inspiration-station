@@ -173,11 +173,8 @@ body::after { content:''; position:fixed; inset:0; z-index:-1;
 .title a:hover { color:var(--accent); }
 
 /* 转化方向是这个库真正的价值所在，给它独立底块做视觉焦点 */
-.dirbox { display:flex; gap:8px; align-items:flex-start; flex-wrap:wrap;
-  background:var(--sunk,rgba(0,0,0,.03)); border-radius:10px; padding:10px 14px; }
-.dirbox .dirbox-lbl { display:inline-flex; align-items:center; font-size:11px;
-  color:#7a5800; background:#ffd84d; font-weight:600; padding:3px 10px;
-  border-radius:9px; margin-right:8px; letter-spacing:.5px; box-shadow:0 1px 3px rgba(255,216,77,.25); }
+.dirbox { display:flex; gap:9px; align-items:baseline; flex-wrap:wrap;
+  background:var(--sunk,rgba(0,0,0,.03)); border-radius:9px; padding:10px 12px; }
 .form { background:var(--accent-l); color:var(--accent); font-size:11px;
   padding:2px 9px; border-radius:7px; white-space:nowrap; flex-shrink:0; }
 .dirtxt { flex:1; min-width:220px; font-size:13.5px; line-height:1.62; }
@@ -365,6 +362,31 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
   border:2px solid transparent; background-clip:padding-box; }
 ::-webkit-scrollbar-thumb:hover { background:rgba(255,176,58,.42); background-clip:padding-box; }
 * { scrollbar-width:thin; scrollbar-color:rgba(255,255,255,.16) transparent; }
+.home-btn { position:absolute; top:20px; left:24px; z-index:10; display:inline-flex;
+  align-items:center; gap:7px; font-size:12px; color:rgba(255,255,255,.55);
+  text-decoration:none; background:rgba(255,255,255,.04); backdrop-filter:blur(12px);
+  padding:7px 14px; border-radius:20px; border:1px solid rgba(255,255,255,.10);
+  transition:all .25s ease; font-weight:500; letter-spacing:.3px; }
+.home-btn:hover { color:#fff; background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.22);
+  transform:translateX(-2px); box-shadow:0 4px 16px rgba(0,0,0,.35); }
+.home-btn:active { transform:translateX(-2px) scale(.96); }
+.home-arrow { width:14px; height:12px; transition:transform .25s ease; }
+.home-btn:hover .home-arrow { transform:translateX(-2px); }
+.card { transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease; }
+.card:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(0,0,0,.38),
+  0 0 0 1px var(--cat,rgba(255,176,58,.15)); }
+.dirbox { position:relative; overflow:hidden; transition:background .25s ease,box-shadow .25s ease; }
+.dirbox::before { content:""; position:absolute; inset:0; border-radius:inherit;
+  background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%),rgba(255,176,58,.06),transparent 70%);
+  opacity:0; transition:opacity .35s ease; pointer-events:none; z-index:0; }
+.dirbox:hover::before { opacity:1; }
+.dirbox .dirbox-lbl,.dirbox .form,.dirbox .dirtxt { position:relative; z-index:1; }
+.card { overflow:hidden; }
+.card::after { content:""; position:absolute; inset:0; border-radius:inherit;
+  background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),rgba(255,176,58,.12),transparent 70%);
+  opacity:0; transition:opacity .5s ease; pointer-events:none; z-index:0; }
+.card:active::after { opacity:1; transition:opacity 0s; }
+@media (max-width:900px) { .home-btn { top:14px; left:14px; padding:6px 12px; font-size:11px; } }
 </style>
 </head>
 <body>
@@ -373,7 +395,7 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
     
     <div class="htxt">
       <h1>和平精英 · 二创选题库</h1>
-      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-05 ｜ 更新于 2026-08-05 12:27</div>
+      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-05 ｜ 更新于 2026-08-05 14:21</div>
     </div>
     
   </div>
@@ -665,7 +687,6 @@ function cardHTML(c) {
     </div>
     <div class="title">${titleHTML}</div>
     <div class="dirbox">
-      <span class="dirbox-lbl">转化方向</span>
       <span class="form">${esc(c.form)}</span>
       <span class="dirtxt">${hl(esc(c.dir), _q)}</span>
       <button class="copy-btn" data-copy="${esc(c.dir)}" title="复制转化方向到剪贴板">📋</button>
