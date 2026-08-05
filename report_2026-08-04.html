@@ -24,7 +24,7 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
 .header .tags span { background:rgba(255,176,58,.18); color:#FFC569; padding:4px 12px;
   border-radius:20px; font-size:12px; border:1px solid rgba(255,176,58,.3); }
 
-.kpis { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:20px; }
+.kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:20px; }
 .kpi { background:var(--card); border-radius:14px; padding:16px; text-align:center;
   border:1px solid var(--line); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
 .kpi .num { font-size:28px; font-weight:600; color:var(--accent); text-shadow:0 0 24px rgba(255,176,58,.30); }
@@ -58,7 +58,7 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
 .cat-item b { margin-left:auto; font-weight:600; }
 .empty-donut { width:160px; text-align:center; color:var(--muted); padding:60px 0; }
 
-.bar { display:flex; height:14px; border-radius:8px; overflow:hidden; margin-bottom:12px; }
+.bar { display:flex; height:14px; border-radius:8px; overflow:hidden; margin-bottom:10px; }
 .bar div { height:100%; }
 .bar-legend { font-size:12px; color:var(--muted); }
 .bar-legend .lg { display:inline-flex; align-items:center; margin-right:14px; }
@@ -73,7 +73,7 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
   padding-left:12px; border-left:4px solid var(--brand); }
 
 .card { background:var(--card); border-radius:14px; padding:16px 18px;
-  margin-bottom:12px; border:1px solid var(--line); border-left:4px solid var(--cat);
+  margin-bottom:10px; border:1px solid var(--line); border-left:4px solid var(--cat);
   transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease; }
 .card:hover { transform:translateY(-2px); border-color:var(--cat);
   box-shadow:0 8px 24px rgba(0,0,0,.30); }
@@ -186,7 +186,7 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
     <div class="kpi"><div class="num">28</div><div class="lbl">有价值方向</div><span class="dl dl-up">▲ +4 (+17%)</span></div>
     <div class="kpi"><div class="num">18</div><div class="lbl">高潜力(4-5★)</div><span class="dl dl-up">▲ +6 (+50%)</span></div>
     <div class="kpi"><div class="num">9</div><div class="lbl">🔥持续发酵</div></div>
-    <div class="kpi"><div class="num">68</div><div class="lbl">品类过滤</div></div>
+    
   </div>
 
   
