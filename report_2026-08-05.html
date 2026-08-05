@@ -53,9 +53,12 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
 .panel h3 { font-size:14px; font-weight:600; margin-bottom:14px; color:var(--ink); }
 .donut-wrap { display:flex; align-items:center; gap:16px; }
 .cat-legend { flex:1; }
-.cat-item { display:flex; align-items:center; font-size:13px; padding:3px 0; }
-.cat-item i { width:10px; height:10px; border-radius:3px; margin-right:8px; }
-.cat-item b { margin-left:auto; font-weight:600; }
+.cat-item { display:flex; align-items:center; font-size:13px; padding:6px 0; gap:10px; }
+.cat-item i { width:10px; height:10px; border-radius:3px; flex-shrink:0; }
+.cat-item .cat-name { min-width:42px; color:var(--ink); }
+.cat-item .cat-bar { flex:1; height:8px; background:rgba(255,255,255,.06); border-radius:4px; overflow:hidden; min-width:60px; }
+.cat-item .cat-bar-fill { height:100%; border-radius:4px; transition:width .5s cubic-bezier(.4,0,.2,1); box-shadow:0 0 8px rgba(255,255,255,.06); }
+.cat-item b { font-weight:600; min-width:32px; text-align:right; color:var(--accent); }
 .empty-donut { width:160px; text-align:center; color:var(--muted); padding:60px 0; }
 
 .bar { display:flex; height:14px; border-radius:8px; overflow:hidden; margin-bottom:10px; }
@@ -173,7 +176,7 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
     
     
     <h1>和平精英 · 二创热点日报</h1>
-    <div class="sub">2026-08-05 · 生成于 2026-08-05 17:47</div>
+    <div class="sub">2026-08-05 · 生成于 2026-08-05 18:53</div>
     <div class="tags"><span>抖音热榜</span><span>B站入站必看</span><span>AI 仅产出二创方向，风险合规由人工判断</span></div>
   </div>
 
@@ -193,7 +196,7 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       <h3>内容品类分布</h3>
       <div class="donut-wrap">
         <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"><path d="M80.00,10.00 A70.00,70.00 0 1 1 58.37,146.57 L67.02,119.94 A42.00,42.00 0 1 0 80.00,38.00 Z" fill="#534AB7"></path><path d="M58.37,146.57 A70.00,70.00 0 0 1 23.37,121.14 L46.02,104.69 A42.00,42.00 0 0 0 67.02,119.94 Z" fill="#378ADD"></path><path d="M23.37,121.14 A70.00,70.00 0 0 1 10.00,80.00 L38.00,80.00 A42.00,42.00 0 0 0 46.02,104.69 Z" fill="#1D9E75"></path><path d="M10.00,80.00 A70.00,70.00 0 0 1 17.63,48.22 L42.58,60.93 A42.00,42.00 0 0 0 38.00,80.00 Z" fill="#EF9F27"></path><path d="M17.63,48.22 A70.00,70.00 0 0 1 38.86,23.37 L55.31,46.02 A42.00,42.00 0 0 0 42.58,60.93 Z" fill="#185FA5"></path><path d="M38.86,23.37 A70.00,70.00 0 0 1 69.05,10.86 L73.43,38.52 A42.00,42.00 0 0 0 55.31,46.02 Z" fill="#888780"></path><path d="M69.05,10.86 A70.00,70.00 0 0 1 80.00,10.00 L80.00,38.00 A42.00,42.00 0 0 0 73.43,38.52 Z" fill="#D4537E"></path><text x="80.0" y="76.0" text-anchor="middle" font-size="26" font-weight="600" fill="#f2f5fb">40</text><text x="80.0" y="96.0" text-anchor="middle" font-size="12" fill="#93a1b8">条线索</text></svg>
-        <div class="cat-legend"><div class="cat-item"><i style="background:#534AB7"></i>游戏<b>22</b></div><div class="cat-item"><i style="background:#378ADD"></i>影视<b>4</b></div><div class="cat-item"><i style="background:#1D9E75"></i>音乐<b>4</b></div><div class="cat-item"><i style="background:#EF9F27"></i>搞笑<b>3</b></div><div class="cat-item"><i style="background:#185FA5"></i>生活<b>3</b></div><div class="cat-item"><i style="background:#888780"></i>其他<b>3</b></div><div class="cat-item"><i style="background:#D4537E"></i>娱乐<b>1</b></div></div>
+        <div class="cat-legend"><div class="cat-item"><i style="background:#534AB7"></i><span class="cat-name">游戏</span><div class="cat-bar"><div class="cat-bar-fill" style="width:100%;background:#534AB7"></div></div><b>22</b></div><div class="cat-item"><i style="background:#378ADD"></i><span class="cat-name">影视</span><div class="cat-bar"><div class="cat-bar-fill" style="width:18%;background:#378ADD"></div></div><b>4</b></div><div class="cat-item"><i style="background:#1D9E75"></i><span class="cat-name">音乐</span><div class="cat-bar"><div class="cat-bar-fill" style="width:18%;background:#1D9E75"></div></div><b>4</b></div><div class="cat-item"><i style="background:#EF9F27"></i><span class="cat-name">搞笑</span><div class="cat-bar"><div class="cat-bar-fill" style="width:13%;background:#EF9F27"></div></div><b>3</b></div><div class="cat-item"><i style="background:#185FA5"></i><span class="cat-name">生活</span><div class="cat-bar"><div class="cat-bar-fill" style="width:13%;background:#185FA5"></div></div><b>3</b></div><div class="cat-item"><i style="background:#888780"></i><span class="cat-name">其他</span><div class="cat-bar"><div class="cat-bar-fill" style="width:13%;background:#888780"></div></div><b>3</b></div><div class="cat-item"><i style="background:#D4537E"></i><span class="cat-name">娱乐</span><div class="cat-bar"><div class="cat-bar-fill" style="width:4%;background:#D4537E"></div></div><b>1</b></div></div>
       </div>
     </div>
     <div class="panel">
