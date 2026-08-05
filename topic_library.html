@@ -173,8 +173,11 @@ body::after { content:''; position:fixed; inset:0; z-index:-1;
 .title a:hover { color:var(--accent); }
 
 /* 转化方向是这个库真正的价值所在，给它独立底块做视觉焦点 */
-.dirbox { display:flex; gap:9px; align-items:baseline; flex-wrap:wrap;
-  background:var(--sunk,rgba(0,0,0,.03)); border-radius:9px; padding:10px 12px; }
+.dirbox { display:flex; gap:8px; align-items:flex-start; flex-wrap:wrap;
+  background:var(--sunk,rgba(0,0,0,.03)); border-radius:10px; padding:10px 14px; }
+.dirbox .dirbox-lbl { display:inline-flex; align-items:center; font-size:11px;
+  color:#7a5800; background:#ffd84d; font-weight:600; padding:3px 10px;
+  border-radius:9px; margin-right:8px; letter-spacing:.5px; box-shadow:0 1px 3px rgba(255,216,77,.25); }
 .form { background:var(--accent-l); color:var(--accent); font-size:11px;
   padding:2px 9px; border-radius:7px; white-space:nowrap; flex-shrink:0; }
 .dirtxt { flex:1; min-width:220px; font-size:13.5px; line-height:1.62; }
@@ -370,7 +373,7 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
     
     <div class="htxt">
       <h1>和平精英 · 二创选题库</h1>
-      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-05 ｜ 更新于 2026-08-05 12:15</div>
+      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-05 ｜ 更新于 2026-08-05 12:27</div>
     </div>
     
   </div>
@@ -662,6 +665,7 @@ function cardHTML(c) {
     </div>
     <div class="title">${titleHTML}</div>
     <div class="dirbox">
+      <span class="dirbox-lbl">转化方向</span>
       <span class="form">${esc(c.form)}</span>
       <span class="dirtxt">${hl(esc(c.dir), _q)}</span>
       <button class="copy-btn" data-copy="${esc(c.dir)}" title="复制转化方向到剪贴板">📋</button>
