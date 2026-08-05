@@ -44,9 +44,8 @@ body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Mi
 .toolbar { background:rgba(15,23,42,.80); box-shadow:0 12px 36px rgba(0,0,0,.45); }
 #q::placeholder, .note::placeholder { color:#7d8ba3; }
 select option { background:#141d2f; color:#e8edf6; }
-/* hover 时只改上/右/下，左边保留分类色——避免金色盖紫色 */
-.card:hover {{ border-color:rgba(255,176,58,.30); border-left-color:var(--cat);
-  box-shadow:0 10px 26px rgba(0,0,0,.34); }}
+.card:hover { border-color:rgba(255,176,58,.32);
+  box-shadow:0 10px 26px rgba(0,0,0,.34); }
 .title a { color:#f2f5fb; }
 .dayhead { border-bottom-color:rgba(255,176,58,.30); }
 .dayhead .d { color:#fff; }
@@ -363,15 +362,58 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
   border:2px solid transparent; background-clip:padding-box; }
 ::-webkit-scrollbar-thumb:hover { background:rgba(255,176,58,.42); background-clip:padding-box; }
 * { scrollbar-width:thin; scrollbar-color:rgba(255,255,255,.16) transparent; }
-</style>
-</head>
+<style>
+.home-btn { position:fixed; top:28px; left:28px; z-index:100; display:inline-flex;
+  align-items:center; gap:8px; font-size:12px; color:rgba(255,255,255,.62);
+  text-decoration:none; background:rgba(15,23,42,.78); backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px); padding:8px 16px 8px 13px; border-radius:24px;
+  border:1px solid rgba(255,255,255,.10); transition:all .28s cubic-bezier(.4,0,.2,1);
+  font-weight:500; letter-spacing:.4px; box-shadow:0 2px 12px rgba(0,0,0,.28); }
+.home-btn:hover { color:#fff; background:rgba(20,30,52,.88); border-color:rgba(255,255,255,.22);
+  transform:translateX(-3px); box-shadow:0 4px 20px rgba(0,0,0,.38),0 0 0 1px rgba(255,176,58,.15); }
+.home-btn:active { transform:translateX(-3px) scale(.95); }
+.home-arrow { width:14px; height:12px; transition:transform .3s cubic-bezier(.4,0,.2,1); opacity:.7; }
+.home-arrow-path { fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.home-btn:hover .home-arrow { opacity:1; transform:translateX(-3px); }
+@media (max-width:900px) { .home-btn { top:16px; left:16px; padding:7px 14px 7px 11px; font-size:11px; } }
+</style></style>
+<style>
+.home-btn { position:fixed; top:28px; left:28px; z-index:100; display:inline-flex;
+  align-items:center; gap:8px; font-size:12px; color:rgba(255,255,255,.62);
+  text-decoration:none; background:rgba(15,23,42,.78); backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px); padding:8px 16px 8px 13px; border-radius:24px;
+  border:1px solid rgba(255,255,255,.10); transition:all .28s cubic-bezier(.4,0,.2,1);
+  font-weight:500; letter-spacing:.4px; box-shadow:0 2px 12px rgba(0,0,0,.28); }
+.home-btn:hover { color:#fff; background:rgba(20,30,52,.88); border-color:rgba(255,255,255,.22);
+  transform:translateX(-3px); box-shadow:0 4px 20px rgba(0,0,0,.38),0 0 0 1px rgba(255,176,58,.15); }
+.home-btn:active { transform:translateX(-3px) scale(.95); }
+.home-arrow { width:14px; height:12px; transition:transform .3s cubic-bezier(.4,0,.2,1); opacity:.7; }
+.home-arrow-path { fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.home-btn:hover .home-arrow { opacity:1; transform:translateX(-3px); }
+@media (max-width:900px) { .home-btn { top:16px; left:16px; padding:7px 14px 7px 11px; font-size:11px; } }
+<style>
+.home-btn { position:fixed; top:28px; left:28px; z-index:100; display:inline-flex;
+  align-items:center; gap:8px; font-size:12px; color:rgba(255,255,255,.62);
+  text-decoration:none; background:rgba(15,23,42,.78); backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px); padding:8px 16px 8px 13px; border-radius:24px;
+  border:1px solid rgba(255,255,255,.10); transition:all .28s cubic-bezier(.4,0,.2,1);
+  font-weight:500; letter-spacing:.4px; box-shadow:0 2px 12px rgba(0,0,0,.28); }
+.home-btn:hover { color:#fff; background:rgba(20,30,52,.88); border-color:rgba(255,255,255,.22);
+  transform:translateX(-3px); box-shadow:0 4px 20px rgba(0,0,0,.38),0 0 0 1px rgba(255,176,58,.15); }
+.home-btn:active { transform:translateX(-3px) scale(.95); }
+.home-arrow { width:14px; height:12px; transition:transform .3s cubic-bezier(.4,0,.2,1); opacity:.7; }
+.home-arrow-path { fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.home-btn:hover .home-arrow { opacity:1; transform:translateX(-3px); }
+@media (max-width:900px) { .home-btn { top:16px; left:16px; padding:7px 14px 7px 11px; font-size:11px; } }
+</style></style></head>
 <body>
 <div class="wrap">
   <div class="header">
+    <a href="./index.html" class="home-btn" title="回灵感站首页"><svg class="home-arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="home-arrow-path" d="M6.5 11L1 6m0 0l5.5-5M1 6h12"/></svg><span>灵感站</span></a>
     
     <div class="htxt">
       <h1>和平精英 · 二创选题库</h1>
-      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-05 ｜ 更新于 2026-08-05 14:31</div>
+      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-05 ｜ 更新于 2026-08-05 14:51</div>
     </div>
     
   </div>
