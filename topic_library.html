@@ -369,7 +369,7 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
     
     <div class="htxt">
       <h1>和平精英 · 二创选题库</h1>
-      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-05 ｜ 更新于 2026-08-05 16:07</div>
+      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-05 ｜ 更新于 2026-08-05 16:10</div>
     </div>
     
   </div>
@@ -1203,6 +1203,8 @@ el('markFile').addEventListener('change', (e) => {
 
   const resetBtn = document.createElement('button');
   resetBtn.className = 'seen-reset';
+  const _g = document.querySelector('.seen-reset-group');
+  if (_g) _g.appendChild(resetBtn); else document.body.appendChild(resetBtn);
   resetBtn.textContent = '↻ 重置已读';
   resetBtn.onclick = () => {
     if (!confirm('清除已读标记？')) return;
