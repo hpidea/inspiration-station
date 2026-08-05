@@ -44,8 +44,9 @@ body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Mi
 .toolbar { background:rgba(15,23,42,.80); box-shadow:0 12px 36px rgba(0,0,0,.45); }
 #q::placeholder, .note::placeholder { color:#7d8ba3; }
 select option { background:#141d2f; color:#e8edf6; }
-.card:hover { border-color:rgba(255,176,58,.32);
-  box-shadow:0 10px 26px rgba(0,0,0,.34); }
+/* hover 时只改上/右/下，左边保留分类色——避免金色盖紫色 */
+.card:hover {{ border-color:rgba(255,176,58,.30); border-left-color:var(--cat);
+  box-shadow:0 10px 26px rgba(0,0,0,.34); }}
 .title a { color:#f2f5fb; }
 .dayhead { border-bottom-color:rgba(255,176,58,.30); }
 .dayhead .d { color:#fff; }
@@ -370,7 +371,7 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
     
     <div class="htxt">
       <h1>和平精英 · 二创选题库</h1>
-      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-05 ｜ 更新于 2026-08-05 14:30</div>
+      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-05 ｜ 更新于 2026-08-05 14:31</div>
     </div>
     
   </div>
