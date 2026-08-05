@@ -112,11 +112,26 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
 .card .title a:hover { color:var(--brand); }
 .card .title .ext { font-size:12px; color:var(--brand); }
 .dir-row { display:flex; gap:12px; align-items:flex-start; }
-.dir-row .form { flex-shrink:0; background:var(--accent-l); color:#FFC569; font-size:12px; padding:4px 10px; border-radius:8px; font-weight:500; }
+.dir-row { display:flex; gap:0; align-items:flex-start; }
+.dirbox { display:flex; gap:8px; align-items:flex-start; flex-wrap:wrap;
+  background:var(--sunk); border-radius:10px; padding:10px 14px; width:100%;
+  transition:background .2s ease; }
+.dirbox:hover { background:rgba(255,176,58,.06); }
+.dirbox .dirbox-lbl { display:inline-flex; align-items:center; font-size:11px;
+  color:#7a5800; background:#ffd84d; font-weight:600; padding:3px 10px;
+  border-radius:9px; letter-spacing:.5px; box-shadow:0 1px 3px rgba(255,216,77,.25);
+  flex-shrink:0; transition:transform .2s ease; }
+.dirbox:hover .dirbox-lbl { transform:translateY(-1px); }
+.dirbox .form { display:inline-flex; align-items:center; font-size:11px; flex-shrink:0;
+  background:rgba(45,212,191,.14); color:#5EEAD4; font-weight:600; padding:3px 10px;
+  border-radius:9px; border:1px solid rgba(45,212,191,.32); letter-spacing:.5px;
+  transition:transform .2s ease; }
+.dirbox:hover .form { transform:translateY(-1px); }
+.dirbox .dirtxt { flex:1; font-size:13.5px; line-height:1.6; color:var(--ink); }
 .direction { flex:1; font-size:13.5px; background:var(--sunk); padding:10px 14px;
   border-radius:10px; color:var(--ink); line-height:1.6; display:flex;
   align-items:flex-start; gap:2px; flex-wrap:wrap; }
-.direction .lbl { display:inline-block; font-size:11px; color:var(--brand); font-weight:600; margin-right:6px; }
+/* .direction .lbl 已废，被 .dirbox .dirbox-lbl 取代 */
 .sustain { background:rgba(244,63,94,.16); color:#FF9BA8; font-size:11px; font-weight:600;
   padding:2px 9px; border-radius:9px; }
 .newtag { background:rgba(45,212,191,.14); color:#5EEAD4; font-size:11px; font-weight:600;
@@ -139,7 +154,7 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
     
     
     <h1>和平精英 · 抖音/B站 二创趋势周报</h1>
-    <div class="sub">2026-07-30 ~ 2026-08-05 · 生成于 2026-08-05 12:45</div>
+    <div class="sub">2026-07-30 ~ 2026-08-05 · 生成于 2026-08-05 14:06</div>
     <div class="tags">
       <span>抖音热榜</span><span>B站入站必看</span>
       <span>近 7 天汇总</span>
@@ -188,8 +203,11 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
       </div>
       <div class="title"><a href="https://www.douyin.com/video/7669114009521622291" target="_blank" rel="noopener">和平精英刺激空投节 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">赛事借势</span>
-        <div class="direction"><span class="lbl">转化方向</span>围绕空投争夺战，制作“空投箱开箱惊喜/惊吓实录”、“四排空投分配防抢指南”或“极限空投位狙击点位教学”，深度结合活动奖励与玩法。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">赛事借势</span>
+          <span class="dirtxt">围绕空投争夺战，制作“空投箱开箱惊喜/惊吓实录”、“四排空投分配防抢指南”或“极限空投位狙击点位教学”，深度结合活动奖励与玩法。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>官方活动自带流量扶持与玩家参与意愿，内容直接服务于游玩需求，转化路径最短，数据预期最高。</div>
@@ -207,8 +225,11 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV126GG62E9G" target="_blank" rel="noopener">老大，你的意思是我们抽烟抽的慢也得死吗？ <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">短剧</span>
-        <div class="direction"><span class="lbl">转化方向</span>还原经典影视台词场景，替换为和平精英战术语境：‘老大，你的意思是我们趴着架枪架得慢也得被拉出去吗？’配合载具追击/封烟反打实录。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">短剧</span>
+          <span class="dirtxt">还原经典影视台词场景，替换为和平精英战术语境：‘老大，你的意思是我们趴着架枪架得慢也得被拉出去吗？’配合载具追击/封烟反打实录。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>影视名场面自带传播基因，替换为游戏黑话/术语能快速引发玩家共鸣。</div>
@@ -226,8 +247,11 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1HA3o6ZEbL" target="_blank" rel="noopener">你 吸 不 过 我 你 信 吗 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">挑战</span>
-        <div class="direction"><span class="lbl">转化方向</span>‘呼吸位老六’挑战：全程不开火，仅靠听声辨位、卡视野、利用烟雾弹/草丛移动，成功存活至决赛圈并淘汰对手。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">挑战</span>
+          <span class="dirtxt">‘呼吸位老六’挑战：全程不开火，仅靠听声辨位、卡视野、利用烟雾弹/草丛移动，成功存活至决赛圈并淘汰对手。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>热点强调‘非对抗性压制’，完美对应和平精英‘苟分/老六’玩法流派，极具话题性。</div>
@@ -245,8 +269,11 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1hA3y6uEdu" target="_blank" rel="noopener">《和 平 绿 洲 启 元 玩 家 现 状》 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">整活</span>
-        <div class="direction"><span class="lbl">转化方向</span>直接围绕标题做“玩家图鉴”：刚枪必死型、快递小哥型、报点哑火型、舔包强迫症型，用真实对局录音+画面还原。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">整活</span>
+          <span class="dirtxt">直接围绕标题做“玩家图鉴”：刚枪必死型、快递小哥型、报点哑火型、舔包强迫症型，用真实对局录音+画面还原。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>标题自带IP属性，精准切中玩家日常痛点，极易引发评论区“是我本人了”的互动。</div>
@@ -264,8 +291,11 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1RK3t6wEH1" target="_blank" rel="noopener">这扳机纪律你就学吧 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">教学</span>
-        <div class="direction"><span class="lbl">转化方向</span>推出“和平精英扳机纪律大师课”，拆解压枪节奏、预瞄点控制、单点/连射切换时机，用高手慢放对比新手“无脑扫射”翻车，附赠练习地图设置。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">教学</span>
+          <span class="dirtxt">推出“和平精英扳机纪律大师课”，拆解压枪节奏、预瞄点控制、单点/连射切换时机，用高手慢放对比新手“无脑扫射”翻车，附赠练习地图设置。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>直击FPS核心痛点，干货价值高，结合“纪律”梗易形成记忆点，沉淀为长尾搜索型教学标杆。</div>
@@ -283,8 +313,11 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1Rkuw69ELC" target="_blank" rel="noopener">我竟然打败了职业选手…… <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">赛事借势</span>
-        <div class="direction"><span class="lbl">转化方向</span>征集或剪辑路人玩家在高段位匹配/创意模式中逆袭PEL职业选手的精彩操作。重点突出“平民视角vs职业微操”的反差，强调和平精英“人人皆可是王牌”的竞技包容性。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">赛事借势</span>
+          <span class="dirtxt">征集或剪辑路人玩家在高段位匹配/创意模式中逆袭PEL职业选手的精彩操作。重点突出“平民视角vs职业微操”的反差，强调和平精英“人人皆可是王牌”的竞技包容性。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>“下克上”叙事极具爆款潜质，能有效拉升普通玩家的参与感与平台活跃度。</div>
@@ -302,8 +335,11 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1qD3p6oE45" target="_blank" rel="noopener">【英雄联盟】搞半天，还是2013级的大学生最难带 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">整活</span>
-        <div class="direction"><span class="lbl">转化方向</span>翻拍“四排车队遇到不同年代/段位队友”的崩溃瞬间：代练乱冲、老六不动、嘴强王者指挥失败，配音吐槽。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">整活</span>
+          <span class="dirtxt">翻拍“四排车队遇到不同年代/段位队友”的崩溃瞬间：代练乱冲、老六不动、嘴强王者指挥失败，配音吐槽。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>“难带队友”是战术竞技最大公约数痛点，极易引发车队玩家共鸣转发。</div>
@@ -321,8 +357,11 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1D2uF6VEEn" target="_blank" rel="noopener">【第四十四赛季·精华3】故事视频公开：——“你觉得，魔法是什么？” <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">混剪</span>
-        <div class="direction"><span class="lbl">转化方向</span>‘魔法主题皮肤/动作实测’：结合和平精英第44赛季精华3预告，制作‘现实魔法vs游戏魔法’对比短片，展示幻象道具、魔法变身动作、专属击杀特效的实机演示。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">混剪</span>
+          <span class="dirtxt">‘魔法主题皮肤/动作实测’：结合和平精英第44赛季精华3预告，制作‘现实魔法vs游戏魔法’对比短片，展示幻象道具、魔法变身动作、专属击杀特效的实机演示。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>官方资料泄露/预告是玩家刚需信息源，抢先拆解视觉元素可抢占搜索流量。</div>
@@ -340,8 +379,11 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1e4GG64Ej4" target="_blank" rel="noopener">挑战开局零元生存第1期 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">挑战</span>
-        <div class="direction"><span class="lbl">转化方向</span>‘零预算吃鸡挑战’：开局不拿任何高级枪/甲，纯靠基础武器、环境道具（木板/汽油桶）和战术意识通关，每期记录生存天数。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">挑战</span>
+          <span class="dirtxt">‘零预算吃鸡挑战’：开局不拿任何高级枪/甲，纯靠基础武器、环境道具（木板/汽油桶）和战术意识通关，每期记录生存天数。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 难</span><span class="mchip mchip-t">时效 长尾</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>极限挑战是游戏区常青题材，和平精英资源随机性天然支持此玩法，系列化易沉淀粉丝。</div>
@@ -359,8 +401,11 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
       </div>
       <div class="title"><a href="https://www.douyin.com/video/7667964758213800434" target="_blank" rel="noopener">攀岩静门十级挑战 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">挑战</span>
-        <div class="direction"><span class="lbl">转化方向</span>结合“静门”的极限平衡与精准操作概念，转化为和平精英载具漂移过弯、跳伞精准落点控制或近身格斗（UT）的身法挑战。用游戏内载具特技/身法卡点视频还原“十级挑战”的紧张感。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">挑战</span>
+          <span class="dirtxt">结合“静门”的极限平衡与精准操作概念，转化为和平精英载具漂移过弯、跳伞精准落点控制或近身格斗（UT）的身法挑战。用游戏内载具特技/身法卡点视频还原“十级挑战”的紧张感。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>攀岩挑战的核心是精准控制与极限操作，与PE的高阶身法/载具特技高度同构，易于通过剪辑+卡点音乐引爆传播。</div>

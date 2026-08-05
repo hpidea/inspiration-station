@@ -107,12 +107,27 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
 .card .title a:hover { color:var(--brand); }
 .card .title .ext { font-size:12px; color:var(--brand); }
 .dir-row { display:flex; gap:12px; align-items:flex-start; }
-.dir-row .form { flex-shrink:0; background:var(--accent-l); color:#FFC569; font-size:12px;
-  padding:4px 10px; border-radius:8px; font-weight:500; }
+.dir-row { display:flex; gap:0; align-items:flex-start; }
+/* 转化方向区：与 topic 库 dirbox 完全对齐 */
+.dirbox { display:flex; gap:8px; align-items:flex-start; flex-wrap:wrap;
+  background:var(--sunk); border-radius:10px; padding:10px 14px; width:100%;
+  transition:background .2s ease; }
+.dirbox:hover { background:rgba(255,176,58,.06); }
+.dirbox .dirbox-lbl { display:inline-flex; align-items:center; font-size:11px;
+  color:#7a5800; background:#ffd84d; font-weight:600; padding:3px 10px;
+  border-radius:9px; letter-spacing:.5px; box-shadow:0 1px 3px rgba(255,216,77,.25);
+  flex-shrink:0; transition:transform .2s ease; }
+.dirbox:hover .dirbox-lbl { transform:translateY(-1px); }
+.dirbox .form { display:inline-flex; align-items:center; font-size:11px; flex-shrink:0;
+  background:rgba(45,212,191,.14); color:#5EEAD4; font-weight:600; padding:3px 10px;
+  border-radius:9px; border:1px solid rgba(45,212,191,.32); letter-spacing:.5px;
+  transition:transform .2s ease; }
+.dirbox:hover .form { transform:translateY(-1px); }
+.dirbox .dirtxt { flex:1; font-size:13.5px; line-height:1.62; color:var(--ink); }
 /* 转化方向是日报的核心价值，文字要最亮 */
 .direction { flex:1; font-size:13.5px; background:var(--sunk); padding:8px 12px;
   border-radius:8px; color:var(--ink); line-height:1.62; }
-.direction .lbl, .reason .lbl { display:inline-flex; align-items:center; font-size:11px;
+.reason .lbl { display:inline-flex; align-items:center; font-size:11px;
   color:#7a5800; background:#ffd84d; font-weight:600; padding:3px 10px;
   border-radius:9px; margin-right:8px; letter-spacing:.5px; box-shadow:0 1px 3px rgba(255,216,77,.25); }
 .reason { margin-top:8px; font-size:12.5px; color:var(--muted); }
@@ -174,7 +189,7 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
     
     
     <h1>和平精英 · 抖音/B站 二创热点日报</h1>
-    <div class="sub">2026-08-05 · 生成于 2026-08-05 12:51</div>
+    <div class="sub">2026-08-05 · 生成于 2026-08-05 14:06</div>
     <div class="tags"><span>抖音热榜</span><span>B站入站必看</span></div>
   </div>
 
@@ -220,8 +235,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1Rkuw69ELC" target="_blank" rel="noopener">我竟然打败了职业选手…… <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">赛事借势</span>
-        <div class="direction"><span class="lbl">转化方向</span>征集或剪辑路人玩家在高段位匹配/创意模式中逆袭PEL职业选手的精彩操作。重点突出“平民视角vs职业微操”的反差，强调和平精英“人人皆可是王牌”的竞技包容性。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">赛事借势</span>
+          <span class="dirtxt">征集或剪辑路人玩家在高段位匹配/创意模式中逆袭PEL职业选手的精彩操作。重点突出“平民视角vs职业微操”的反差，强调和平精英“人人皆可是王牌”的竞技包容性。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>“下克上”叙事极具爆款潜质，能有效拉升普通玩家的参与感与平台活跃度。</div>
@@ -239,8 +257,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.douyin.com/video/7670036653897587114" target="_blank" rel="noopener">夏日蓝色系妆一眼降温 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">挑战</span>
-        <div class="direction"><span class="lbl">转化方向</span>发起“冰蓝战术妆容挑战”，玩家在游戏内搭配蓝色系套装（如冰霜系列、海洋主题），利用拍照模式展示“战地清冷感”穿搭，并分享变装前后对比与实战手感反馈。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">挑战</span>
+          <span class="dirtxt">发起“冰蓝战术妆容挑战”，玩家在游戏内搭配蓝色系套装（如冰霜系列、海洋主题），利用拍照模式展示“战地清冷感”穿搭，并分享变装前后对比与实战手感反馈。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>将美妆降温概念转化为游戏外观搭配美学，契合夏季皮肤上新周期，激发UGC穿搭分享与商城转化。</div>
@@ -258,8 +279,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.douyin.com/video/7670349850551389029" target="_blank" rel="noopener">WTT横滨冠军赛今日赛程 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">赛事借势</span>
-        <div class="direction"><span class="lbl">转化方向</span>提取“顶尖对决/关键分博弈”精神，制作PEL选手高光反应操作混剪（如决赛圈反杀、残局单挑）。文案对标赛事解说节奏，强调“指尖上的微操与心理博弈”。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">赛事借势</span>
+          <span class="dirtxt">提取“顶尖对决/关键分博弈”精神，制作PEL选手高光反应操作混剪（如决赛圈反杀、残局单挑）。文案对标赛事解说节奏，强调“指尖上的微操与心理博弈”。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>电竞赛事热度可平移至战术竞技的“微操与心理战”看点，强化PEL竞技氛围与选手个人魅力。</div>
@@ -280,8 +304,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1Rkuw69ELC" target="_blank" rel="noopener">我竟然打败了职业选手…… <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">赛事借势</span>
-        <div class="direction"><span class="lbl">转化方向</span>征集或剪辑路人玩家在高段位匹配/创意模式中逆袭PEL职业选手的精彩操作。重点突出“平民视角vs职业微操”的反差，强调和平精英“人人皆可是王牌”的竞技包容性。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">赛事借势</span>
+          <span class="dirtxt">征集或剪辑路人玩家在高段位匹配/创意模式中逆袭PEL职业选手的精彩操作。重点突出“平民视角vs职业微操”的反差，强调和平精英“人人皆可是王牌”的竞技包容性。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>“下克上”叙事极具爆款潜质，能有效拉升普通玩家的参与感与平台活跃度。</div>
@@ -299,8 +326,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.douyin.com/video/7670036653897587114" target="_blank" rel="noopener">夏日蓝色系妆一眼降温 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">挑战</span>
-        <div class="direction"><span class="lbl">转化方向</span>发起“冰蓝战术妆容挑战”，玩家在游戏内搭配蓝色系套装（如冰霜系列、海洋主题），利用拍照模式展示“战地清冷感”穿搭，并分享变装前后对比与实战手感反馈。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">挑战</span>
+          <span class="dirtxt">发起“冰蓝战术妆容挑战”，玩家在游戏内搭配蓝色系套装（如冰霜系列、海洋主题），利用拍照模式展示“战地清冷感”穿搭，并分享变装前后对比与实战手感反馈。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>将美妆降温概念转化为游戏外观搭配美学，契合夏季皮肤上新周期，激发UGC穿搭分享与商城转化。</div>
@@ -318,8 +348,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.douyin.com/video/7670349850551389029" target="_blank" rel="noopener">WTT横滨冠军赛今日赛程 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">赛事借势</span>
-        <div class="direction"><span class="lbl">转化方向</span>提取“顶尖对决/关键分博弈”精神，制作PEL选手高光反应操作混剪（如决赛圈反杀、残局单挑）。文案对标赛事解说节奏，强调“指尖上的微操与心理博弈”。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">赛事借势</span>
+          <span class="dirtxt">提取“顶尖对决/关键分博弈”精神，制作PEL选手高光反应操作混剪（如决赛圈反杀、残局单挑）。文案对标赛事解说节奏，强调“指尖上的微操与心理博弈”。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>电竞赛事热度可平移至战术竞技的“微操与心理战”看点，强化PEL竞技氛围与选手个人魅力。</div>
@@ -337,8 +370,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV126GG62E9G" target="_blank" rel="noopener">老大，你的意思是我们抽烟抽的慢也得死吗？ <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">整活</span>
-        <div class="direction"><span class="lbl">转化方向</span>还原四排车队“老带新”翻车名场面。用游戏内刚枪失败/被堵桥的录屏做素材，配音模仿原梗语气，吐槽“苟分太慢也被毒收走/被狙击手一枪带走”，引发车队共鸣。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">整活</span>
+          <span class="dirtxt">还原四排车队“老带新”翻车名场面。用游戏内刚枪失败/被堵桥的录屏做素材，配音模仿原梗语气，吐槽“苟分太慢也被毒收走/被狙击手一枪带走”，引发车队共鸣。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>精准击中战术竞技中“节奏把控失误导致团灭”的日常痛点，幽默自嘲极易引发玩家转发与评论区互动。</div>
@@ -356,8 +392,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.douyin.com/video/7669638186621390582" target="_blank" rel="noopener">王者荣耀无尽之局新皮肤 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">口播</span>
-        <div class="direction"><span class="lbl">转化方向</span>借鉴MOBA皮肤特效展示逻辑，制作和平精英夏季新款皮肤细节赏析视频。聚焦动态光影、换肤动作差异及实战手感测试，对比同类战术竞技皮肤设计思路。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">口播</span>
+          <span class="dirtxt">借鉴MOBA皮肤特效展示逻辑，制作和平精英夏季新款皮肤细节赏析视频。聚焦动态光影、换肤动作差异及实战手感测试，对比同类战术竞技皮肤设计思路。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>跨品类皮肤评测是稳定流量池，用专业视角拆解和平精英外观价值，引导玩家关注商城上新与购买决策。</div>
@@ -375,8 +414,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.douyin.com/search/%E5%BC%A0%E8%BF%9C%E6%BC%94%E5%94%B1%E4%BC%9A%E5%98%89%E5%AE%BE%E6%98%AF%E5%BC%A0%E6%99%BA%E9%9C%96" target="_blank" rel="noopener">张远演唱会嘉宾是张智霖 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">短剧</span>
-        <div class="direction"><span class="lbl">转化方向</span>策划‘老将回归’主题短剧：退役/半退坑老玩家受好友邀请重返海岛，用老旧操作配合默契补位完成极限吃鸡，致敬陪伴多年的游戏时光。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">短剧</span>
+          <span class="dirtxt">策划‘老将回归’主题短剧：退役/半退坑老玩家受好友邀请重返海岛，用老旧操作配合默契补位完成极限吃鸡，致敬陪伴多年的游戏时光。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>嘉宾惊喜触发怀旧情绪，迁移至和平精英玩家社区可强化用户黏性与情感归属。</div>
@@ -394,8 +436,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.douyin.com/video/7666311683312209179" target="_blank" rel="noopener">电影痴迷二刷全是细节 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">教学</span>
-        <div class="direction"><span class="lbl">转化方向</span>挖掘和平精英地图中的隐藏彩蛋与机制细节（如海岛图废弃房屋的可交互物品、地铁逃生特殊道具刷新规律）。用逐帧回放+箭头标注，制作“高手必看细节”盘点视频。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">教学</span>
+          <span class="dirtxt">挖掘和平精英地图中的隐藏彩蛋与机制细节（如海岛图废弃房屋的可交互物品、地铁逃生特殊道具刷新规律）。用逐帧回放+箭头标注，制作“高手必看细节”盘点视频。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>“二刷找细节”思维完美契合战术竞技的地图熟悉度要求，干货内容利于长尾收藏与搜索引流。</div>
@@ -413,8 +458,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1Nr3s6rE79" target="_blank" rel="noopener">⚡️宗 主 连 携 技⚡️ <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">混剪</span>
-        <div class="direction"><span class="lbl">转化方向</span>提取“连锁反应/爆发输出”概念，制作游戏内“连续淘汰/多辆载具连环爆炸”高能时刻混剪。配合鬼畜节奏剪辑与“暴击/连击”音效，突出战术协同或运气爆发的爽感。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">混剪</span>
+          <span class="dirtxt">提取“连锁反应/爆发输出”概念，制作游戏内“连续淘汰/多辆载具连环爆炸”高能时刻混剪。配合鬼畜节奏剪辑与“暴击/连击”音效，突出战术协同或运气爆发的爽感。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>鬼畜梗自带传播势能，转化为游戏内高频击杀/环境伤害的视觉奇观，符合短视频快节奏审美。</div>
@@ -432,8 +480,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1fGuc6xEmp" target="_blank" rel="noopener">你说偷吃零食被发现会死是吗？ <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">整活</span>
-        <div class="direction"><span class="lbl">转化方向</span>改编为游戏内“舔包被发现”名场面。队友躲在掩体后搜刮物资时发出声音/露出破绽，被敌人远程架枪一锅端。配音还原原梗焦虑感，包装成“战术撤离失败实录”。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">整活</span>
+          <span class="dirtxt">改编为游戏内“舔包被发现”名场面。队友躲在掩体后搜刮物资时发出声音/露出破绽，被敌人远程架枪一锅端。配音还原原梗焦虑感，包装成“战术撤离失败实录”。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>将生活化喜剧冲突映射到游戏核心循环（搜刮-暴露-交火），接地气且极易引发玩家情景代入。</div>
@@ -451,8 +502,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1pt3x6gErU" target="_blank" rel="noopener">【MC】耗时一年制作真正能玩的赛博朋克世界！？丨RPG剧情向地图丨 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">口播</span>
-        <div class="direction"><span class="lbl">转化方向</span>介绍和平精英创意工坊中类似的“高自由度RPG/赛博朋克风格”自定义地图。展示玩家在其中进行任务、探索、非传统吃鸡的体验，突出“第二人生”玩法可能性。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">口播</span>
+          <span class="dirtxt">介绍和平精英创意工坊中类似的“高自由度RPG/赛博朋克风格”自定义地图。展示玩家在其中进行任务、探索、非传统吃鸡的体验，突出“第二人生”玩法可能性。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>沙盒创作热点与和平精英UGC生态高度契合，能吸引硬核创作者与地图探索玩家。</div>
@@ -470,8 +524,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1eKMX6tERP" target="_blank" rel="noopener">当我梦到了一段很锈湖的音乐。 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">教学</span>
-        <div class="direction"><span class="lbl">转化方向</span>提取“悬疑/沉浸氛围”音乐特质，搭配和平精英地铁逃生或雨林地图夜间潜行画面。利用脚步声、呼吸声、枪械上膛声做ASMR式音效设计，营造紧张刺激的“听觉战术”体验。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">教学</span>
+          <span class="dirtxt">提取“悬疑/沉浸氛围”音乐特质，搭配和平精英地铁逃生或雨林地图夜间潜行画面。利用脚步声、呼吸声、枪械上膛声做ASMR式音效设计，营造紧张刺激的“听觉战术”体验。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>氛围感音乐热点可转化为游戏内声音机制的教学与展示，提升硬核玩家对听声辨位的关注度。</div>
@@ -489,8 +546,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1m1Md6tEem" target="_blank" rel="noopener">丧尸末日生存，装备食物药品全靠捡【亡者世界】 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">教学</span>
-        <div class="direction"><span class="lbl">转化方向</span>结合和平精英“地铁逃生”或“末世觉醒”赛季玩法，制作“零号病人开局物资搜集路线”攻略。详细讲解如何高效规划拾取优先级、应对AI威胁与玩家埋伏，主打硬核生存策略。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">教学</span>
+          <span class="dirtxt">结合和平精英“地铁逃生”或“末世觉醒”赛季玩法，制作“零号病人开局物资搜集路线”攻略。详细讲解如何高效规划拾取优先级、应对AI威胁与玩家埋伏，主打硬核生存策略。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>生存类热点直接对口游戏内大逃杀核心循环，提供实用价值的同时强化赛季特色玩法曝光。</div>
@@ -508,8 +568,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1gRMX6RE1P" target="_blank" rel="noopener">自制短剧《全民围棋：我觉醒了金铲铲业余玩家》第一集 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">短剧</span>
-        <div class="direction"><span class="lbl">转化方向</span>借鉴“策略觉醒/新手逆袭”剧本结构，创作和平精英四排小队成长短剧。设定主角为“刚枪菜鸟”，通过不断试错掌握掩体利用、烟闪配合，最终带领队伍晋级决赛圈。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">短剧</span>
+          <span class="dirtxt">借鉴“策略觉醒/新手逆袭”剧本结构，创作和平精英四排小队成长短剧。设定主角为“刚枪菜鸟”，通过不断试错掌握掩体利用、烟闪配合，最终带领队伍晋级决赛圈。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 难</span><span class="mchip mchip-t">时效 长尾</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>RPG养成叙事与战术竞技的“升级打怪”过程高度一致，适合系列化更新，培养粉丝追更习惯。</div>
@@ -527,8 +590,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1wSMQ6gEAv" target="_blank" rel="noopener">“ 最 终 幻 想 ” <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">混剪</span>
-        <div class="direction"><span class="lbl">转化方向</span>制作赛季收官或重大版本更新回顾视频。精选本年度精彩夺冠瞬间、绝美皮肤首秀、地图变迁对比，以“最终幻想/理想战场”为主题，用史诗感配乐烘托情怀与期待。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">混剪</span>
+          <span class="dirtxt">制作赛季收官或重大版本更新回顾视频。精选本年度精彩夺冠瞬间、绝美皮肤首秀、地图变迁对比，以“最终幻想/理想战场”为主题，用史诗感配乐烘托情怀与期待。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>总结性内容利于沉淀品牌资产，激发老玩家回忆与新玩家向往，适合作为节点营销素材。</div>
@@ -546,8 +612,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV11KM967ED5" target="_blank" rel="noopener">樱花妹的国服跑刀之旅！也是应聘加入了堵桥队...？ <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">整活</span>
-        <div class="direction"><span class="lbl">转化方向</span>聚焦游戏内“跨服开黑/语言不通”的搞笑交流名场面。剪辑外国玩家加入国内车队后误入堵桥点、疯狂扔雷、用翻译软件互动的片段，主打文化碰撞与欢乐对局。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">整活</span>
+          <span class="dirtxt">聚焦游戏内“跨服开黑/语言不通”的搞笑交流名场面。剪辑外国玩家加入国内车队后误入堵桥点、疯狂扔雷、用翻译软件互动的片段，主打文化碰撞与欢乐对局。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>国际化玩家互动是天然流量密码，突出现实社交趣味，增强游戏全球化社区氛围。</div>
@@ -565,8 +634,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1EEM96uEPh" target="_blank" rel="noopener">十年之后，再筑新馆 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">混剪</span>
-        <div class="direction"><span class="lbl">转化方向</span>以“时光机”视角对比和平精英早期版本与当前画质/玩法迭代。展示经典海岛地形保留与新科技（如光追、物理引擎）带来的视觉革新，致敬老牌玩家并吸引回归。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">混剪</span>
+          <span class="dirtxt">以“时光机”视角对比和平精英早期版本与当前画质/玩法迭代。展示经典海岛地形保留与新科技（如光追、物理引擎）带来的视觉革新，致敬老牌玩家并吸引回归。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>怀旧+技术升级的双重叙事能打动核心用户群，适合配合周年庆或大型资料片预热。</div>
@@ -584,8 +656,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1kxuw6iEb2" target="_blank" rel="noopener">柯洁VS党毅飞（不可能的逆转） <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">赛事借势</span>
-        <div class="direction"><span class="lbl">转化方向</span>提取“绝境翻盘/心理抗压”内核，剪辑PEL赛场或高分段排位中“1v4残局救主”、“决赛圈反杀”的高光操作。用棋类博弈术语包装（如“落子无悔”、“预判三步”），突出战术智慧。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">赛事借势</span>
+          <span class="dirtxt">提取“绝境翻盘/心理抗压”内核，剪辑PEL赛场或高分段排位中“1v4残局救主”、“决赛圈反杀”的高光操作。用棋类博弈术语包装（如“落子无悔”、“预判三步”），突出战术智慧。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>智力对抗精神跨项目通用，将棋类逆转叙事平移至射击游戏的微操与大局观，提升内容格调。</div>
@@ -603,8 +678,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1pmuA6gEtG" target="_blank" rel="noopener">【有线耳机推荐2026】8月大合集！游戏耳机推荐/HiFi耳机/入耳式游戏耳机推荐，内含游戏实测和音质测试！学生党性价比推荐！有线耳机选购指南！建议收藏！ <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">口播</span>
-        <div class="direction"><span class="lbl">转化方向</span>制作“和平精英听声辨位外设选购指南”。针对游戏内脚步、枪声、载具声的频率特点，测评不同价位耳机/手机外放的定位差异，给出“学生党高性价比听音方案”。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">口播</span>
+          <span class="dirtxt">制作“和平精英听声辨位外设选购指南”。针对游戏内脚步、枪声、载具声的频率特点，测评不同价位耳机/手机外放的定位差异，给出“学生党高性价比听音方案”。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>硬件评测属刚需干货，直接解决玩家提升游戏体验的实际问题，带货潜力与搜索流量双高。</div>
@@ -622,8 +700,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.douyin.com/video/7670008015454101861" target="_blank" rel="noopener">趁夏天赴一场八大古镇之约 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">混剪</span>
-        <div class="direction"><span class="lbl">转化方向</span>结合海岛地图R城、军事基地等高辨识度建筑，制作“古镇风”空投开箱与载具巡游Vlog。使用夏日清凉色调滤镜+国风轻音乐，打造“海岛古镇漫游指南”，突出游戏内风景党拍照与休闲开黑体验。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">混剪</span>
+          <span class="dirtxt">结合海岛地图R城、军事基地等高辨识度建筑，制作“古镇风”空投开箱与载具巡游Vlog。使用夏日清凉色调滤镜+国风轻音乐，打造“海岛古镇漫游指南”，突出游戏内风景党拍照与休闲开黑体验。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>借旅行打卡情绪迁移至游戏高颜值场景探索，降低竞技压力，吸引休闲玩家与情侣组队打卡。</div>
@@ -641,8 +722,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.douyin.com/video/7670146285110419562" target="_blank" rel="noopener">蜘蛛侠官抖也在玩MJ梗 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">整活</span>
-        <div class="direction"><span class="lbl">转化方向</span>利用MJ经典动作/语音梗，在和平精英训练场中复刻角色标志性动作（如滑铲、摆姿势），搭配“蜘蛛感应”预警音效，制作搞笑卡点视频。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">整活</span>
+          <span class="dirtxt">利用MJ经典动作/语音梗，在和平精英训练场中复刻角色标志性动作（如滑铲、摆姿势），搭配“蜘蛛感应”预警音效，制作搞笑卡点视频。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>跨IP热梗具备强传播性，通过游戏内动作编辑功能实现低成本二创，吸引泛游戏用户破圈。</div>
@@ -660,8 +744,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.douyin.com/video/7670112179728220069" target="_blank" rel="noopener">“爸王龙”才是电影的隐藏主角 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">短剧</span>
-        <div class="direction"><span class="lbl">转化方向</span>提取“幕后大佬/压轴登场”叙事张力，拍摄游戏内“老六位”四排日常。以队友视角记录某队员全程隐身苟分，最后决赛圈一穿三吃鸡的反转剧情，配电影级解说词。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">短剧</span>
+          <span class="dirtxt">提取“幕后大佬/压轴登场”叙事张力，拍摄游戏内“老六位”四排日常。以队友视角记录某队员全程隐身苟分，最后决赛圈一穿三吃鸡的反转剧情，配电影级解说词。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>将影视人物弧光迁移至游戏“老六”玩法，强化战术竞技中“隐忍与爆发”的戏剧性，满足观众反转爽感。</div>
@@ -679,8 +766,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.douyin.com/video/7669560412514478763" target="_blank" rel="noopener">别把夏天关掉 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">挑战</span>
-        <div class="direction"><span class="lbl">转化方向</span>发起#别把夏天关进房区 挑战。玩家驾驶吉普/摩托载具在海岛公路狂飙，镜头跟随第一人称视角，搭配轻快夏日BGM，展现“追逐落日与海风”的自由开黑氛围。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">挑战</span>
+          <span class="dirtxt">发起#别把夏天关进房区 挑战。玩家驾驶吉普/摩托载具在海岛公路狂飙，镜头跟随第一人称视角，搭配轻快夏日BGM，展现“追逐落日与海风”的自由开黑氛围。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>借情绪向热点传递游戏社交属性，弱化竞技压力，吸引休闲玩家与户外开黑群体跟拍。</div>
@@ -698,8 +788,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.douyin.com/video/7670040419891626149" target="_blank" rel="noopener">虞书欣歌舞青春手势舞好明媚 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">整活</span>
-        <div class="direction"><span class="lbl">转化方向</span>在游戏内拍照模式或大厅界面，使用手动摆拍角色做对应手势舞动作，结合游戏内“击掌/跳舞”表情动作，制作“战地少女手势舞”变装视频。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">整活</span>
+          <span class="dirtxt">在游戏内拍照模式或大厅界面，使用手动摆拍角色做对应手势舞动作，结合游戏内“击掌/跳舞”表情动作，制作“战地少女手势舞”变装视频。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>明星舞蹈热点具备强跟拍属性，利用游戏内置互动动作降低门槛，扩大破圈传播与女性玩家参与度。</div>
@@ -717,8 +810,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1xwMQ6GEix" target="_blank" rel="noopener">还来！！！！！！！！！！！ <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">混剪</span>
-        <div class="direction"><span class="lbl">转化方向</span>聚焦“复活再战/不屈心态”。收集玩家在游戏中被击败后迅速重生、连续跳伞同一区域“复仇”或地铁逃生多次下本刷装备的片段，配以热血BGM，主打“永远有下一局”的精神。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">混剪</span>
+          <span class="dirtxt">聚焦“复活再战/不屈心态”。收集玩家在游戏中被击败后迅速重生、连续跳伞同一区域“复仇”或地铁逃生多次下本刷装备的片段，配以热血BGM，主打“永远有下一局”的精神。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>重复热词强化情感共鸣，贴合FPS玩家“不服输、爱复盘”的核心特质，适合做社区话题运营。</div>
@@ -736,8 +832,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1Z53m6tEPC" target="_blank" rel="noopener">左耳 忘情牛肉面 右耳 爱情麻辣烫 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">整活</span>
-        <div class="direction"><span class="lbl">转化方向</span>借用食物双关梗，制作游戏内“物资分配/舔包顺序”搞笑短片。例如左耳听指令拿急救包（忘情），右耳听到信号弹决定刚枪（爱情），通过语音沟通错位制造笑点。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">整活</span>
+          <span class="dirtxt">借用食物双关梗，制作游戏内“物资分配/舔包顺序”搞笑短片。例如左耳听指令拿急救包（忘情），右耳听到信号弹决定刚枪（爱情），通过语音沟通错位制造笑点。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>谐音梗与游戏内物资管理、战术决策天然挂钩，轻松幽默适合碎片化传播。</div>
@@ -755,8 +854,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1X3GV6xEfG" target="_blank" rel="noopener">哈哈哈别跑~李信叔叔抓你来喽！! ! ! ! ! ! <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">混剪</span>
-        <div class="direction"><span class="lbl">转化方向</span>将“追捕”概念迁移至和平精英载具追逐战。录制吉普/摩托车在海岛追车、甩车、撞车的欢乐/惊险片段，配音加入夸张追逐音效，制作“海上/陆地追击名场面”。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">混剪</span>
+          <span class="dirtxt">将“追捕”概念迁移至和平精英载具追逐战。录制吉普/摩托车在海岛追车、甩车、撞车的欢乐/惊险片段，配音加入夸张追逐音效，制作“海上/陆地追击名场面”。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>追逐戏码是FPS游戏的经典乐趣之一，结合热门IP话术能迅速拉近与年轻用户的距离。</div>
@@ -774,8 +876,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1BG3f6bExg" target="_blank" rel="noopener">有些善意当时没有声音，但总有一天，你会听到它的回响。 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">短剧</span>
-        <div class="direction"><span class="lbl">转化方向</span>拍摄游戏内“扶人/送药/让空投”的暖心瞬间。记录陌生玩家或车队队友在劣势局互相扶持、放弃独食换取团队胜利的故事，用温情旁白串联，传递“战术竞技也有温度”。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">短剧</span>
+          <span class="dirtxt">拍摄游戏内“扶人/送药/让空投”的暖心瞬间。记录陌生玩家或车队队友在劣势局互相扶持、放弃独食换取团队胜利的故事，用温情旁白串联，传递“战术竞技也有温度”。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>情感向内容能有效软化竞技游戏的硬核印象，促进社区正向互动与玩家粘性。</div>
@@ -793,8 +898,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV1KY3R6bExg" target="_blank" rel="noopener">天宫学院 #微剧情 <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">短剧</span>
-        <div class="direction"><span class="lbl">转化方向</span>结合游戏内“航天基地”地图或科幻系列皮肤，编写太空舱演练/失重作战微剧情。玩家扮演特工执行高空索降或反重力武器测试任务，融合科幻设定与战术动作演示。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">短剧</span>
+          <span class="dirtxt">结合游戏内“航天基地”地图或科幻系列皮肤，编写太空舱演练/失重作战微剧情。玩家扮演特工执行高空索降或反重力武器测试任务，融合科幻设定与战术动作演示。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>科幻题材与游戏未来感美术风格契合，微剧情形式便于控制成本，适合垂直圈层传播。</div>
@@ -812,8 +920,11 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
       </div>
       <div class="title"><a href="https://www.bilibili.com/video/BV16QuA6qEDG" target="_blank" rel="noopener">抽象新闻：7月人类迷惑行为大赏（下） <span class="ext">↗</span></a></div>
       <div class="dir-row">
-        <span class="form">整活</span>
-        <div class="direction"><span class="lbl">转化方向</span>筛选游戏内“迷惑操作/奇葩战术”合集。如玩家骑摩托车跳伞、载具卡在屋顶、队友互扔雷炸自己等，搭配新闻播报腔配音，包装成《海岛迷惑行为日报》，强化社区乐子人文化。</div>
+        <div class="dirbox">
+          <span class="dirbox-lbl">转化方向</span>
+          <span class="form">整活</span>
+          <span class="dirtxt">筛选游戏内“迷惑操作/奇葩战术”合集。如玩家骑摩托车跳伞、载具卡在屋顶、队友互扔雷炸自己等，搭配新闻播报腔配音，包装成《海岛迷惑行为日报》，强化社区乐子人文化。</span>
+        </div>
       </div>
       <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 24h内</span></div>
       <div class="reason"><span class="lbl">推荐理由</span>抽象幽默是短视频平台通用语言，将现实新闻格式套用于游戏搞笑切片，成本低且易爆。</div>
