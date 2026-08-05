@@ -136,7 +136,7 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
       
     
     <h1>和平精英 · 抖音/B站 二创趋势周报</h1>
-    <div class="sub">2026-07-30 ~ 2026-08-05 · 生成于 2026-08-05 16:00</div>
+    <div class="sub">2026-07-30 ~ 2026-08-05 · 生成于 2026-08-05 16:07</div>
     <div class="tags">
       <span>抖音热榜</span><span>B站入站必看</span>
       <span>近 7 天汇总</span>
@@ -434,6 +434,8 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
 
   const reset = document.createElement('button');
   reset.className = 'seen-reset';
+  const group = document.querySelector(".seen-reset-group");
+  if (group) group.appendChild(reset); else document.body.appendChild(reset);
   reset.textContent = '↻ 重置已读';
   reset.onclick = () => {
     if (!confirm('清除「已读」标记？')) return;
