@@ -128,10 +128,17 @@ body::after { content:''; position:fixed; inset:0; z-index:-1;
 .daygroup { margin-bottom:30px; }
 /* 日期吸顶：长列表滚动时始终知道自己在看哪一天 */
 .dayhead { display:flex; align-items:center; gap:10px; margin-bottom:12px;
-  padding:7px 2px 8px; border-bottom:2px solid var(--border);
-  position:sticky; top:112px; z-index:9;
+  padding:9px 14px 8px; border-bottom:2px solid var(--border);
+  position:sticky; top:112px; z-index:15;
   background:var(--daybg,rgba(245,246,248,.92));
-  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-radius:10px;
+  transition:box-shadow .2s ease, border-color .2s ease, background .2s ease; }
+.dayhead.is-stuck { box-shadow:0 4px 16px rgba(0,0,0,.18);
+  border-bottom-color:var(--accent);
+  background:rgba(11,17,31,.92); }
+.dayhead.is-stuck .d { color:#fff; }
+.dayhead.is-stuck .w { color:rgba(255,255,255,.7); }
 .dayhead .d { font-size:17px; font-weight:600; }
 .dayhead .w { font-size:12px; color:var(--muted); }
 .dayhead .n { font-size:12px; color:#fff; background:var(--accent);
@@ -373,7 +380,7 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
     
     <div class="htxt">
       <h1>和平精英 · 二创选题库</h1>
-      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-06 ｜ 更新于 2026-08-06 15:33</div>
+      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-06 ｜ 更新于 2026-08-06 15:59</div>
     </div>
     
   </div>
@@ -577,6 +584,28 @@ document.querySelectorAll('#fScore .sf').forEach(btn => {
     el('fScore').dataset.value = btn.dataset.v;
     el('fScore').querySelectorAll('.sf').forEach(b => b.classList.toggle('on', b === btn));
     render();
+
+
+// 日期吸顶状态：当日历标签被 sticky 时高亮
+(function() {
+  if (!('IntersectionObserver' in window)) return;
+  const heads = document.querySelectorAll('.dayhead');
+  if (!heads.length) return;
+  function updateStuck() {
+    heads.forEach(h => h.classList.remove('is-stuck'));
+    let best = null, bestTop = -Infinity;
+    heads.forEach(h => {
+      const r = h.getBoundingClientRect();
+      if (r.top <= 140 && r.bottom > 140) {
+        if (r.top > bestTop) { bestTop = r.top; best = h; }
+      }
+    });
+    if (best) best.classList.add('is-stuck');
+  }
+  updateStuck();
+  window.addEventListener('scroll', updateStuck, { passive: true });
+  window.addEventListener('resize', updateStuck);
+})();
   });
 });
 
