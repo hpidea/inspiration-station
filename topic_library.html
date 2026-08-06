@@ -129,7 +129,7 @@ body::after { content:''; position:fixed; inset:0; z-index:-1;
 /* 日期吸顶：长列表滚动时始终知道自己在看哪一天 */
 .dayhead { display:flex; align-items:center; gap:10px; margin-bottom:12px;
   padding:9px 14px 8px; border-bottom:2px solid var(--border);
-  position:sticky; top:112px; z-index:15;
+  position:sticky; top:172px; z-index:15;
   background:var(--daybg,rgba(245,246,248,.92));
   backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
   border-radius:10px;
@@ -380,7 +380,7 @@ kbd { display:inline-block; padding:1px 6px; font-family:ui-monospace,Menlo,Cons
     
     <div class="htxt">
       <h1>和平精英 · 二创选题库</h1>
-      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-06 ｜ 更新于 2026-08-06 16:05</div>
+      <div class="sub">全部历史有价值选题沉淀 ｜ 覆盖 2026-06-24 ~ 2026-08-06 ｜ 更新于 2026-08-06 16:29</div>
     </div>
     
   </div>
@@ -596,7 +596,7 @@ document.querySelectorAll('#fScore .sf').forEach(btn => {
     let best = null, bestTop = -Infinity;
     heads.forEach(h => {
       const r = h.getBoundingClientRect();
-      if (r.top <= 140 && r.bottom > 140) {
+      if (r.top <= 200 && r.bottom > 200) {
         if (r.top > bestTop) { bestTop = r.top; best = h; }
       }
     });
