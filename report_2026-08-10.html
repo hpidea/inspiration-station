@@ -15,7 +15,9 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
   background:var(--bg); color:var(--ink); line-height:1.6; padding:24px 16px 60px; }
 .wrap { max-width:1180px; margin:0 auto; }
 .header { background:linear-gradient(135deg,#1a2540,#2d3a5a); color:#fff;
-  border:1px solid rgba(255,255,255,.10); border-radius:18px; padding:28px 30px; margin-bottom:20px;
+  border:1px solid rgba(139,174,218,.38); border-radius:18px; padding:28px 30px; margin-bottom:20px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 2px 8px rgba(45,89,139,.16),
+    0 18px 42px rgba(3,9,22,.36);
   backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
 .header h1 { font-size:22px; font-weight:600; margin-bottom:6px; color:#fff; }
 .header .sub { font-size:13px; opacity:.85; }
@@ -50,6 +52,12 @@ body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans
 .mustdo-card .md-foot { font-size:11px; color:var(--muted); font-family:ui-monospace,monospace; }
 .panel { background:var(--card); border-radius:14px; padding:18px 20px;
   border:1px solid var(--line); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+.kpi,.panel { box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 8px 24px rgba(3,9,22,.14);
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease; }
+@media (hover:hover) {
+  .kpi:hover,.panel:hover { transform:translateY(-2px); border-color:rgba(139,174,218,.38);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 4px 12px rgba(45,89,139,.14),0 16px 34px rgba(3,9,22,.30); }
+}
 .panel h3 { font-size:14px; font-weight:600; margin-bottom:14px; color:var(--ink); }
 .donut-wrap { display:flex; align-items:center; gap:16px; }
 .cat-legend { flex:1; }
@@ -176,7 +184,7 @@ table td { padding:6px 8px; border-bottom:1px solid var(--line); }
     
     
     <h1>和平精英 · 二创热点日报</h1>
-    <div class="sub">2026-08-10 · 生成于 2026-08-10 12:51</div>
+    <div class="sub">2026-08-10 · 生成于 2026-08-10 16:15</div>
     <div class="tags"><span>抖音热榜</span><span>B站入站必看</span><span>AI 仅产出二创方向，风险合规由人工判断</span></div>
   </div>
 
