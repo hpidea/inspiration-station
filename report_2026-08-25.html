@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>和平精英二创热点日报 2026-08-25</title>
+<style>
+:root {
+  --bg:#0f172a; --card:rgba(23,32,50,.88); --ink:#e8edf6; --muted:#93a1b8;
+  --line:rgba(255,255,255,.10); --brand:#FFB03A; --accent:#FFB03A;
+  --accent-l:rgba(255,176,58,.14); --on-accent:#241705; --sunk:rgba(255,255,255,.035);
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.6; padding:24px 16px 60px; }
+.wrap { max-width:1180px; margin:0 auto; }
+.header { background:linear-gradient(135deg,#1a2540,#2d3a5a); color:#fff;
+  border:1px solid rgba(139,174,218,.38); border-radius:18px; padding:28px 30px; margin-bottom:20px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 2px 8px rgba(45,89,139,.16),
+    0 18px 42px rgba(3,9,22,.36);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+.header h1 { font-size:22px; font-weight:600; margin-bottom:6px; color:#fff; }
+.header .sub { font-size:13px; opacity:.85; }
+.h-logo { position:absolute; top:16px; right:20px; height:36px; width:auto; border-radius:6px; }
+.header .tags { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.header .tags span { background:rgba(255,176,58,.18); color:#FFC569; padding:4px 12px;
+  border-radius:20px; font-size:12px; border:1px solid rgba(255,176,58,.3); }
+
+.kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:20px; }
+.kpi { background:var(--card); border-radius:14px; padding:16px; text-align:center;
+  border:1px solid var(--line); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+.kpi .num { font-size:28px; font-weight:600; color:var(--accent); text-shadow:0 0 24px rgba(255,176,58,.30); }
+.kpi .lbl { font-size:12px; color:var(--muted); margin-top:2px; }
+
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
+/* U-10 今日必做 TOP3：横向卡片、金边醒目 */
+.mustdo { background:linear-gradient(160deg,rgba(31,43,66,.88),rgba(18,25,41,.88));
+  border:1px solid rgba(255,176,58,.40); border-radius:14px; padding:14px 16px; margin-bottom:18px;
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+.mustdo h3 { font-size:14px; color:#FFB03A; margin-bottom:10px; font-weight:600; }
+.mustdo h3 .big { font-size:22px; margin:0 3px; color:#fff; font-weight:700; }
+.mustdo-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:10px; }
+.mustdo-card { display:block; background:rgba(15,23,42,.78); border:1px solid var(--cat,#FFB03A);
+  border-left:4px solid var(--cat,#FFB03A); border-radius:10px; padding:11px 13px;
+  text-decoration:none; color:inherit; transition:transform .15s, border-color .15s; }
+.mustdo-card:hover { transform:translateY(-2px); border-color:#FFB03A; }
+.mustdo-card .md-cat { font-size:11px; color:var(--cat,#FFB03A); font-weight:600; margin-bottom:4px; }
+.mustdo-card .md-title { font-size:14.5px; font-weight:600; line-height:1.45; margin-bottom:7px; color:#fff; }
+.mustdo-card .md-form { font-size:11px; color:#FFC569; background:rgba(255,176,58,.14);
+  padding:2px 8px; border-radius:7px; display:inline-block; margin-bottom:6px; }
+.mustdo-card .md-dir { font-size:12.5px; color:#e8edf6; line-height:1.55; margin-bottom:6px; }
+.mustdo-card .md-foot { font-size:11px; color:var(--muted); font-family:ui-monospace,monospace; }
+.panel { background:var(--card); border-radius:14px; padding:18px 20px;
+  border:1px solid var(--line); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+.kpi,.panel { box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 8px 24px rgba(3,9,22,.14);
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease; }
+@media (hover:hover) {
+  .kpi:hover,.panel:hover { transform:translateY(-2px); border-color:rgba(139,174,218,.38);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 4px 12px rgba(45,89,139,.14),0 16px 34px rgba(3,9,22,.30); }
+}
+.panel h3 { font-size:14px; font-weight:600; margin-bottom:14px; color:var(--ink); }
+.donut-wrap { display:flex; align-items:center; gap:16px; }
+.cat-legend { flex:1; }
+.cat-item { display:flex; align-items:center; font-size:13px; padding:6px 0; gap:10px; }
+.cat-item i { width:10px; height:10px; border-radius:3px; flex-shrink:0; }
+.cat-item .cat-name { min-width:42px; color:var(--ink); }
+.cat-item .cat-bar { flex:1; height:8px; background:rgba(255,255,255,.06); border-radius:4px; overflow:hidden; min-width:60px; }
+.cat-item .cat-bar-fill { height:100%; border-radius:4px; transition:width .5s cubic-bezier(.4,0,.2,1); box-shadow:0 0 8px rgba(255,255,255,.06); }
+.cat-item b { font-weight:600; min-width:32px; text-align:right; color:var(--accent); }
+.empty-donut { width:160px; text-align:center; color:var(--muted); padding:60px 0; }
+
+.bar { display:flex; height:14px; border-radius:8px; overflow:hidden; margin-bottom:10px; }
+.bar div { height:100%; }
+.bar-legend { font-size:12px; color:var(--muted); }
+.bar-legend .lg { display:inline-flex; align-items:center; margin-right:14px; }
+.bar-legend i { width:9px; height:9px; border-radius:2px; margin-right:5px; display:inline-block; }
+.chips { margin-top:14px; }
+.chip { display:inline-block; background:var(--accent-l); color:var(--accent); padding:4px 12px;
+  border-radius:16px; font-size:12px; margin:0 6px 6px 0; }
+.chip b { font-weight:600; }
+.chip-empty { color:var(--muted); font-size:12px; }
+
+.section-title { font-size:16px; font-weight:600; margin:28px 0 14px;
+  padding-left:12px; border-left:4px solid var(--brand); }
+
+.card { background:var(--card); border-radius:14px; padding:16px 18px;
+  margin-bottom:10px; border:1px solid var(--line); border-left:4px solid var(--cat);
+  transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease; }
+.card:hover { transform:translateY(-2px); border-color:var(--cat);
+  box-shadow:0 8px 24px rgba(0,0,0,.30); }
+/* 今日 TOP3 高亮：深色主题下用金橙微光底 + 描边，别用白底（会和浅色文字撞） */
+.card-top { background:linear-gradient(180deg,rgba(255,176,58,.10),rgba(23,32,50,.86));
+  border-color:rgba(255,176,58,.34); }
+.card-top:hover { transform:translateY(-3px); border-color:#FFB03A;
+  box-shadow:0 10px 28px rgba(255,176,58,.18); }
+.card-head { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+.card-head .rank { font-size:13px; font-weight:600; color:var(--muted); }
+.card-head .cat { color:#fff; font-size:11px; padding:2px 9px; border-radius:10px; }
+.top-badge { background:#ffd84d; color:#7a5800; font-size:11px; font-weight:600;
+  padding:2px 9px; border-radius:10px; }
+.caseid { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11px;
+  color:var(--accent); background:var(--accent-l); padding:2px 8px; border-radius:10px;
+  text-decoration:none; border:1px solid rgba(255,176,58,.34); }
+.caseid:hover { background:var(--accent); color:var(--on-accent); }
+.score { color:#fff; font-size:11px; font-weight:600; padding:2px 9px;
+  border-radius:10px; letter-spacing:-1px; }
+.sustain { background:rgba(244,63,94,.16); color:#FF9BA8; font-size:11px; font-weight:600;
+  padding:2px 9px; border-radius:10px; border:1px solid rgba(244,63,94,.34); }
+.newtag { background:rgba(45,212,191,.14); color:#5EEAD4; font-size:11px; font-weight:600;
+  padding:2px 9px; border-radius:10px; border:1px solid rgba(45,212,191,.32); }
+.mchips { margin-top:8px; display:flex; gap:8px; }
+.mchip { font-size:11.5px; color:var(--muted); background:rgba(255,255,255,.05);
+  padding:3px 10px; border-radius:8px; }
+.mchip-t { background:rgba(255,176,58,.14); color:#FFC569; }
+.card-head .meta { font-size:12px; color:var(--muted); margin-left:auto; }
+.card .title { font-size:17px; font-weight:600; margin-bottom:10px; }
+.card .title a { color:var(--ink); text-decoration:none; }
+.card .title a:hover { color:var(--brand); }
+.card .title .ext { font-size:12px; color:var(--brand); }
+.dir-row { display:flex; gap:12px; align-items:flex-start; }
+.dir-row .form { flex-shrink:0; background:var(--accent-l); color:#FFC569; font-size:12px;
+  padding:4px 10px; border-radius:8px; font-weight:500; }
+/* 转化方向是日报的核心价值，文字要最亮 */
+.direction { flex:1; font-size:13.5px; background:var(--sunk); padding:10px 14px;
+  border-radius:10px; color:var(--ink); line-height:1.62; }
+.direction .lbl, .reason .lbl { display:inline-flex; align-items:center; font-size:11px;
+  color:#7a5800; background:#ffd84d; font-weight:600; padding:3px 10px;
+  border-radius:9px; margin-right:8px; }
+.reason { margin-top:8px; font-size:12.5px; color:var(--muted); }
+
+.no-dir { background:var(--card); border-radius:14px; padding:12px 18px;
+  border:1px solid var(--line); list-style:none; }
+.no-dir li { padding:8px 0; border-bottom:1px solid var(--line); font-size:13.5px;
+  display:flex; align-items:center; gap:8px; }
+.no-dir li:last-child { border-bottom:none; }
+.nd-cat { color:#fff; font-size:11px; padding:1px 8px; border-radius:9px; flex-shrink:0; }
+.nd-heat { margin-left:auto; font-size:12px; color:var(--muted); }
+.empty, .empty-li { color:var(--muted); text-align:center; padding:20px; font-size:13px; }
+
+details { background:var(--card); border-radius:14px; border:1px solid var(--line);
+  margin-top:14px; padding:0 18px; }
+details summary { cursor:pointer; padding:14px 0; font-size:14px; font-weight:600; }
+table { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:14px; }
+table th { text-align:left; color:var(--muted); font-weight:500; padding:6px 8px;
+  border-bottom:2px solid var(--line); }
+table td { padding:6px 8px; border-bottom:1px solid var(--line); }
+
+.notice { background:rgba(255,176,58,.10); border:1px solid rgba(255,176,58,.30); border-radius:12px;
+  padding:12px 16px; font-size:12.5px; color:#FFC569; margin-top:20px; }
+/* U-11 已读：轻量徽标，不再整张卡变灰、标题不再加删除线 */
+.card.seen { background:rgba(94,231,168,.06); border-color:rgba(94,231,168,.30); }
+.seen-btn { font-size:11px; padding:2px 9px; border:1px solid var(--border);
+  background:var(--ctrl); color:var(--muted); border-radius:7px; cursor:pointer;
+  user-select:none; transition:all .12s; }
+.seen-btn:hover { color:var(--accent); border-color:var(--accent); }
+.seen-btn.on { color:#5ee7a8; border-color:rgba(94,231,168,.50); background:rgba(94,231,168,.10); font-weight:500; }
+.footer { text-align:center; color:var(--muted); font-size:12px; margin-top:30px; }
+
+@media (max-width:680px) {
+  .kpis { grid-template-columns:repeat(2,1fr); }
+  .grid2 { grid-template-columns:1fr; }
+  .card-head .meta { margin-left:0; width:100%; }
+}
+@media print {
+  body { background:#fff; padding:0; }
+  .card,.panel,.kpi,.no-dir,details { break-inside:avoid; }
+  .header { -webkit-print-color-adjust:exact; print-color-adjust:exact; background-image:none !important; }
+  .h-logo { display:none; }
+}
+.token-warn { background:#FEE2E2; color:#991B1B; border:1px solid #F87171;
+  border-radius:10px; padding:12px 16px; margin:12px 0; font-size:14px;
+  font-weight:600; text-align:center; }
+</style>
+<style id="home-btn-style">.seen-reset-group{position:fixed;bottom:20px;right:20px;z-index:50;display:flex;flex-direction:column;gap:8px;width:164px}.home-btn,.seen-reset{width:100%;min-height:40px;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-sizing:border-box;padding:8px 12px;color:#FFC86A;background:radial-gradient(120% 120% at 12% 0%,rgba(255,176,58,.10),transparent 48%),linear-gradient(145deg,rgba(25,37,57,.96),rgba(12,20,34,.96));border:0;border-radius:11px;box-shadow:0 10px 24px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,225,166,.10),inset 0 0 18px rgba(255,176,58,.035);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:12px;font-weight:500;letter-spacing:.3px;text-decoration:none;white-space:nowrap;cursor:pointer;transition:transform .18s ease,background .18s ease,color .18s ease,box-shadow .18s ease}.home-btn:hover,.seen-reset:hover{color:#FFE2A3;background:radial-gradient(120% 120% at 12% 0%,rgba(255,176,58,.21),transparent 52%),linear-gradient(145deg,rgba(30,42,61,.98),rgba(13,22,37,.98));box-shadow:0 13px 30px rgba(0,0,0,.38),0 0 18px rgba(255,176,58,.12),inset 0 1px 0 rgba(255,226,166,.18),inset 0 0 20px rgba(255,176,58,.055);transform:translateY(-2px)}.home-btn svg{width:15px;height:13px;flex:0 0 auto}.seen-reset::before{content:"↻";font-size:14px;line-height:1;color:currentColor}.home-btn:active,.seen-reset:active{transform:translateY(0) scale(.98)}@media(max-width:680px){.seen-reset-group{right:12px;bottom:12px;width:150px;gap:7px}.home-btn,.seen-reset{min-height:37px;padding:7px 10px;font-size:11px}}</style></head>
+<body>
+<div class="wrap">
+
+  <div class="header charlie" style="background-image:linear-gradient(100deg,rgba(9,14,26,.95) 0%,rgba(9,14,26,.86) 30%,rgba(9,14,26,.24) 58%,rgba(9,14,26,.10) 100%),url('data:image/jpeg;base64,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RiOKNrGjsArEJHJHNE2SJ7XscMhzTkFSQvvTjjw+JeefLxVERfnn6EREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERSCIiAiIgIiICIioByrKApQFZQOVKMByrKArBUxYcqwVRwrhbErALRoVAtAFcRV2rRoVGhaBUmrALRoVWhaNG6uIq7QtmhZtC1AXSIq7QtmBZtW7RgK452rtC1aN1RoWrRsrjnWjQtWhUaFq0LpE1o0LUBUaFo0K4itGBatCo0YWrRsqjmsFoAqBaNCpNXarjlVAVwtgu0K44VQrhalYBWUBWHKCVYKo5VxyglEUhBKkKFYcKQQcopCyiURBwsBERZVCIiwEREUIiKQRFB4QBucqVA4UoCIiygiIsBERUCIiD6aGGjnqxHXVjqSI/wDitiMmPwBC7XU+GWoBWRwWt0FxEoY6Msd5fU1wy13x4ABHuulr0HQGtPEaiqIrFpXqukYy5lBUU7aiOPPLvi/yx6nIAXPZ3Sc43/Lrr7LeMp/h8c3hN4nUTvMOir1lmHdcEBkx6EFmV6tQ1T9caKkt+qrfU0tfTFtPd43x9E73E/wpgxwGCen/ANwP8y7BbdSTUlKa/U0VNSVbh1xtsE8kjC7qwXSZIYACOA45IXVqO91kdVeKm7XeouklYwxU1XWQFr+tp6xE9xwQ3k4O3GML52zdln4ynmfh9LV08w843xfy6VpbwwFV4t1OnbnebTT01DGat7q6QxipgAz8AGcHBydx0jJ7L3+r8Cm3rT1HQVdbTXGgpogykqLS2OHyRjfDMlrycNy7OT67leB0DrZqyGJ9z1FT2OvomOdDNEC8RnqdkuDdgwu2AGXZz22Xsmhr5frDaJrNX36K5Oic0xVltuXxNbsOiaB46gOd9z7FN3U2TnnimnpObcZOY6jc/Bux1VTRUFFfIqUW+INloalnmPqJi/BHXEPhLhjnvxgLhbL4ATX7UlbQVOpqCyPjyYqeoheHvIPDWudkgfUld41jTOqWdU/nwQzjznxySyB0jCcA46sZ9CNu2BwulWuqrtF22eewWiulpomCeQ0tIZ4Y5Nsh7TkYzj43Y+oV6+ouePON9pz6bHHLjKPsi8NPD7SVBUVWqtT11wp6aSN0bpqN1LRteSNnjqL3lw+60B2M7Lr8njboyx3uegp9U3S4XNzXA1MlC+OgbHn4GxxPDeho9SD9SufqfHkzSRXm40NJL9lb50lHDh8Ur3NGPJLmdTWuwAcbjB3XSdLVVFdGXe91FNaLdHUT9UlE66w0MT5cZDpTK4y1BAJ2yGjIG+DlncrOcrOFa9eOPqeXdrFr2o1dVmout6rHxty6Sd08lRE8DtHIPgyRw04Xl+r9a3a/1k1HDV1cFmjmcaehMmABnZz8fM/3OccDAWfiR4nWXS9VbLbpfTrLPT1EQdNdZLiJYg/JBDGQnAae5IPPflYC+0M1dSWnUFO2nNXTtmp3wsy2eMt+CWJ+T1twcnpzwON1mrbrxy8eTfpzzx/DiairrrhPG+rqZ6iRrAxhleXFrRwBngD0Vp5LhUUUMtTNNLAwmOMyPLg3GCQATt2XZq7S9FW9EGmJnVpii898xkY9paRk7t4wQeRncBet+E3hZYrhpuV98tjKy7sPnwQyysYwtO2dzkjY7nDQf5jgD15b8Jj3PDOmzuXa/Oa2eyAUsTo53PldnzIyzAZ6b53yv0jcPBKy3zXVTav3tLU3Qxvd5VH5TaaiYDhgJaNhzt83cjkrh/8AsoZ4f36uNTT1VZVCFjKSYMbMxnVjqlB6dnY+XbIGTzgif1eCv0efLyDTOidUawuhoLBaKiqkawySP6emONgGepzjsB/fsuz3XQ9v8P8ATdRV6uqqWp1FMAygtFPMHiHf4pp8HOAPlbwTzkAhczfKvXNf1WHSlJeoKFkUctfV5fF9odJgNMjwQAwcNbnfDic9uw6N8LtKWSdl017UC8vd8bIaV4fFIe4Dvv8AffjP0yau3xzleP2+6Zp88Yzn93h/RerxSveyOrq4KRvUehpcyEE+g2bk4XKWzROqLja5aqh0vcK+GR3lQ1UTHBjXDcu4+IY78BfrwV+jWUzGaasNrtfQB8M8PmjONsjOD+q4O7+IF4tFO2e6NbV0FRmISW2MQlvSOHku2bjgDZc71dv0x1nR8fVX5Dr7fNb5WRzvhc57A/EUgf057HHBXbvDzxAm0neIaa4iWpscr2tqoGHD2tDuoSRns9jvjb75Hcr1266c0RrqpFTTUT5qyZuAKQF0xPqQNyB7Lzi/+Dl1t9wdS0T3ibq6Y6eqjdHJISdmtBHPstu7Vtx7Nn3ZNO3TlNmv7O2+KFD4f6Hs1CzTkslQauBtQ6ulnMhqOsdXWM9jlfnq83iuurnMoozHDwXZ3K/YmmfDXQ2kvCemZrm22+/6gic57m1QE7aTLg3yIgTjZxwexcXey8JuumLVqvU2o4NP0lNQXShcak0FKMRmPhzABsHNO/uCfRfA26rhzJfEfpNO/wCJJbOLXk1I9lnt01VORiNpeQTjOB6rj62upLvY21tK4tqHNa87dHUCd2j3G6w1759LBTWx8JDpZHOfvjAZ2x7khcTaaSprqCWkIeWBh6XN5Y4DkemNl6elvY8/U3m8Ox+GEtab+a2mkLKiCT5wPlc3Zfr3w/t1RHoq5UNW4OZTvY9hz1Ah4PUPcEjP1yvzJ4HW2eqt9ymqIy6ojq+l56d5AQCCB74P5L9a3XUFk8MtEU1o1W+CkqJ/48MEZ82onYflyxvGOBk/kvoatvEkr5u3Du54ea+IukdSdbtYWZ01Y6OndFNC/wCN8MeCHPj7uG5zyRzxx4u+0XySikuD7XXup2jqfUGB5YB6l2ML9IWrXmrNcVv2TRWmfslO3BdWVpBc0DgkD4Wfmu411NNZNIQU12u0FRcKmYsbB8Ukk7e4jY1pL9yBgDGF3x6vHHxw82XSZZeeX4xfHH9mbIJ2mQk5jwcj3zwvqoq7RlqH23VtwqWQ9QayCCJx6z3LnDOGj23K9U1H4UwS3PUFxoJY7ZDbWsmqLbKw+dEXs6sCNpLsdwO2cHGF0nX3hnWaTttM67VVtq6Wuc5kLYpSXytAB8wsIBa34gN98hdrum2XHXfLjNF1ZTPZjzH1v8XbTVaZqR4eCjtVyhLYIZLnTOlqjHj/ADImf5cYHYnqd7Bdf0ZrCaN4sGpLo+iqTUfa4K6Z5ezzfvOceS1w5HbkLzStsE1plE1I6V1K09TXM3kgPt6t9lyMtRVz6WNZW0rm/ATBVMwWS7429N+QvnduOMuOz6v3+/8AD6Vzyzsy1/T+32fo+8eKFvst+gpKGppLjb/LaZprbUCRznEb426W/TOfouUjulg13BUusdaaONlK51wDmYeyMbiQtIIOD97JJJAX5wttL9ktcFPjBa3f68n9Vz1L4nXXRlmbaqKAOglqGVUjWHo85zHAjzDj4gMbN4GSeV039HNenuk+Zx09Xc93bb8r5NbtdpWM2u4UlWZ2P8+kqHwugcWk5+IO+X6cha6e8VdW6RuEV1loYrhY6st+0mOIh5cNs9XZ+O3BXrT/ABX8MPEPTj26joDSz9BaYK1nU1jjuS1w2P15X5+r6Vtu1HWUel66We3SP/hZYQD32B5x64Xm1asrPMendtxl4xr0Lxb8ZZdRtj0ZpGapttkqWMkr6xzC2prARnyh3awDbAx1HO+OfFblp7y4/tVua4xlvWYHH4mj1HqP1Xcqa20NFVRXG4032+eM+Y9ssrgHu9CR2ys5KQPJqKYCIyYc5rWjPOcNPZdv0eWXpw/VY4+K6PaLtVWybDcyQE/FET+o9Cu90tRHWUbKmHJY8ZGRgrha20wVLzKxjaebJ+EkfF9ccH37rlrXC6C0RROGC3OR/wCor19F343svp5es7Mp3T28cREXzn1BERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQERFIIiICIiAiItgIiLaLDhERCpClBwi2MSOFYcKFYcrU1YK4VQrhVE1Zq0aqNC1ariKs0LQKrVcKomrtWrRss2hbNCuOdXaFq0bqjQtGjZdIitGjdbNCowLVoVxzyrRoWrQs2jdbNC6RDRoWrQqNGy1aFcTWgGy0YMlUHK2aNlcc6u0LUKjR3WgVRKwC0AVGjdaALUrALQBVHKu0KmLBXCqFccoxZSFCsFokKw4UBWWArDhVHKssoDlWUDhSsBWUDlSpAoiI2CIiloiIjYIiLK0REWAhRR3QSiIgIiKQREW8AigqE5bwnKZKhFnLeHK2W4Wq3VH2m42dt0cCOiGaVzIh7uDcFx9sgeuV3w+KNuo7M+32q01LYJCC6kL46end3y5sTQX78dRK8uXN6WpYJb6yqrJII6amxK99QSIwc/D1Y3Iz2HOMLnswxy85OuvZljeMXrw1FdKXSU89+utPbHdDGziKnY2WmaR1NgpmHdzyMdTict7kAHPmdXreoqqwNMVQ6jDg4tkqXPlccY6i/jPtjHZU1rqaK+1sNLQOkNDTdThI/PVPK85kldk53OAPYDvldVBI4XLXox45ynmuu3qMue3G+I7XXXCopKSfV1jo6UQeSyO5OjhHW2UE9JYCD90u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CvK47dFBh03xu9OwXaZoI4MtY3Hqe5XHmk63l7htnYL16OI8u1xojIbnGFm7YLkqhgDfTC455G+F7sa8eUfJUSBjC49lwr3F7y4919lwny/yh+K+DOyuIrw1ERfnX6MREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERSCIiAiIgIiICIioSFKgcqUgkcqVVWRiQrBUHKsOVTFxwrjlUHKsOFsS0C0CyC0ariK1aVoFk1aNVIrULVpWLStGlXEVu0rUFYNO61aukRW7StmnZfO07LZh2wriLG7TstmlfO0rZp7K451u0rZp3XztK2adl0ia+hp2WjThYtO60CuOdfQFqDssGHZatVxDULRp2WTVo3lalqCrgrNpVwqjGoVwsmlaAoxccKwVRypQXHKsFRWCCykKEHKCysqqQpEqRwoUjlZRJ4QcIiwERFKgcoiICIiKERFIKDwpRARQPRSgIiLKCIiwERFQKCpUFKRCIilSRypUDlStiaIiLQX00VyrrXJLU2yNr6t0L4ouoZwXjpyPfBKiioK65VbaW30c9XO4ZEUEZe4/gN13Ky6MvuntVWq56qsVZQW9koqHGpZ0dYb8QGDvvhcdmWMxvLrqxyuU7X6L8EvCgeH2l3a11lTsq9XVMHmSY+IW6Jw2haT98j5iPpwN+oUlm05ZfGLUXiRDDHDd7qxwnc+QGOJxxuCdxkAA+3ovGr/APtIeJFz1tIILu+Clkl6f3fE4Np4mk4aMDdz8Yy4kknOMBdHv3i5X3GOrpIpP40PU58jxhhIOO3bfJJK+Lhcpl3WvvZcccR37WVbVVF0fPddU2qihmef4jZXVErxnhsbRnH1IHuvM77qrTdsmMFC6S51jjlpfh2PQuHyg/0747uPC84uGobhWOkqJ55TG/bzDkGU/wCw9vRfBbgI2vqHgdb/ANB6L1/qNmy9svEcfhY4+a7XNd62oa+rrKoiokcXP+ztbHj26sZ/t9FxVRO6tqIzUVM88znfF1PLgwdh9V8r5XY75Iyt6FuGyyva/wA0N/hBm+HZG/6rvlxJIieX1Qx0tu3Y0SvI3GMYKzlr5ZH9QBb9Oy++h0/X152jPvI8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');background-repeat:no-repeat,no-repeat;background-position:center,right top;background-size:cover,cover;">
+    
+    
+    <h1>和平精英 · 二创热点日报</h1>
+    <div class="sub">2026-08-25 · 生成于 2026-08-25 13:22</div>
+    <div class="tags"><span>抖音热榜</span><span>B站入站必看</span><span>AI 仅产出二创方向，风险合规由人工判断</span></div>
+  </div>
+
+  
+
+  <div class="kpis">
+    <div class="kpi"><div class="num">53</div><div class="lbl">送 AI 线索</div><span class="dl dl-down">▼ -1 (-2%)</span></div>
+    <div class="kpi"><div class="num">31</div><div class="lbl">有价值方向</div><span class="dl dl-down">▼ -3 (-9%)</span></div>
+    <div class="kpi"><div class="num">10</div><div class="lbl">高潜力(4-5★)</div><span class="dl dl-down">▼ -1 (-9%)</span></div>
+    <div class="kpi"><div class="num">7</div><div class="lbl">🔥持续发酵</div></div>
+  </div>
+
+  
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>内容品类分布</h3>
+      <div class="donut-wrap">
+        <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"><path d="M80.00,10.00 A70.00,70.00 0 0 1 125.60,133.11 L107.36,111.87 A42.00,42.00 0 0 0 80.00,38.00 Z" fill="#D4537E"></path><path d="M125.60,133.11 A70.00,70.00 0 0 1 72.92,149.64 L75.75,121.78 A42.00,42.00 0 0 0 107.36,111.87 Z" fill="#EF9F27"></path><path d="M72.92,149.64 A70.00,70.00 0 0 1 34.40,133.11 L52.64,111.87 A42.00,42.00 0 0 0 75.75,121.78 Z" fill="#534AB7"></path><path d="M34.40,133.11 A70.00,70.00 0 0 1 12.23,97.55 L39.34,90.53 A42.00,42.00 0 0 0 52.64,111.87 Z" fill="#888780"></path><path d="M12.23,97.55 A70.00,70.00 0 0 1 14.36,55.69 L40.61,65.41 A42.00,42.00 0 0 0 39.34,90.53 Z" fill="#378ADD"></path><path d="M14.36,55.69 A70.00,70.00 0 0 1 29.26,31.77 L49.56,51.06 A42.00,42.00 0 0 0 40.61,65.41 Z" fill="#185FA5"></path><path d="M29.26,31.77 A70.00,70.00 0 0 1 52.40,15.67 L63.44,41.40 A42.00,42.00 0 0 0 49.56,51.06 Z" fill="#888780"></path><path d="M52.40,15.67 A70.00,70.00 0 0 1 80.00,10.00 L80.00,38.00 A42.00,42.00 0 0 0 63.44,41.40 Z" fill="#1D9E75"></path><text x="80.0" y="76.0" text-anchor="middle" font-size="26" font-weight="600" fill="#f2f5fb">31</text><text x="80.0" y="96.0" text-anchor="middle" font-size="12" fill="#93a1b8">条线索</text></svg>
+        <div class="cat-legend"><div class="cat-item"><i style="background:#D4537E"></i><span class="cat-name">娱乐</span><div class="cat-bar"><div class="cat-bar-fill" style="width:100%;background:#D4537E"></div></div><b>12</b></div><div class="cat-item"><i style="background:#EF9F27"></i><span class="cat-name">搞笑</span><div class="cat-bar"><div class="cat-bar-fill" style="width:33%;background:#EF9F27"></div></div><b>4</b></div><div class="cat-item"><i style="background:#534AB7"></i><span class="cat-name">游戏</span><div class="cat-bar"><div class="cat-bar-fill" style="width:25%;background:#534AB7"></div></div><b>3</b></div><div class="cat-item"><i style="background:#888780"></i><span class="cat-name">体育</span><div class="cat-bar"><div class="cat-bar-fill" style="width:25%;background:#888780"></div></div><b>3</b></div><div class="cat-item"><i style="background:#378ADD"></i><span class="cat-name">影视</span><div class="cat-bar"><div class="cat-bar-fill" style="width:25%;background:#378ADD"></div></div><b>3</b></div><div class="cat-item"><i style="background:#185FA5"></i><span class="cat-name">生活</span><div class="cat-bar"><div class="cat-bar-fill" style="width:16%;background:#185FA5"></div></div><b>2</b></div><div class="cat-item"><i style="background:#888780"></i><span class="cat-name">其他</span><div class="cat-bar"><div class="cat-bar-fill" style="width:16%;background:#888780"></div></div><b>2</b></div><div class="cat-item"><i style="background:#1D9E75"></i><span class="cat-name">音乐</span><div class="cat-bar"><div class="cat-bar-fill" style="width:16%;background:#1D9E75"></div></div><b>2</b></div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>来源占比</h3>
+      <div class="bar"><div style="width:66.0%;background:#534AB7;" title="抖音热点 35条"></div><div style="width:34.0%;background:#1D9E75;" title="B站热门 18条"></div></div><div class="bar-legend"><span class="lg"><i style="background:#534AB7"></i>抖音热点 35</span> <span class="lg"><i style="background:#1D9E75"></i>B站热门 18</span></div>
+      <h3 style="margin-top:18px">建议内容形式</h3>
+      <div class="chips"><span class="chip">混剪 <b>8</b></span><span class="chip">整活 <b>8</b></span><span class="chip">挑战 <b>6</b></span><span class="chip">短剧 <b>6</b></span><span class="chip">赛事借势 <b>2</b></span><span class="chip">口播 <b>1</b></span></div>
+    </div>
+  </div>
+
+  <div class="section-title">今日最值得看的 3 条</div>
+  
+    <div class="card card-top" style="--cat:#534AB7" data-k="2026年08月25日 #04">
+      <div class="card-head">
+        <span class="rank">#1</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        <span class="top-badge">必看</span>
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #04</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 922万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E5%A4%AE%E8%A7%86%E5%B0%91%E5%84%BF%E7%BB%9900%E5%90%8E%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1" target="_blank" rel="noopener">央视少儿给00后的一封信 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>围绕信中‘存档点’‘回血’‘关卡’等游戏化金句，做和平精英情怀混剪：口播读信式文案串联四排开黑、刚枪失误、封烟救援、决赛圈翻盘，把队友互救和重新开局剪成‘回血存档点’。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点真实出圈机制是童年陪伴情怀与‘游戏存档点/回血’隐喻；这些表达与和平精英队友救援、决赛圈翻盘、开黑陪伴高度同构，适合做情绪向混剪。</div>
+    </div>
+    <div class="card card-top" style="--cat:#D4537E" data-k="2026年08月25日 #05">
+      <div class="card-head">
+        <span class="rank">#2</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        <span class="top-badge">必看</span>
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-08-24，持续发酵中">🔥连续2天</span>
+        
+        <span class="caseid">2026年08月25日 #05</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 921万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E5%8F%8C%E4%BA%BA%E7%89%88%E7%AC%AC57%E6%AC%A1%E5%8F%96%E6%B6%88%E5%8F%91%E9%80%81" target="_blank" rel="noopener">双人版第57次取消发送 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">挑战</span>
+        <div class="direction"><span class="lbl">转化方向</span>保留双人手势舞‘指拳敲4下→前指转2圈→摸嘴→轻拍脸颊’的动作模板，让两名队友先真人合拍，再切到和平精英双人配合：一人封烟一人前压，一人递三级头一人救援，用卡点剪辑把‘取消发送’的犹豫感变成决赛圈互相救回的反转。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点出圈机制是双人手势舞的低门槛合拍与甜蜜互动；动作模板可直接复刻，并自然接入和平精英队友封烟、救援、三级头等互动，适合挑战类内容。</div>
+    </div>
+    <div class="card card-top" style="--cat:#D4537E" data-k="2026年08月25日 #08">
+      <div class="card-head">
+        <span class="rank">#3</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        <span class="top-badge">必看</span>
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #08</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 825万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E5%A2%A8%E9%95%9C%E5%8A%A0emo%E5%B8%85%E5%88%B0%E6%B2%A1%E6%9C%8B%E5%8F%8B" target="_blank" rel="noopener">墨镜加emo帅到没朋友 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">挑战</span>
+        <div class="direction"><span class="lbl">转化方向</span>复刻“墨镜加emo”反差氛围挑战：和平精英角色在决赛圈封烟后切入黑超特效，若当前版本存在匹配墨镜外观则可替换，否则用后期贴纸或特效实现；配冷色调滤镜与慢走、探头、蹲伏动作，在海岛房区或野区暗角完成变装。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点背景显示该热点是墨镜酷感与emo忧郁感碰撞的潮流搭配梗，出圈点是反差帅和氛围感模板；该形式可迁移到和平精英角色动作、封烟场景和后期特效复刻，具备挑战跟拍潜力。</div>
+    </div>
+
+  <div class="section-title">完整线索（31 条）</div>
+  
+    <div class="card" style="--cat:#534AB7" data-k="2026年08月25日 #04">
+      <div class="card-head">
+        <span class="rank">#1</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #04</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 922万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E5%A4%AE%E8%A7%86%E5%B0%91%E5%84%BF%E7%BB%9900%E5%90%8E%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1" target="_blank" rel="noopener">央视少儿给00后的一封信 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>围绕信中‘存档点’‘回血’‘关卡’等游戏化金句，做和平精英情怀混剪：口播读信式文案串联四排开黑、刚枪失误、封烟救援、决赛圈翻盘，把队友互救和重新开局剪成‘回血存档点’。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点真实出圈机制是童年陪伴情怀与‘游戏存档点/回血’隐喻；这些表达与和平精英队友救援、决赛圈翻盘、开黑陪伴高度同构，适合做情绪向混剪。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E" data-k="2026年08月25日 #05">
+      <div class="card-head">
+        <span class="rank">#2</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-08-24，持续发酵中">🔥连续2天</span>
+        
+        <span class="caseid">2026年08月25日 #05</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 921万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E5%8F%8C%E4%BA%BA%E7%89%88%E7%AC%AC57%E6%AC%A1%E5%8F%96%E6%B6%88%E5%8F%91%E9%80%81" target="_blank" rel="noopener">双人版第57次取消发送 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">挑战</span>
+        <div class="direction"><span class="lbl">转化方向</span>保留双人手势舞‘指拳敲4下→前指转2圈→摸嘴→轻拍脸颊’的动作模板，让两名队友先真人合拍，再切到和平精英双人配合：一人封烟一人前压，一人递三级头一人救援，用卡点剪辑把‘取消发送’的犹豫感变成决赛圈互相救回的反转。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点出圈机制是双人手势舞的低门槛合拍与甜蜜互动；动作模板可直接复刻，并自然接入和平精英队友封烟、救援、三级头等互动，适合挑战类内容。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E" data-k="2026年08月25日 #08">
+      <div class="card-head">
+        <span class="rank">#3</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #08</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 825万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E5%A2%A8%E9%95%9C%E5%8A%A0emo%E5%B8%85%E5%88%B0%E6%B2%A1%E6%9C%8B%E5%8F%8B" target="_blank" rel="noopener">墨镜加emo帅到没朋友 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">挑战</span>
+        <div class="direction"><span class="lbl">转化方向</span>复刻“墨镜加emo”反差氛围挑战：和平精英角色在决赛圈封烟后切入黑超特效，若当前版本存在匹配墨镜外观则可替换，否则用后期贴纸或特效实现；配冷色调滤镜与慢走、探头、蹲伏动作，在海岛房区或野区暗角完成变装。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点背景显示该热点是墨镜酷感与emo忧郁感碰撞的潮流搭配梗，出圈点是反差帅和氛围感模板；该形式可迁移到和平精英角色动作、封烟场景和后期特效复刻，具备挑战跟拍潜力。</div>
+    </div>
+    <div class="card" style="--cat:#888780" data-k="2026年08月25日 #11">
+      <div class="card-head">
+        <span class="rank">#4</span>
+        <span class="cat" style="background:#888780">体育</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #11</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 773万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E5%81%87%E5%A6%82%E5%A6%88%E5%A6%88%E7%9A%84%E8%96%AA%E6%B0%B4%E8%BF%9E%E4%B8%80%E4%BA%BF%E9%83%BD%E4%B8%8D%E5%88%B0" target="_blank" rel="noopener">假如妈妈的薪水连一亿都不到 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">挑战</span>
+        <div class="direction"><span class="lbl">转化方向</span>保留‘假如妈妈的薪水连一亿都不到’的BGM句式，改成四排穷队互坑版：‘假如队友的物资连一个空投都不到，我扔手雷给队友听响；别人队友坐载具戴三级头，我的队友只会封烟坑我’。画面按歌词卡点展示捡空投失败、手雷双响、载具翻车、封烟误封等反转。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>背景说明热点是猫咪视角反差BGM，出圈点是固定歌词句式、夸张财富门槛和荒诞孝顺反差；替换成和平精英队友物资与道具反差能保留句式钩子，且四排、空投、手雷、载具都是稳定元素，卡点剪辑门槛低。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7" data-k="2026年08月25日 #14">
+      <div class="card-head">
+        <span class="rank">#5</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #14</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 771万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/Spirit%E8%8E%B7%E7%94%B5%E7%AB%9E%E4%B8%96%E4%BF%B1%E6%9D%AFCS2%E9%A1%B9%E7%9B%AE%E5%86%A0%E5%86%9B" target="_blank" rel="noopener">Spirit获电竞世俱杯CS2项目冠军 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">赛事借势</span>
+        <div class="direction"><span class="lbl">转化方向</span>借“让一追三”和“一日双冠”的电竞逆袭叙事，做和平精英四排翻盘混剪：开局队友倒地、丢三级头或被迫弃车，对应先丢一分；随后封烟救援、载具转点、M416拉枪线刚枪，连续拿下决赛圈；字幕用回合式比分推进，不直接套用CS2或DOTA2赛事名称。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点真实出圈点是Team Spirit在BO5中先丢一图后完成让一追三，并叠加同日另一项目夺冠的俱乐部高光；这种逆风翻盘和连胜爽感可直接映射到和平精英四排翻盘高光，素材剪辑路径成熟。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E" data-k="2026年08月25日 #16">
+      <div class="card-head">
+        <span class="rank">#6</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #16</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 769万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E7%94%B7%E5%9B%A2%E8%BF%99%E4%B8%AA%E8%B5%9B%E9%81%93%E7%9C%9F%E8%AE%A9%E6%9D%A8%E8%BF%AA%E9%97%AF%E8%BF%9B%E5%8E%BB%E4%BA%86" target="_blank" rel="noopener">男团这个赛道真让杨迪闯进去了 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>借杨迪“气氛组闯男团”的反差钩子，拍四排决赛圈整活：三名队友像专业男团一样整齐执行封烟、拉枪线、架枪，第四名玩家模仿“金鱼101”甩手舞式慢半拍动作，字幕标注“成功打入四排内部”；最后用一记手雷或平底锅反转收束，形成专业战术与综艺感的反差。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点真实出圈点是杨迪以嘉宾身份进入专业男团舞台，靠速成舞蹈、接梗和松弛综艺感制造反差笑点。这个机制可以平移到和平精英四排关系里：高手队友认真打战术，气氛组队友乱入整活，识别钩子清晰且游戏内动作、封烟、拉枪线、决赛圈都能直接承载。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E" data-k="2026年08月25日 #18">
+      <div class="card-head">
+        <span class="rank">#7</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #18</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 768万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E9%99%88%E5%B0%8F%E6%98%A5%E5%BD%93%E5%98%89%E5%AE%BE%E6%9B%B4%E7%B4%A7%E5%BC%A0" target="_blank" rel="noopener">陈小春当嘉宾更紧张 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>把陈小春“当嘉宾比当主咖更紧张”转成外援整活短剧：刚枪大神平时带自己车队很松弛，被邀请临时加入陌生四排当嘉宾，赛前反复练压枪和封烟，实战中紧张到拉枪线慢半拍、封烟封错，但最后靠专业本能救下队友进决赛圈，突出硬汉紧张反差。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点出圈机制是陈小春荧幕硬汉气场与私下社恐、当嘉宾紧张之间的反差。和平精英里“熟悉的自己车队”和“陌生的嘉宾车队”天然对应主咖与嘉宾心态，可以用刚枪、封烟、拉枪线、救援等动作把紧张感可视化，迁移自然。</div>
+    </div>
+    <div class="card" style="--cat:#185FA5" data-k="2026年08月25日 #19">
+      <div class="card-head">
+        <span class="rank">#8</span>
+        <span class="cat" style="background:#185FA5">生活</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #19</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 768万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E5%BC%80%E5%AD%A6%E4%B9%9F%E8%A6%81%E7%BB%AD%E7%81%AB%E8%8A%B1" target="_blank" rel="noopener">开学也要续火花 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">挑战</span>
+        <div class="direction"><span class="lbl">转化方向</span>把“开学续火花”转成四排开黑打卡挑战：发起#开学也要续火花，固定队每天或隔天完成一个游戏内互动任务，如一次载具接人、一次封烟救援、一次共同进决赛圈，用后期字幕显示连续开黑天数，强调不走机械打卡而走真实陪伴。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点背景明确围绕开学后好友关系维系、火花打卡和不断档互动展开，情绪点是“关系不能断”。这与和平精英固定四排、每日开黑、队友救援的关系表达高度同构，且任务式挑战容易复制，适合低门槛发起跟拍。</div>
+    </div>
+    <div class="card" style="--cat:#EF9F27" data-k="2026年08月25日 #21">
+      <div class="card-head">
+        <span class="rank">#9</span>
+        <span class="cat" style="background:#EF9F27">搞笑</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #21</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 767万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E6%97%A9%E6%98%A5%E6%99%B4%E6%9C%97%E6%A0%BE%E5%BF%B5%E5%90%83%E9%86%8B%E5%A5%BD%E4%B8%8A%E5%A4%B4" target="_blank" rel="noopener">早春晴朗栾念吃醋好上头 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>以“高冷毒舌队友吃醋失控”为识别钩子，拍四排开黑短剧：他嘴上嫌弃队友“别给我丢人”，看到队友被路人扶起或坐上别人载具就猛按喇叭、脸色铁青；决赛圈却主动封烟、丢手雷掩护、让三级头，并开车接人撤离，形成嘴硬心软反差。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点真实出圈机制是栾念“口嫌体正直”的吃醋反差和失控感，名场面集中在嘴硬、找茬、暗中护人。这个关系模板可直接迁移到和平精英四排队友互动，用封烟、救援、载具、三级头等稳定元素承接“没名分却醋意爆棚”的戏剧张力。</div>
+    </div>
+    <div class="card" style="--cat:#888780" data-k="2026年08月25日 #22">
+      <div class="card-head">
+        <span class="rank">#10</span>
+        <span class="cat" style="background:#888780">体育</span>
+        
+        <span class="score" style="background:#534AB7" title="潜力分 4/5（AI 综合契合度·流量潜力·可执行性）">★★★★☆ 4</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #22</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 767万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E8%B0%81%E6%83%B9%E9%A2%9C%E5%AE%89%E5%94%90%E4%B9%9D%E6%B4%B2%E5%BC%80%E5%BF%83%E4%BA%86" target="_blank" rel="noopener">谁惹颜安唐九洲开心了 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">挑战</span>
+        <div class="direction"><span class="lbl">转化方向</span>以“彼此互宠、追逐接梗”为识别钩子，发起四排双人挑战：一名队友喊话想要空投或三级头，另一名队友嘴上吐槽但立刻开车、封烟去帮；复刻“泳池追逐战”改成跑毒路上吉普车追队友，最后用游戏内通用表情动作完成1分钟连续互动7次。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>背景显示热点核心不是体育，而是综艺嘉宾之间的互宠、互怼、追逐和快速接梗，具备可模仿的双人互动模板。和平精英的四排、载具、空投、救援和通用表情动作可以承接这种“一个敢提一个敢宠”的喜剧关系，执行路径较清楚。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E" data-k="2026年08月25日 #01">
+      <div class="card-head">
+        <span class="rank">#11</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #01</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 1147万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E4%B8%80%E5%BC%A0%E7%94%A8%E5%85%89%E7%AD%BE%E5%90%8D%E7%9A%84%E6%8B%8D%E7%AB%8B%E5%BE%97" target="_blank" rel="noopener">一张用光签名的拍立得 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>以‘光签名拍立得’为识别钩子，把四排决赛圈吃鸡瞬间截图套入拍立得边框，再用后期光绘特效在空白处写出队伍ID或‘吃鸡’签名；前半段混剪队友封烟、救援、进决赛圈，最后定格成一张发光拍立得。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点出圈机制是慢门光绘或后期合成出的发光签名拍立得，视觉模板清晰；将照片主体替换为和平精英四排决赛圈高光，可保留光签名钩子并完成游戏化纪念向二创。</div>
+    </div>
+    <div class="card" style="--cat:#888780" data-k="2026年08月25日 #02">
+      <div class="card-head">
+        <span class="rank">#12</span>
+        <span class="cat" style="background:#888780">其他</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #02</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 1130万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E4%B8%87%E5%8D%83%E6%B0%94%E8%B1%A1%E7%9E%B0%E5%AE%81%E5%A4%8F" target="_blank" rel="noopener">万千气象瞰宁夏 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>借‘瞰宁夏’的航拍观景与地域反差钩子，做一支‘瞰和平精英经典沙漠场景’混剪：用高点俯瞰、载具穿行、空投落点和决赛圈缩圈画面，剪出开阔公路、沙地、植被区域的反差转场；不复刻具体宁夏景点，只借航拍结构。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点核心是文旅航拍与‘荒漠/江南’反差景观；和平精英经典沙漠场景具备类似的开阔地貌视觉，可用载具、空投、决赛圈等元素做风景向混剪，迁移路径明确但需要较强剪辑包装。</div>
+    </div>
+    <div class="card" style="--cat:#888780" data-k="2026年08月25日 #03">
+      <div class="card-head">
+        <span class="rank">#13</span>
+        <span class="cat" style="background:#888780">其他</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-08-24，持续发酵中">🔥连续2天</span>
+        
+        <span class="caseid">2026年08月25日 #03</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 931万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E7%AC%AC%E4%B8%80%E6%89%B9%E6%96%B0%E7%94%9F%E5%AE%B6%E9%95%BF%E5%B7%B2%E7%BB%8F%E5%9C%A8%E9%93%BA%E5%BA%8A%E4%BA%86" target="_blank" rel="noopener">第一批新生家长已经在铺床了 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>把‘家长帮新生铺床’的开学仪式感改编成四排老玩家带新队友的短剧：用三级头、M416、平底锅、手雷在经典海岛场景角落摆成‘床铺/行李’的借位画面，配字幕‘开学第一天帮室友铺床’，老队友递装备、封烟掩护、救援拉起，最后新队友进决赛圈。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点出圈点是开学季父母铺床的温情与仪式感；和平精英四排老带新、物资分享、封烟救援等队友互动可以承接这种照顾关系，形成开学季整活短剧。</div>
+    </div>
+    <div class="card" style="--cat:#1D9E75" data-k="2026年08月25日 #06">
+      <div class="card-head">
+        <span class="rank">#14</span>
+        <span class="cat" style="background:#1D9E75">音乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #06</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 878万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E6%88%91%E6%84%BF%E6%84%8F%E4%B8%80%E7%9B%B4%E8%BF%99%E6%A0%B7" target="_blank" rel="noopener">我愿意一直这样 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>用“我愿意一直这样”副歌作为BGM和字幕钩子，剪四排陪伴向混剪：从开局集合、队友倒地封烟救援、互让三级头，到决赛圈互相拉枪线护航，最后吃鸡定格。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点背景显示该热点是热门歌曲副歌歌词走红，出圈点在于直白深情的陪伴感与BGM适配性；该情绪可迁移到和平精英四排队友长期陪伴、救援和决赛圈护航关系，现有游戏素材即可剪辑。</div>
+    </div>
+    <div class="card" style="--cat:#888780" data-k="2026年08月25日 #07">
+      <div class="card-head">
+        <span class="rank">#15</span>
+        <span class="cat" style="background:#888780">体育</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #07</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 866万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E7%83%AD%E7%81%AB%E5%AE%98%E5%AE%A3%E5%85%8B%E8%8E%B1%E5%8A%A0%E7%9B%9F" target="_blank" rel="noopener">热火官宣克莱加盟 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>借热火官宣克莱加盟的“官宣新成员/补强外线”模板，做和平精英四排车队官宣整活：海报式介绍新固定队友担任远程架枪位，随后切M416压枪、封烟补枪、决赛圈拉枪线，最后用队伍语音“欢迎加盟”收尾。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点背景显示该热点是NBA球员转会官宣与外线投射补强，出圈点在于官方宣布、阵容升级和球迷期待；该叙事可迁移到和平精英四排固定队友位置分工与火力补强，但体育话题向游戏转化需要包装，因此给中位价值分。</div>
+    </div>
+    <div class="card" style="--cat:#534AB7" data-k="2026年08月25日 #09">
+      <div class="card-head">
+        <span class="rank">#16</span>
+        <span class="cat" style="background:#534AB7">游戏</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #09</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 792万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/donk%E8%8E%B7EWC%E8%B5%9B%E4%BA%8BMVP" target="_blank" rel="noopener">donk获EWC赛事MVP <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">赛事借势</span>
+        <div class="direction"><span class="lbl">转化方向</span>借donk获EWC赛事MVP的“MVP数据高光”叙事模板，不将EWC或CS2表述为和平精英赛事，做一期和平精英“MVP级操作”混剪：开头用“MVP结算”字幕，中间按淘汰、伤害、关键救援展示M416压枪、决赛圈以少打多、封烟拉枪线，结尾给四排队友颁发MVP。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点背景显示该热点是CS2选手donk凭借统治级数据获得双料MVP，出圈点是硬核数据、逆转夺冠和MVP叙事；该模板可迁移到和平精英高光剪辑或PEL选手操作盘点，但需明确原赛事不属于和平精英，因此适合泛电竞借势。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E" data-k="2026年08月25日 #10">
+      <div class="card-head">
+        <span class="rank">#17</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #10</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 778万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E6%B1%AA%E5%B3%B0%E5%9B%9E%E5%BA%9408%E5%B9%B4T%E6%81%A4%E4%B8%8A%E7%9A%84%E8%A1%A8%E6%83%85%E5%8C%85%E7%81%AB%E4%BA%86" target="_blank" rel="noopener">汪峰回应08年T恤上的表情包火了 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>做「汪峰式疑惑队友」整活：四排开黑时队友抢三级头、误封烟或平底锅误伤，镜头切角色原地使用游戏内通用表情，后期叠加08年T恤‘疑惑三连’表情包和字幕‘碰巧了’‘你们好好查查’，最后用手雷完成反转回击。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 24h内</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点真实出圈机制是旧表情包被考古与本人幽默回应，梗点集中在疑惑三连和轻松接梗；迁移到队友互坑场景可保留‘疑惑表情’这一最小识别钩子，并用后期贴图实现，不依赖游戏皮肤。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E" data-k="2026年08月25日 #12">
+      <div class="card-head">
+        <span class="rank">#18</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #12</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 773万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E5%BC%A0%E9%9F%B6%E6%B6%B5%E6%88%90%E9%83%BD%E6%BC%94%E5%94%B1%E4%BC%9A%E9%80%A0%E5%9E%8B%E6%83%8A%E8%89%B3" target="_blank" rel="noopener">张韶涵成都演唱会造型惊艳 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>以“赛博歌姬机甲造型切换”为钩子，做“海岛闯关造型秀”混剪：从落地搜三级头和M416开始，每次进圈或完成一次刚枪就切换一套战术穿搭；若当前版本存在匹配机甲风外观则可替换，否则用后期霓虹描边、赛博光效实现，最后以决赛圈封烟、载具卡点收尾。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点真实出圈点是张韶涵成都站“赛博歌姬”多套造型、紫粉机甲战衣和“闯关”舞台视觉，识别钩子明确；可映射到和平精英从搜物资到决赛圈的闯关流程，但机甲感需要后期或条件外观支撑，迁移成本中等。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E" data-k="2026年08月25日 #13">
+      <div class="card-head">
+        <span class="rank">#19</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #13</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 771万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E7%9C%8B%E6%B1%AA%E8%8B%8F%E6%B3%B7%E6%BC%94%E5%94%B1%E4%BC%9A%E5%83%8F%E5%9B%9E%E5%AE%B6" target="_blank" rel="noopener">看汪苏泷演唱会像回家 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>用“看汪苏泷演唱会像回家”文案开场，转成“回和平精英像回家”：老玩家被四排队友拉回经典海岛，队友在出生点集合，互让三级头、载具接人、封烟救援，最后决赛圈集结完成翻盘；整体用温暖BGM和队友语音强化回家氛围。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点出圈机制是粉丝对汪苏泷北京鸟巢场“像回家”的情绪共鸣与现场合唱氛围；该情绪可自然迁移到老玩家回归、四排队友重聚等和平精英关系场景，具备短剧包装空间。</div>
+    </div>
+    <div class="card" style="--cat:#EF9F27" data-k="2026年08月25日 #15">
+      <div class="card-head">
+        <span class="rank">#20</span>
+        <span class="cat" style="background:#EF9F27">搞笑</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-08-24，持续发酵中">🔥连续2天</span>
+        
+        <span class="caseid">2026年08月25日 #15</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 769万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E6%8B%BC%E8%B1%86%E5%B7%B2%E4%B8%A5%E8%82%83%E8%BF%9B%E5%85%A5%E7%BE%8E%E5%A6%86%E7%95%8C" target="_blank" rel="noopener">拼豆已严肃进入美妆界 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>把“拼豆已严肃进入美妆界”改成“拼豆严肃进入和平精英装备界”：用后期拼豆或像素贴纸模拟美妆上妆流程，将三级头、M416、平底锅、手雷、信号枪一件件拼到角色身上，配“咔滋”音效和认真测评口吻，最后四排进决赛圈展示整套装备。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点出圈机制是“拼豆严肃进入美妆界”的仪式感反差、沉浸式流程和音效梗；可将美妆替换为和平精英战术装备装配，保留原梗句式和反差感，且主要靠后期与剪辑实现。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E" data-k="2026年08月25日 #17">
+      <div class="card-head">
+        <span class="rank">#21</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #17</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 769万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E7%99%BB%E9%99%86%E5%B0%91%E5%B9%B4%E5%A5%BD%E6%83%B3%E5%A5%BD%E6%83%B3" target="_blank" rel="noopener">登陆少年好想好想 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>用“好想好想”思念文案做四排重聚短剧：久未上线的队友回归，其他三人在海岛地图载具旁等待，接到人后送三级头、一起开车进决赛圈，配合“好想好想和你在一起”字幕与游戏内通用表情动作，呈现开黑搭子双向奔赴。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点核心不是登录操作，而是登陆少年演唱会歌曲《好想好想》衍生出的粉丝思念与双向奔赴情绪。该情绪可以迁移到和平精英队友关系中，用久别重逢、载具接人、决赛圈互保等稳定元素承接，适合做轻剧情向内容。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E" data-k="2026年08月25日 #20">
+      <div class="card-head">
+        <span class="rank">#22</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #20</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 767万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E4%B9%90%E8%AF%84%E8%AF%B4%E5%94%B1%E5%B7%85%E5%B3%B0%E9%A2%9C%E5%A6%82%E7%8E%892.0" target="_blank" rel="noopener">乐评说唱巅峰颜如玉2.0 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>借《颜如玉2.0》三人分工托举结构做三排或四排协同混剪：指挥位负责拉枪线定节奏，突击手负责正面破点，自由人负责架枪收割，用该舞台热门音频片段或同节奏BGM踩点，字幕标注“不炫技但能赢的松弛刚枪”。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点出圈点在于三人分工互补、松弛氛围和“托举式合作”带来的完整舞台结构。这个结构可以映射到和平精英战术协同：指挥、突击、架枪各司其职，不靠夸张炫技而靠配合赢下决赛圈，适合做节奏感强的团队高光混剪。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E" data-k="2026年08月25日 #23">
+      <div class="card-head">
+        <span class="rank">#23</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-08-24，持续发酵中">🔥连续2天</span>
+        
+        <span class="caseid">2026年08月25日 #23</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 767万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E5%BC%A0%E5%BD%AC%E5%BD%AC%E6%88%91%E5%A5%BD%E5%83%8F%E6%89%8D%E8%AE%A4%E8%AF%86%E4%BD%A0" target="_blank" rel="noopener">张彬彬我好像才认识你 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>以“我好像才认识你”的认知反转钩子，做队友反差混剪：平时苟分、怕刚枪的队友，在决赛圈突然M416压枪、封烟拉枪线、救援倒地队友，配合字幕“我好像才认识你”，突出从被低估到carry全场的反转。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>热点出圈点是观众对张彬彬“重新认识”的反差感，而非单一挑战动作。和平精英里常见的苟分与刚枪反差、队友实力反转可以自然承接该情绪，用现有对局素材剪辑即可成立，但爆点依赖素材质量，因此给中位潜力。</div>
+    </div>
+    <div class="card" style="--cat:#378ADD" data-k="2026年08月25日 #24">
+      <div class="card-head">
+        <span class="rank">#24</span>
+        <span class="cat" style="background:#378ADD">影视</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #24</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">抖音热点 · 抖音热榜 · 热度 767万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.douyin.com/search/%E6%9B%BE%E8%88%9C%E6%99%9E%E4%BB%8E%E5%90%B4%E8%80%81%E7%8B%97%E5%8F%98%E6%A3%AE%E9%97%B4%E7%B2%BE%E7%81%B5" target="_blank" rel="noopener">曾舜晞从吴老狗变森间精灵 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>以“糙汉变精灵”的反差变身钩子，做和平精英装备与状态变装混剪：开局角色空手或拿平底锅跑毒，用封烟、手雷特效或载具遮挡镜头转场，切到三级头、M416、决赛圈刚枪状态；如需“森间精灵”氛围，使用后期光斑、树叶光影特效实现，不声称游戏内已有对应外观。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>背景明确热点出圈机制是角色造型与气质的强反差，而不是具体人物事件。和平精英可用落地穷装到决赛圈满配的反差完成同构表达，三级头、M416、平底锅、封烟等稳定元素能支撑变身模板；精灵感需后期处理，因此执行有一定门槛。</div>
+    </div>
+    <div class="card" style="--cat:#185FA5" data-k="2026年08月25日 #25">
+      <div class="card-head">
+        <span class="rank">#25</span>
+        <span class="cat" style="background:#185FA5">生活</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="sustain" title="连续 3 天上榜，首次 2026-08-23，持续发酵中">🔥连续3天</span>
+        
+        <span class="caseid">2026年08月25日 #25</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">B站热门 · B站入站必看 · 热度 443万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1Vy8r6JE9z" target="_blank" rel="noopener">严肃观看儿子的历史记录 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>以“严肃观看儿子的历史记录”的句式为钩子，替换为严肃观看四排队友黑历史：用严肃旁白盘点队友过往苟分、误封烟、抢空投、开车翻车片段，最后切到决赛圈被队友救援或反杀的反转。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>仅基于标题判断，标题的核心是“严肃观看历史记录”带来的反差感；将历史记录替换为四排队友黑历史素材，可保留严肃旁白与搞笑反转的叙事，不依赖复杂事实。</div>
+    </div>
+    <div class="card" style="--cat:#EF9F27" data-k="2026年08月25日 #26">
+      <div class="card-head">
+        <span class="rank">#26</span>
+        <span class="cat" style="background:#EF9F27">搞笑</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-08-24，持续发酵中">🔥连续2天</span>
+        
+        <span class="caseid">2026年08月25日 #26</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">B站热门 · B站入站必看 · 热度 257万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1j38B65Eyw" target="_blank" rel="noopener">搞笑疯人院：满级病友竟是大佬！大家都有病的时候，楚闻野张口闭口就喊桑九舅舅，桑九也觉得楚闻野是个好孩子，就是脑子不太好。 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">短剧</span>
+        <div class="direction"><span class="lbl">转化方向</span>保留“满级病友竟是大佬”“张口闭口喊舅舅”“脑子不太好”的标题钩子，拍四排短剧：一名队友被调侃脑子不太好，开局乱封烟、苟分、乱救援，决赛圈突然用M416压枪或平底锅近战完成反杀，队友用游戏内通用表情动作做反应。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>仅基于标题判断，标题自带搞笑人物关系、称呼梗和满级大佬反差；将其替换为四排队友互动，可用游戏内行为承载搞笑反转。</div>
+    </div>
+    <div class="card" style="--cat:#EF9F27" data-k="2026年08月25日 #27">
+      <div class="card-head">
+        <span class="rank">#27</span>
+        <span class="cat" style="background:#EF9F27">搞笑</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="sustain" title="连续 2 天上榜，首次 2026-08-24，持续发酵中">🔥连续2天</span>
+        
+        <span class="caseid">2026年08月25日 #27</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">B站热门 · B站入站必看 · 热度 197万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1CW8C66E5r" target="_blank" rel="noopener">抽象新闻：8月人类迷惑行为大赏（上） <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">混剪</span>
+        <div class="direction"><span class="lbl">转化方向</span>把“8月人类迷惑行为大赏”替换为和平精英四排迷惑行为盘点：用抽象新闻口播剪辑决赛圈乱封烟、载具撞树、空投前犹豫被抢、救援时被补、刚枪秒变苟分等片段。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 易</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>仅基于标题判断，标题提供“抽象新闻+迷惑行为大赏”的盘点模板；和平精英四排迷惑操作素材天然适配混剪，执行门槛低。</div>
+    </div>
+    <div class="card" style="--cat:#1D9E75" data-k="2026年08月25日 #28">
+      <div class="card-head">
+        <span class="rank">#28</span>
+        <span class="cat" style="background:#1D9E75">音乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #28</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">B站热门 · B站入站必看 · 热度 99万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1or8e6TEte" target="_blank" rel="noopener">《海阔天空》一个人的乐队 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>以‘一个人的乐队’为识别钩子，做‘一个人的四排’分屏整活：同一玩家通过后期分屏分别扮演刚枪位、封烟位、载具司机、救援位，按音乐节奏切换镜头，最终在决赛圈完成一次多人协作式推进。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>仅基于标题判断，热点核心是‘一个人完成乐队’的一人多角协作感；该机制可迁移到和平精英四排分工中，用刚枪、封烟、载具、救援等稳定元素构成可剪辑的卡点整活，不依赖具体人物或事件。</div>
+    </div>
+    <div class="card" style="--cat:#D4537E" data-k="2026年08月25日 #29">
+      <div class="card-head">
+        <span class="rank">#29</span>
+        <span class="cat" style="background:#D4537E">娱乐</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #29</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">B站热门 · B站入站必看 · 热度 37万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1tY8b6MErt" target="_blank" rel="noopener">这么高的鞋子也能跳舞吗？ <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">挑战</span>
+        <div class="direction"><span class="lbl">转化方向</span>保留「这么高的鞋子也能跳舞吗」的反差问句作为字幕钩子，让四排队友在决赛圈封烟后使用游戏内通用表情动作跳舞；若当前版本存在高跟/厚底类外观则使用，否则用后期特效做出夸张鞋型，最后被手雷或平底锅打断形成反转。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>仅基于标题判断，标题呈现「高难度装备+跳舞」的反差动作模板，可把鞋子替换为和平精英可识别的外观或后期特效，并保留决赛圈、封烟、四排互动等稳定元素，执行路径较清楚。</div>
+    </div>
+    <div class="card" style="--cat:#378ADD" data-k="2026年08月25日 #30">
+      <div class="card-head">
+        <span class="rank">#30</span>
+        <span class="cat" style="background:#378ADD">影视</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #30</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">B站热门 · B站入站必看 · 热度 36万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1Mw8v69E2u" target="_blank" rel="noopener">新京报怒批、导演狂喷！可嘲讽牛来的导演自己作品仅4.1分？！【网络狠人113】 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">口播</span>
+        <div class="direction"><span class="lbl">转化方向</span>做「四排嘴强王者翻车实录」口播：用怒批语气吐槽队友不会封烟、拉枪线、救援，随后画面切到自己决赛圈失误、被平底锅淘汰的整活片段，形成「狂喷别人但自己更菜」的反差。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 本周</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>仅基于标题判断，标题核心是「指责他人却被自身低分反噬」的吐槽反差结构，可迁移到和平精英队友互喷与翻车场景；不需要依赖原影视事件细节。</div>
+    </div>
+    <div class="card" style="--cat:#378ADD" data-k="2026年08月25日 #31">
+      <div class="card-head">
+        <span class="rank">#31</span>
+        <span class="cat" style="background:#378ADD">影视</span>
+        
+        <span class="score" style="background:#378ADD" title="潜力分 3/5（AI 综合契合度·流量潜力·可执行性）">★★★☆☆ 3</span>
+        <span class="newtag" title="今日首次进入热榜">🆕首发</span>
+        
+        <span class="caseid">2026年08月25日 #31</span>
+        <button class="seen-btn" title="点击标记/取消标记为已读">○ 标为已读</button>
+        <span class="meta">B站热门 · B站入站必看 · 热度 19万 · 未知</span>
+      </div>
+      <div class="title"><a href="https://www.bilibili.com/video/BV1v6hP6nE8e" target="_blank" rel="noopener">【逆天中配】超神人辉夜姬 完整版大电影 <span class="ext">↗</span></a></div>
+      <div class="dir-row">
+        <span class="form">整活</span>
+        <div class="direction"><span class="lbl">转化方向</span>借「逆天中配/完整版大电影」的恶搞配音形式，把四排刚枪、封烟、救援、决赛圈转移素材剪成伪电影预告片，用夸张中二旁白重新配音；不复刻标题中不明角色剧情，只保留大电影包装。</div>
+      </div>
+      <div class="mchips"><span class="mchip">难度 中</span><span class="mchip mchip-t">时效 长尾</span></div>
+      <div class="reason"><span class="lbl">推荐理由</span>仅基于标题判断，标题中「逆天中配」「完整版大电影」指向恶搞配音和史诗化剪辑的形式模板；该形式可直接套用到和平精英对局素材，且不依赖原作品事实。</div>
+    </div>
+
+  <div class="notice">
+    AI 使用说明：AI 仅用于生成二创方向和推荐理由。涉及严肃资讯、公共事件、负面情绪的热点，
+    风险、合规、是否跟进一律由人工判断。
+  </div>
+
+  <details>
+    <summary>附录：原始热榜全量（53 条）</summary>
+    <table>
+      <thead><tr><th>排名</th><th>来源</th><th>标题</th><th>热度</th></tr></thead>
+      <tbody><tr><td>2</td><td>抖音热点</td><td>一张用光签名的拍立得</td><td>1147万</td></tr><tr><td>4</td><td>抖音热点</td><td>万千气象瞰宁夏</td><td>1130万</td></tr><tr><td>7</td><td>抖音热点</td><td>第一批新生家长已经在铺床了</td><td>931万</td></tr><tr><td>8</td><td>抖音热点</td><td>央视少儿给00后的一封信</td><td>922万</td></tr><tr><td>9</td><td>抖音热点</td><td>双人版第57次取消发送</td><td>921万</td></tr><tr><td>10</td><td>抖音热点</td><td>我的出伏自救指南</td><td>918万</td></tr><tr><td>14</td><td>抖音热点</td><td>我愿意一直这样</td><td>878万</td></tr><tr><td>15</td><td>抖音热点</td><td>飞到我心上定档</td><td>875万</td></tr><tr><td>16</td><td>抖音热点</td><td>热火官宣克莱加盟</td><td>866万</td></tr><tr><td>17</td><td>抖音热点</td><td>墨镜加emo帅到没朋友</td><td>825万</td></tr><tr><td>18</td><td>抖音热点</td><td>殷玉珍赛考斯故事何以打动全网</td><td>821万</td></tr><tr><td>21</td><td>抖音热点</td><td>donk获EWC赛事MVP</td><td>792万</td></tr><tr><td>22</td><td>抖音热点</td><td>英留老吃家萝卜乔乔毕业</td><td>782万</td></tr><tr><td>23</td><td>抖音热点</td><td>珠雀开机</td><td>779万</td></tr><tr><td>24</td><td>抖音热点</td><td>汪峰回应08年T恤上的表情包火了</td><td>778万</td></tr><tr><td>25</td><td>抖音热点</td><td>媒体评中国俱乐部登顶EWC</td><td>778万</td></tr><tr><td>26</td><td>抖音热点</td><td>TUIDE出道</td><td>777万</td></tr><tr><td>27</td><td>抖音热点</td><td>假如妈妈的薪水连一亿都不到</td><td>773万</td></tr><tr><td>28</td><td>抖音热点</td><td>张韶涵成都演唱会造型惊艳</td><td>773万</td></tr><tr><td>30</td><td>抖音热点</td><td>八仙捞饭好吃到停不下来</td><td>772万</td></tr><tr><td>31</td><td>抖音热点</td><td>终于等到FFOREVER的鸟巢演唱会</td><td>772万</td></tr><tr><td>33</td><td>抖音热点</td><td>看汪苏泷演唱会像回家</td><td>771万</td></tr><tr><td>34</td><td>抖音热点</td><td>Spirit获电竞世俱杯CS2项目冠军</td><td>771万</td></tr><tr><td>36</td><td>抖音热点</td><td>拼豆已严肃进入美妆界</td><td>769万</td></tr><tr><td>37</td><td>抖音热点</td><td>男团这个赛道真让杨迪闯进去了</td><td>769万</td></tr><tr><td>41</td><td>抖音热点</td><td>登陆少年好想好想</td><td>769万</td></tr><tr><td>42</td><td>抖音热点</td><td>陈小春当嘉宾更紧张</td><td>768万</td></tr><tr><td>43</td><td>抖音热点</td><td>把我们一家画进彩铅画里</td><td>768万</td></tr><tr><td>44</td><td>抖音热点</td><td>开学也要续火花</td><td>768万</td></tr><tr><td>45</td><td>抖音热点</td><td>乐评说唱巅峰颜如玉2.0</td><td>767万</td></tr><tr><td>46</td><td>抖音热点</td><td>早春晴朗栾念吃醋好上头</td><td>767万</td></tr><tr><td>47</td><td>抖音热点</td><td>谁惹颜安唐九洲开心了</td><td>767万</td></tr><tr><td>48</td><td>抖音热点</td><td>张彬彬我好像才认识你</td><td>767万</td></tr><tr><td>49</td><td>抖音热点</td><td>单依纯演唱会造型美出新高度</td><td>767万</td></tr><tr><td>50</td><td>抖音热点</td><td>曾舜晞从吴老狗变森间精灵</td><td>767万</td></tr><tr><td>11</td><td>B站热门</td><td>&quot;复活吧！我的（ ）&quot;</td><td>663万</td></tr><tr><td>35</td><td>B站热门</td><td>没人会记得神作之下的第二名，除非那一年都是神仙！</td><td>612万</td></tr><tr><td>13</td><td>B站热门</td><td>严肃观看儿子的历史记录</td><td>443万</td></tr><tr><td>41</td><td>B站热门</td><td>【纪录片TV】大乾乾被撞成两半了……</td><td>402万</td></tr><tr><td>16</td><td>B站热门</td><td>搞笑疯人院：满级病友竟是大佬！大家都有病的时候，楚闻野张口闭口就喊桑九舅舅，桑九也觉得楚闻野是个好孩子，就是脑子不太好。</td><td>257万</td></tr><tr><td>17</td><td>B站热门</td><td>原创民俗AI短片《槐灯》</td><td>202万</td></tr><tr><td>43</td><td>B站热门</td><td>抽象新闻：8月人类迷惑行为大赏（上）</td><td>197万</td></tr><tr><td>31</td><td>B站热门</td><td>提前40秒进图？三角洲完蛋了！</td><td>146万</td></tr><tr><td>3</td><td>B站热门</td><td>《海阔天空》一个人的乐队</td><td>99万</td></tr><tr><td>18</td><td>B站热门</td><td>【Spirit】我们早已习惯作为反派登场，嘘声再大一点根本听不见！</td><td>95万</td></tr><tr><td>10</td><td>B站热门</td><td>【科学修仙】你给姐下套，姐带你打瓦...【up动画】</td><td>86万</td></tr><tr><td>39</td><td>B站热门</td><td>🦋 炼 定 仙 游 ♂ 股 🦋</td><td>75万</td></tr><tr><td>15</td><td>B站热门</td><td>这德穆兰技能组真官方外挂吧？来感受一下牢太在航天的统治力！诶？这里怎么有堵墙？</td><td>66万</td></tr><tr><td>50</td><td>B站热门</td><td>“我能否将你比作一个夏天？”</td><td>42万</td></tr><tr><td>48</td><td>B站热门</td><td>这么高的鞋子也能跳舞吗？</td><td>37万</td></tr><tr><td>37</td><td>B站热门</td><td>新京报怒批、导演狂喷！可嘲讽牛来的导演自己作品仅4.1分？！【网络狠人113】</td><td>36万</td></tr><tr><td>47</td><td>B站热门</td><td>【心月弗传2】你怎么不从盘古开天地开始说？</td><td>21万</td></tr><tr><td>27</td><td>B站热门</td><td>【逆天中配】超神人辉夜姬 完整版大电影</td><td>19万</td></tr></tbody>
+    </table>
+  </details>
+
+  <div class="footer">本报告由「和平精英二创热点 AI 日报工具」自动生成</div>
+
+</div>
+<script>
+// U-11 已读：显式 ✓ 按钮触发，轻量徽标（不再整张卡点击就标记）
+(function() {
+  const KEY = 'pubg_daily_seen_2026-08-25';
+  let seen = {};
+  try { seen = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e) {}
+
+  // 初始化：所有卡按已读状态显示/隐藏 ✓ 徽标
+  document.querySelectorAll('.card[data-k]').forEach(c => {
+    const k = c.dataset.k;
+    const btn = c.querySelector('.seen-btn');
+    if (!btn) return;
+    if (seen[k]) {
+      c.classList.add('seen');
+      btn.classList.add('on');
+      btn.textContent = '✓ 已读';
+    } else {
+      btn.textContent = '○ 标为已读';
+    }
+  });
+
+  // 标记函数（复用）
+  function markSeen(card) {
+    const k = card.dataset.k;
+    if (!k || card.classList.contains('seen')) return;
+    card.classList.add('seen');
+    const btn = card.querySelector('.seen-btn');
+    if (btn) { btn.classList.add('on'); btn.textContent = '✓ 已读'; }
+    seen[k] = 1;
+    try { localStorage.setItem(KEY, JSON.stringify(seen)); } catch(err) {}
+  }
+
+  // 自动标记：点击卡片打开外部链接时自动标已读
+  document.addEventListener('click', e => {
+    const card = e.target.closest('.card[data-k]');
+    if (!card) return;
+    // 不拦截 .seen-btn 自身的点击，留给下面的 handler 处理
+    if (e.target.closest('.seen-btn')) return;
+    // 点击整张卡（含标题链接）→ 自动标已读
+    markSeen(card);
+  });
+
+  // ✓ 按钮手动切换（已在自动标记之外，用于取消已读）
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.seen-btn');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const card = btn.closest('.card[data-k]');
+    if (!card) return;
+    const on = !card.classList.contains('seen');
+    if (on) {
+      card.classList.add('seen');
+      btn.classList.add('on');
+      btn.textContent = '✓ 已读';
+      const k = card.dataset.k;
+      if (k) { seen[k] = 1; }
+    } else {
+      card.classList.remove('seen');
+      btn.classList.remove('on');
+      btn.textContent = '○ 标为已读';
+      const k = card.dataset.k;
+      if (k) { delete seen[k]; }
+    }
+    try { localStorage.setItem(KEY, JSON.stringify(seen)); } catch(err) {}
+  });
+
+  // 右下角「重置已读」按钮
+  const reset = document.createElement('button');
+  reset.className = 'seen-reset';
+  reset.textContent = '重置已读';
+  reset.title = '清除全部已读标记';
+  reset.onclick = () => {
+    if (!confirm('清除「已读」标记？')) return;
+    try { localStorage.removeItem(KEY); } catch(e) {}
+    document.querySelectorAll('.card.seen').forEach(c => c.classList.remove('seen'));
+    document.querySelectorAll('.seen-btn').forEach(b => {
+      b.classList.remove('on');
+      b.textContent = '○ 标为已读';
+    });
+  };
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      const _g = document.querySelector(".seen-reset-group");
+      if (_g) _g.appendChild(reset); else document.body.appendChild(reset);
+    });
+  } else {
+    const _g = document.querySelector(".seen-reset-group");
+    if (_g) _g.appendChild(reset); else document.body.appendChild(reset);
+  }
+})();
+</script>
+<div class="seen-reset-group" aria-label="快捷操作"><a href="./index.html" class="home-btn" title="返回灵感站首页"><svg viewBox="0 0 14 12"><path d="M6.5 11L1 6m0 0l5.5-5M1 6h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>返回灵感站</span></a></div></body>
+</html>
